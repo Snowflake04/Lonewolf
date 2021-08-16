@@ -1,0 +1,179 @@
+2021-05-20 04:32:42 - info [index.js]: Initializing...
+2021-05-20 04:32:42 - info [index.js]: Loading commands...
+2021-05-20 04:32:42 - info [index.js]: 
+.--------------------------------------------------------------------------.
+|                                 Commands                                 |
+|--------------------------------------------------------------------------|
+|          File          |            Aliases             | Type  | Status |
+|------------------------|--------------------------------|-------|--------|
+| adminrole.js           | setar, sar                     | admin | pass   |
+| autokick.js            | setak, sak                     | admin | pass   |
+| autorole.js            | arole                          | admin | pass   |
+| deletedlog.js          | dlog                           | admin | pass   |
+| editlog.js             | eml                            | admin | pass   |
+| farewell.js            | fwchannel                      | admin | pass   |
+| farewellmessage.js     | setfwmsg                       | admin | pass   |
+| memberlog.js           | setmlog                        | admin | pass   |
+| modchannels.js         | setmods                        | admin | pass   |
+| modlog.js              | mlog                           | admin | pass   |
+| modrole.js             | mrole                          | admin | pass   |
+| muterole.js            | mutedrole                      | admin | pass   |
+| nicklog.js             | nicknamelog                    | admin | pass   |
+| rolelog.js             | setrolelog                     | admin | pass   |
+| setprefix.js           | setp, sp                       | admin | pass   |
+| settings.js            | set, s, config, conf           | admin | pass   |
+| starboard.js           | starchannel                    | admin | pass   |
+| systemchannel.js       | syschannel                     | admin | pass   |
+| togglecommand.js       | togglec, togc, tc              | admin | pass   |
+| togglepoints.js        | togglep, togp                  | admin | pass   |
+| togglerandomcolor.js   | togglerc, togrc, trc           | admin | pass   |
+| toggletype.js          | togglet, togt, tt              | admin | pass   |
+| verificationchannel.js | setverify                      | admin | pass   |
+| verificationmessage.js | verifymsg                      | admin | pass   |
+| verificationrole.js    | vrole                          | admin | pass   |
+| welcomechannel.js      | welchannel                     | admin | pass   |
+| welcomemessage.js      | welcomemsg                     | admin | pass   |
+| color.js               | changecolor, colour, c         | color | pass   |
+| colors.js              | colorlist, colours, cols, cs   | color | pass   |
+| createcolor.js         | cc                             | color | pass   |
+| createdefaultcolors.js | cdc                            | color | pass   |
+| randomcolor.js         | rc                             | color | pass   |
+| 8ball.js               | fortune                        | fun   | pass   |
+| Play.js                | ps                             | fun   | pass   |
+| bird.js                |                                | fun   | pass   |
+| cat.js                 | kitten, kitty                  | fun   | pass   |
+| catfact.js             | cf                             | fun   | pass   |
+| coinflip.js            | cointoss, coin, flip           | fun   | pass   |
+| dog.js                 | puppy, pup                     | fun   | pass   |
+| dogfact.js             | df                             | fun   | pass   |
+| duck.js                |                                | fun   | pass   |
+| emojify.js             | sayemoji                       | fun   | pass   |
+| fox.js                 |                                | fun   | pass   |
+| iq.js                  |                                | fun   | pass   |
+| meme.js                |                                | fun   | pass   |
+| roll.js                | dice, r                        | fun   | pass   |
+| rps.js                 |                                | fun   | pass   |
+| say.js                 |                                | fun   | pass   |
+| shibe.js               |                                | fun   | pass   |
+| solotrivia.js          | solotriv, striv, solot, st     | fun   | pass   |
+| thouart.js             | elizabethan, ta                | fun   | pass   |
+| topics.js              | triviatopics, categories, ts   | fun   | pass   |
+| trivia.js              | triv, t                        | fun   | pass   |
+| trumptweet.js          | trump                          | fun   | pass   |
+| yesno.js               | yn                             | fun   | pass   |
+| yomomma.js             | yourmom, yomamma, yomama, ym   | fun   | pass   |
+| youtube.js             | yt                             | fun   | pass   |
+| admins.js              |                                | info  | pass   |
+| aliases.js             | alias, ali, a                  | info  | pass   |
+| avatar.js              | profilepic, pic, ava           | info  | pass   |
+| botinfo.js             | bot, bi                        | info  | pass   |
+| channelinfo.js         | channel, ci                    | info  | pass   |
+| emojis.js              | e                              | info  | pass   |
+| findid.js              | find, id                       | info  | pass   |
+| help.js                | commands, h                    | info  | pass   |
+| inviteme.js            | invite, invme, im              | info  | pass   |
+| members.js             | memberstatus                   | info  | pass   |
+| mods.js                |                                | info  | pass   |
+| permissions.js         | perms                          | info  | pass   |
+| ping.js                |                                | info  | pass   |
+| prefix.js              | pre                            | info  | pass   |
+| roleinfo.js            | role, ri                       | info  | pass   |
+| servercount.js         | usercount, sc, uc              | info  | pass   |
+| servericon.js          | icon, i                        | info  | pass   |
+| serverinfo.js          | server, si                     | info  | pass   |
+| serverstaff.js         | staff                          | info  | pass   |
+| stats.js               | statistics, metrics            | info  | pass   |
+| uptime.js              | up                             | info  | pass   |
+| userinfo.js            | whois, user, ui                | info  | pass   |
+| feedback.js            | fb                             | misc  | pass   |
+| nickme.js              | setnick, nick                  | misc  | pass   |
+| reportbug.js           | bugreport, report, bug, rb, br | misc  | pass   |
+| addrole.js             | giverole, addr, ar             | mod   | pass   |
+| ban.js                 |                                | mod   | pass   |
+| clearwarns.js          |                                | mod   | pass   |
+| kick.js                |                                | mod   | pass   |
+| mute.js                |                                | mod   | pass   |
+| purge.js               | clear                          | mod   | pass   |
+| purgebot.js            | clearbot                       | mod   | pass   |
+| removerole.js          | remover, rr                    | mod   | pass   |
+| setnickname.js         | setnn, snn                     | mod   | pass   |
+| slowmode.js            | slow, sm                       | mod   | pass   |
+| softban.js             |                                | mod   | pass   |
+| unban.js               |                                | mod   | pass   |
+| unmute.js              |                                | mod   | pass   |
+| warn.js                |                                | mod   | pass   |
+| warnpurge.js           | purgewarn                      | mod   | pass   |
+| warns.js               | warnings                       | mod   | pass   |
+| loop.js                | lp                             | music | pass   |
+| lyrics.js              | ly                             | music | pass   |
+| move.js                | mv                             | music | pass   |
+| pause.js               | pm                             | music | pass   |
+| play.js                | py                             | music | pass   |
+| playlist.js            | list                           | music | pass   |
+| queue.js               | q                              | music | pass   |
+| remove.js              | rm                             | music | pass   |
+| resume.js              | res                            | music | pass   |
+| search.js              | sh                             | music | pass   |
+| shuffle.js             |                                | music | pass   |
+| skip.js                | next                           | music | pass   |
+| skipto.js              | sk                             | music | pass   |
+| stop.js                |                                | music | pass   |
+| volume.js              | vl                             | music | pass   |
+| blast.js               |                                | owner | pass   |
+| eval.js                |                                | owner | pass   |
+| leaveguild.js          |                                | owner | pass   |
+| servers.js             | servs                          | owner | pass   |
+| wipeallpoints.js       | wipeap, wap                    | owner | pass   |
+| wipealltotalpoints.js  | wipeatp, watp                  | owner | pass   |
+| wipepoints.js          | wipep, wp                      | owner | pass   |
+| wipetotalpoints.js     | wipetp, wtp                    | owner | pass   |
+'--------------------------------------------------------------------------'
+2021-05-20 04:32:42 - info [index.js]: 18 event(s) found...
+2021-05-20 04:32:42 - info [index.js]: Loading event: debug
+2021-05-20 04:32:42 - info [index.js]: Loading event: error
+2021-05-20 04:32:42 - info [index.js]: Loading event: guildCreate
+2021-05-20 04:32:42 - info [index.js]: Loading event: guildDelete
+2021-05-20 04:32:42 - info [index.js]: Loading event: guildMemberAdd
+2021-05-20 04:32:42 - info [index.js]: Loading event: guildMemberRemove
+2021-05-20 04:32:42 - info [index.js]: Loading event: guildMemberUpdate
+2021-05-20 04:32:42 - info [index.js]: Loading event: guildUpdate
+2021-05-20 04:32:42 - info [index.js]: Loading event: message
+2021-05-20 04:32:42 - info [index.js]: Loading event: messageDelete
+2021-05-20 04:32:42 - info [index.js]: Loading event: messageDeleteBulk
+2021-05-20 04:32:42 - info [index.js]: Loading event: messageReactionAdd
+2021-05-20 04:32:42 - info [index.js]: Loading event: messageReactionRemove
+2021-05-20 04:32:42 - info [index.js]: Loading event: messageUpdate
+2021-05-20 04:32:42 - info [index.js]: Loading event: ready
+2021-05-20 04:32:42 - info [index.js]: Loading event: userUpdate
+2021-05-20 04:32:42 - info [index.js]: Loading event: voiceStateUpdate
+2021-05-20 04:32:42 - info [index.js]: Loading event: warn
+2021-05-20 04:32:42 - info [index.js]: 24 topic(s) found...
+2021-05-20 04:32:42 - info [index.js]: Loading topic: anime
+2021-05-20 04:32:42 - info [index.js]: Loading topic: cars
+2021-05-20 04:32:42 - info [index.js]: Loading topic: darksouls
+2021-05-20 04:32:42 - info [index.js]: Loading topic: dota2abilities
+2021-05-20 04:32:42 - info [index.js]: Loading topic: dota2items
+2021-05-20 04:32:42 - info [index.js]: Loading topic: elements
+2021-05-20 04:32:42 - info [index.js]: Loading topic: finalfantasy
+2021-05-20 04:32:42 - info [index.js]: Loading topic: gameofthrones
+2021-05-20 04:32:42 - info [index.js]: Loading topic: greekmyth
+2021-05-20 04:32:42 - info [index.js]: Loading topic: harrypotter
+2021-05-20 04:32:42 - info [index.js]: Loading topic: leagueoflegends
+2021-05-20 04:32:42 - info [index.js]: Loading topic: leagueults
+2021-05-20 04:32:42 - info [index.js]: Loading topic: overwatch
+2021-05-20 04:32:42 - info [index.js]: Loading topic: slogans
+2021-05-20 04:32:42 - info [index.js]: Loading topic: sports
+2021-05-20 04:32:42 - info [index.js]: Loading topic: starwars
+2021-05-20 04:32:42 - info [index.js]: Loading topic: uscapitals
+2021-05-20 04:32:42 - info [index.js]: Loading topic: usflags
+2021-05-20 04:32:42 - info [index.js]: Loading topic: usmap
+2021-05-20 04:32:42 - info [index.js]: Loading topic: usstateabbreviations
+2021-05-20 04:32:42 - info [index.js]: Loading topic: videogames
+2021-05-20 04:32:42 - info [index.js]: Loading topic: worldcapitals
+2021-05-20 04:32:42 - info [index.js]: Loading topic: worldflags
+2021-05-20 04:32:42 - info [index.js]: Loading topic: worldmap
+2021-05-20 04:32:47 - info [index.js]: Updating database and scheduling jobs...
+2021-05-20 04:32:47 - info [index.js]: EC Boiss: Successfully scheduled job
+2021-05-20 04:32:47 - info [index.js]: Calypso is now online
+2021-05-20 04:32:47 - info [index.js]: Calypso is running on 3 server(s)
+2021-05-20 05:03:49 - info [index.js]: YÖlöやꪖlpHä#3037 user tag changed to YÖlöやwalker#3037
