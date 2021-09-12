@@ -40,7 +40,7 @@ reply = await reply.json()
       // Check permissions
       const permission = command.checkPermissions(message);
       if (permission) {
-const cooldown = command.getOrCreateCooldown(message.author.id)
+const cooldown = command.getOrCreateCooldown(message.author)
       if (cooldown) return command.sendCooldownMessage(message, cooldown);
       
        message.command = true; // Add flag for messageUpdate event
