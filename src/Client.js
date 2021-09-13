@@ -45,7 +45,7 @@ class Client extends Discord.Client {
 		 * @type {Collection<string, Command>}
 		 */
 		this.commands = new Discord.Collection();
-
+                this.token = process.env.token
 		/**
 		 * Collection of command aliases
 		 * @type {Collection<string, Command>}
