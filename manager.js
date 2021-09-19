@@ -5,6 +5,11 @@ const config = require('./config');
 module.exports = function(client) {
 	return new Manager({
 		nodes: [
+                       {
+                           host: 'lava.link',
+                           port: 80,
+                           password: "nothing"
+                      },
 			{
 				host: 'n3.nighthost.tech',
 
