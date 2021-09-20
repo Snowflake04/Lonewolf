@@ -13,7 +13,8 @@ intents.add(
 	'GUILDS',
 	'GUILD_VOICE_STATES',
 	'GUILD_MESSAGES',
-	'GUILD_MESSAGE_REACTIONS'
+	'GUILD_MESSAGE_REACTIONS',
+        'DIRECT_MESSAGES'
 );
 const client = new Client(config, { ws: { intents: intents } });
 require('discord-buttons')(client);
