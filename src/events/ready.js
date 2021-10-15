@@ -50,7 +50,7 @@ module.exports = async (client) => {
   client.logger.info('Updating database and scheduling jobs...');
   
   
-  await mongo().then((mongoose) => {
+  await mongo()
     try {
       console.log('Connected to mongo!')
     }catch(err){

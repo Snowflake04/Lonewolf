@@ -1,52 +1,50 @@
-const { createLogger, format, transports } = require('winston');
-const path = require('path');
+const chalk = require('chalk');
+const moment = require('moment');
+const log = require('simple-node-logger').createRollingFileLogger({
+		logDirectory: './data/logs',
+		fileNamePattern: 'roll-<DATE>.log',
+		dateFormat: 'YYYY.MM.DD',
+	});
 
-// Custom log formatting
-const logFormat = format.printf((info) => {
-  const { timestamp, level, label, message, ...rest } = info;
-  let log = `${timestamp} - ${level} [${label}]: ${message}`;
 
-  // Check if rest is an object
-  if (!( Object.keys(rest).length === 0 && rest.constructor === Object )) {
-    log = `${log}\n${JSON.stringify(rest, null, 2)}`.replace(/\\n/g, '\n');
-  }
-  return log;
-});
+exports.log = (content, type = 'log') => {
+	if (content == 'error') return;
+	const timestamp = `[${moment().format('HH:mm:ss:SSS')}]:`;
+	switch (type) {
+	case 'log':
+		log.info(content);
+		console.log(`${timestamp} ${chalk.bgBlue(type.toUpperCase())} ${content} `);
+		break;
+	case 'warn':
+		log.warn(content);
+		console.log(`${timestamp} ${chalk.black.bgYellow(type.toUpperCase())} ${content} `);
+		break;
+	case 'error':
+		log.error(content);
+		console.log(`${timestamp} ${chalk.bgRed(type.toUpperCase())} ${content} `);
+		break;
+	case 'debug':
+		console.log(`${timestamp} ${chalk.green(type.toUpperCase())} ${content} `);
+		break;
+	case 'cmd':
+		log.info(content);
+		console.log(`${timestamp} ${chalk.black.bgWhite(type.toUpperCase())} ${content}`);
+		break;
+	case 'ready':
+		log.info(content);
+		console.log(`${timestamp} ${chalk.black.bgGreen(type.toUpperCase())} ${content}`);
+		break;
+	default:
+		break;
+	}
+};
 
-/**
- * Create a new logger
- * @type {Logger}
- */
-const logger = createLogger({
-  level: 'debug',
-  format: format.combine(
-    format.errors({ stack: true }),
-    format.label({ label: path.basename(process.mainModule.filename) }),
-    format.timestamp({ format: 'YYYY-MM-DD HH:mm:ss' })
-  ),
-  transports: [ 
-    // Logging to console
-    new transports.Console({ 
-      format: format.combine(
-        format.colorize(),
-        logFormat
-      )
-    }),
-    // Logging info and up to file
-    new transports.File({ 
-      filename: path.join(__basedir, 'logs/full.log'), 
-      level: 'info',
-      format: logFormat,
-      options: { flags: 'w' } 
-    }),
-    // Logging only warns and errors to file
-    new transports.File({ 
-      filename: path.join(__basedir, 'logs/error.log'),
-      level: 'warn',
-      format: logFormat,
-      options: { flags: 'w' }
-    })
-  ]
-});
+exports.warn = (...args) => this.log(...args, 'warn');
 
-module.exports = logger;
+exports.error = (...args) => this.log(...args, 'error');
+
+exports.debug = (...args) => this.log(...args, 'debug');
+
+exports.cmd = (...args) => this.log(...args, 'cmd');
+
+exports.ready = (...args) => this.log(...args, 'ready');

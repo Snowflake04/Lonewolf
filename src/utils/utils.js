@@ -1,6 +1,8 @@
-const { MessageEmbed } = require('discord.js');
+/*const { MessageEmbed } = require('discord.js');
 const schedule = require('node-schedule');
 const { stripIndent } = require('common-tags');
+*/
+
 
 /**
  * Capitalizes a string
@@ -114,20 +116,7 @@ function getStatus(...args) {
     if (!arg) return 'disabled';
   }
   return 'enabled';
-}
-
-/**
- * Surrounds welcome/farewell message keywords with backticks
- * @param {string} message
- */
-function replaceKeywords(message) {
-  if (!message) return message;
-  else return message
-    .replace(/\?member/g, '`?member`')
-    .replace(/\?username/g, '`?username`')
-    .replace(/\?tag/g, '`?tag`')
-    .replace(/\?size/g, '`?size`');
-}
+};
 
 module.exports = {
   capitalize,
@@ -138,5 +127,4 @@ module.exports = {
   getOrdinalNumeral,
   getCaseNumber,
   getStatus,
-  replaceKeywords,
 };

@@ -1,23 +1,12 @@
 const { Manager } = require('erela.js');
-
+const { LavasfyClient } = require('lavasfy')
 const config = require('./config');
-
-module.exports = function(client) {
-	return new Manager({
-		nodes: [
+let nodes = [
                        {
                            host: 'lava.link',
                            port: 80,
                            password: "nothing"
                       },
-			{
-				host: 'n3.nighthost.tech',
-
-				port: 26777,
-
-				password: 'password111'
-			},
-
 			{
 				host: 'lava2.danbot.host',
 
@@ -26,19 +15,16 @@ module.exports = function(client) {
 				password: 'DBH'
 			},
 			{
-				host: 'node3.noldpvp.cf',
-				port: 25570,
-				password: 'youshallnotpass'
-			},
-
-			{
 				host: config.host,
 
 				port: config.port,
 
 				password: config.pass
 			}
-		],
+		]
+module.exports = function(client) {
+client.Manager = new Manager({
+		nodes: nodes,
 
 		send(id, payload) {
 			const guild = client.guilds.cache.get(id);
@@ -70,4 +56,13 @@ module.exports = function(client) {
 				player.destroy();
 			}, 30000);
 		});
+  
+client.Lavasfy = new LavasfyClient(
+		{
+			clientID: config.scldid,
+			clientSecret: config.scldsc
+		},
+		nodes
+	);
 };
+

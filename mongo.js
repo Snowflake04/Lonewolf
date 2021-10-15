@@ -4,8 +4,7 @@ module.exports = async () => {
 		process.env.db,
 		{
 			useNewUrlParser: true,
-			useUnifiedTopology: true,
-			useFindAndModify: false
+			useUnifiedTopology: true
 		}
 	);
 	return mongoose;

@@ -4,7 +4,6 @@ const { join, resolve } = require('path');
 const AsciiTable = require('ascii-table');
 const { fail } = require('./utils/emojis.json');
 const botSet = require('../schemas/botschema');
-const userSet = require('../schemas/userschema');
 
 class Client extends Discord.Client {
 	/**
@@ -45,29 +44,15 @@ class Client extends Discord.Client {
 		 * @type {Collection<string, Command>}
 		 */
 		this.commands = new Discord.Collection();
-                this.token = process.env.token
+
+    
+    this.token = process.env.token
 		/**
 		 * Collection of command aliases
 		 * @type {Collection<string, Command>}
 		 */
 		this.aliases = new Discord.Collection();
 
-		/**
-		 * Array of trivia topics
-		 * @type {Array<string>}
-		 */
-		this.topics = [];
-
-		/**
-		 * Login token
-		 * @type {string}
-		 */
-
-		/**
-		 * API keys
-		 * @type {Object}
-		 */
-		this.apiKeys = config.apiKeys;
 
 		/**
 		 *  owner ID
@@ -165,24 +150,6 @@ class Client extends Discord.Client {
 		return this;
 	}
 
-	/**
-	 * Loads all available trivia topics
-	 * @param {string} path
-	 */
-	loadTopics(path) {
-		readdir(path, (err, files) => {
-			if (err) this.logger.error(err);
-			files = files.filter(f => f.split('.').pop() === 'yml');
-			if (files.length === 0) return this.logger.warn('No topics found');
-			this.logger.info(`${files.length} topic(s) found...`);
-			files.forEach(f => {
-				const topic = f.substring(0, f.indexOf('.'));
-				this.topics.push(topic);
-				this.logger.info(`Loading topic: ${topic}`);
-			});
-		});
-		return this;
-	}
 
 	/**
 	 * Checks if user is the bot owner
@@ -228,7 +195,7 @@ class Client extends Discord.Client {
 			.setDescription(`\`\`\`diff\n- System Failure\n+ ${errorMessage}\`\`\``)
 			.setTimestamp()
 			.setColor(guild.me.displayHexColor);
-		systemChannel.send(embed);
+		systemChannel.send({ embeds: [embed]});
 	}
 }
 

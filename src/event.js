@@ -113,11 +113,11 @@ module.exports = {
 				'Playing.png'
 			);
 
-			channel.send(attachment);
+			channel.send({ files: [attachment]});
 		} catch (error) {
 			message.channel.send(
 				`Started playing: ${
-					track.titel
+					track.title
 				} \n Make sure i have SEND_ATTACHMEMTS permission for better experience`
 			);
 		}

@@ -1,5 +1,5 @@
 const botSet = require('../schemas/botschema');
-const userSet = require('../schemas/userschema');
+//const userSet = require('../schemas/userschema');
 
 let prefixcache = {};
 let disabled_command = [];
