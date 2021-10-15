@@ -63,6 +63,6 @@ module.exports = class ChannelInfoCommand extends Command {
       ' or provide a valid text, announcement, or voice channel ID'
     );
     if (channel.topic) embed.addField('Topic', channel.topic);
-    message.channel.send(embed);
+    message.channel.send({ embeds: [embed] } );
   }
 };

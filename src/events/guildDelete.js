@@ -6,18 +6,18 @@ const userSet = require('../../schemas/userschema');
 module.exports = async (client, guild) => {
 
   client.logger.info(`LoneWolf has left ${guild.name}`);
- const serverLog = client.channels.cache.get(client.serverLogId);
- if (serverLog)
-   serverLog.send(new MessageEmbed().setDescription(`${client.user} has left **${guild.name}** ${fail}`));
-   
-const Guild = guild.id
- 
- await userSet.deleteMany({
-   guild_id: Guild
- })
+  const serverLog = client.channels.cache.get(client.serverLogId);
+  if (serverLog)
+    serverLog.send(new MessageEmbed().setDescription(`${client.user} has left **${guild.name}** ${fail}`));
+
+  const Guild = guild.id
+
+  await userSet.deleteMany({
+    guild_id: Guild
+  })
   await botSet.findOneAndDelete({
-   _id: Guild
- })
+    _id: Guild
+  })
 
   if (guild.job) guild.job.cancel(); // Cancel old job
 

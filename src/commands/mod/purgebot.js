@@ -90,7 +90,7 @@ const prefix = db.prefix
           .setTimestamp()
           .setColor(message.guild.me.displayHexColor);
 
-        message.channel.send(embed).then(msg => msg.delete({ timeout: 10000 }))
+        message.channel.send({ embeds: [embed] } ).then(msg => msg.delete({ timeout: 10000 }))
           .catch(err => message.client.logger.error(err.stack));
       });
     }

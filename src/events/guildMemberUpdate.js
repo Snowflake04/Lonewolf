@@ -2,14 +2,14 @@ const { MessageEmbed } = require('discord.js');
 const botSet = require('../../schemas/botschema');
 
 module.exports = async (client, oldMember, newMember) => {
-  
+
   const embed = new MessageEmbed()
     .setAuthor(`${newMember.user.tag}`, newMember.user.displayAvatarURL({ dynamic: true }))
     .setTimestamp()
     .setColor(oldMember.guild.me.displayHexColor);
-const Db = await botSet.findOne({
-  _id: oldMember.guild.id
-});
+  const Db = await botSet.findOne({
+    _id: oldMember.guild.id
+  });
   // Nickname change
   if (oldMember.nickname != newMember.nickname) {
     // Get nickname log
@@ -26,7 +26,7 @@ const Db = await botSet.findOne({
         .setTitle('Member Update: `Nickname`')
         .setDescription(`${newMember}'s **nickname** was changed.`)
         .addField('Nickname', `${oldNickname} ➔ ${newNickname}`);
-      nicknameLog.send(embed);
+      nicknameLog.send({ embeds: [embed] });
     }
   }
 
@@ -44,7 +44,7 @@ const Db = await botSet.findOne({
       embed
         .setTitle('Member Update: `Role Add`')
         .setDescription(`${newMember} was **given** the ${role} role.`);
-      roleLog.send(embed);
+      roleLog.send({ embeds: [embed] });
     }
   }
 
@@ -62,7 +62,7 @@ const Db = await botSet.findOne({
       embed
         .setTitle('Member Update: `Role Remove`')
         .setDescription(`${newMember} was **removed** from ${role} role.`);
-      roleLog.send(embed);
+      roleLog.send({ embeds: [embed] });
     }
   }
 };

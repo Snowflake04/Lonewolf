@@ -55,7 +55,7 @@ module.exports = class RollCommand extends Command {
 
     .setColor(message.guild.me.displayHexColor);
 
-    message.channel.send(embed);
+    message.channel.send({ embeds: [embed] } );
 
 
 

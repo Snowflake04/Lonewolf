@@ -18,6 +18,6 @@ module.exports = class ServerIconCommand extends Command {
       .setFooter(message.member.displayName,  message.author.displayAvatarURL({ dynamic: true }))
       .setTimestamp()
       .setColor(message.guild.me.displayHexColor);
-    message.channel.send(embed);
+    message.channel.send({ embeds: [embed] } );
   }
 };

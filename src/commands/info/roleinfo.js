@@ -47,6 +47,6 @@ module.exports = class RoleInfoCommand extends Command {
       .setFooter(message.member.displayName,  message.author.displayAvatarURL({ dynamic: true }))
       .setTimestamp()
       .setColor(role.hexColor);
-    message.channel.send(embed);
+    message.channel.send({ embeds: [embed] } );
   }
 };

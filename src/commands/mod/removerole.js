@@ -47,7 +47,7 @@ module.exports = class RemoveRoleCommand extends Command {
           .setFooter(message.member.displayName,  message.author.displayAvatarURL({ dynamic: true }))
           .setTimestamp()
           .setColor(message.guild.me.displayHexColor);
-        message.channel.send(embed);
+        message.channel.send({ embeds: [embed] } );
 
         // Update mod log
         this.sendModLogMessage(message, reason, { Member: member, Role: role });

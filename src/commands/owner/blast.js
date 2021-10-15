@@ -33,7 +33,7 @@ module.exports = class BlastCommand extends Command {
           .setDescription(msg)
           .setTimestamp()
           .setColor(message.guild.me.displayHexColor);
-        systemChannel.send(embed);
+        systemChannel.send({ embeds: [embed] } );
       } else guilds.push(guild.name);
     })
   if (guilds.length > 0) {
@@ -46,7 +46,7 @@ module.exports = class BlastCommand extends Command {
         .setFooter(message.member.displayName,  message.author.displayAvatarURL({ dynamic: true }))
         .setTimestamp()
         .setColor(message.guild.me.displayHexColor);
-      message.channel.send(embed);
+      message.channel.send({ embeds: [embed] } );
     }
   } 
 };

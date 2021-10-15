@@ -30,7 +30,7 @@ module.exports = class PingCommand extends Command {
 
       .setColor(message.guild.me.displayHexColor);    
 
-    const msg = await message.channel.send(embed);
+    const msg = await message.channel.send({ embeds: [embed] } );
 
     const timestamp = (message.editedTimestamp) ? message.editedTimestamp : message.createdTimestamp; // Check if edited
 

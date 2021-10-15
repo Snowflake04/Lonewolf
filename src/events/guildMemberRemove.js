@@ -12,9 +12,9 @@ module.exports = async (client, member) => {
    * MEMBER LOG
    * ------------------------------------------------------------------------------------------------ */
   // Get member log
-const Db = await botSet.findOne({
-  _id: member.guild.id
-})
+  const Db = await botSet.findOne({
+    _id: member.guild.id
+  })
   const memberLogId = Db.member_log_id;
   const memberLog = member.guild.channels.cache.get(memberLogId);
   if (
@@ -29,18 +29,18 @@ const Db = await botSet.findOne({
       .setDescription(`${member} (**${member.user.tag}**)`)
       .setTimestamp()
       .setColor(member.guild.me.displayHexColor);
-    memberLog.send(embed);
+    memberLog.send({ embeds: [embed] });
   }
 
   /** ------------------------------------------------------------------------------------------------
    * FAREWELL MESSAGES
-   * ------------------------------------------------------------------------------------------------ */ 
+   * ------------------------------------------------------------------------------------------------ */
   // Send farewell message
   let farewellChannelId = Db.farewell_channel_id;
-  let farewellMessage  = Db.farewell_message;
+  let farewellMessage = Db.farewell_message;
   const farewellChannel = member.guild.channels.cache.get(farewellChannelId);
-  
-  if (
+
+/*  if (
     farewellChannel &&
     farewellChannel.viewable &&
     farewellChannel.permissionsFor(member.guild.me).has(['SEND_MESSAGES', 'EMBED_LINKS']) &&
@@ -53,19 +53,19 @@ const Db = await botSet.findOne({
       .replace(/`?\?size`?/g, member.guild.members.cache.size); // Guild size substitution
     farewellChannel.send(new MessageEmbed().setDescription(farewellMessage).setColor(member.guild.me.displayHexColor));
   }
-  
+*/
   /** ------------------------------------------------------------------------------------------------
    * USERS TABLE
-   * ------------------------------------------------------------------------------------------------ */ 
+   * ------------------------------------------------------------------------------------------------ */
   // Update users table
-await userSet.findOneAndDelete({
-  user_id:member.id,
-  guild_id:member.guild.id
-}
-
- 
+  await userSet.findOneAndDelete({
+      user_id: member.id,
+      guild_id: member.guild.id
+    }
 
 
 
-)
+
+
+  )
 };

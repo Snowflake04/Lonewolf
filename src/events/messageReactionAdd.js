@@ -8,13 +8,13 @@ module.exports = async (client, messageReaction, user) => {
   if (client.user === user) return;
 
   const { message, emoji } = messageReaction;
-const Db = await botSet.findOne({
-  _id:message.guild.id
-})
+  const Db = await botSet.findOne({
+    _id: message.guild.id
+  })
   // Verification
   if (emoji.id === verify.split(':')[2].slice(0, -1)) {
- const  verificationRoleId = Db.verification_role_id;
- const verificationMessageId = Db.verification_message_id;
+    const verificationRoleId = Db.verification_role_id;
+    const verificationMessageId = Db.verification_message_id;
     const verificationRole = message.guild.roles.cache.get(verificationRoleId);
 
     if (!verificationRole || message.id != verificationMessageId) return;
@@ -24,10 +24,9 @@ const Db = await botSet.findOne({
       try {
         await member.roles.add(verificationRole);
       } catch (err) {
-        return client.sendSystemErrorMessage(member.guild, 'verification', 
-          stripIndent`Unable to assign verification role,` +
-          'please check the role hierarchy and ensure I have the Manage Roles permission'
-          , err.message);
+        return client.sendSystemErrorMessage(member.guild, 'verification',
+          stripIndent `Unable to assign verification role,` +
+          'please check the role hierarchy and ensure I have the Manage Roles permission', err.message);
       }
     }
   }
@@ -37,7 +36,7 @@ const Db = await botSet.findOne({
     const starboardChannelId = Db.starboard_channel_id;
     const starboardChannel = message.guild.channels.cache.get(starboardChannelId);
     if (
-      !starboardChannel || 
+      !starboardChannel ||
       !starboardChannel.viewable ||
       !starboardChannel.permissionsFor(message.guild.me).has(['SEND_MESSAGES', 'EMBED_LINKS']) ||
       message.channel === starboardChannel
@@ -70,7 +69,7 @@ const Db = await botSet.findOne({
       await starMessage.edit(`${emojiType} **${starCount}  |**  ${message.channel}`)
         .catch(err => client.logger.error(err.stack));
 
-    // New starred message
+      // New starred message
     } else {
 
       // Check for attachment image
@@ -86,18 +85,18 @@ const Db = await botSet.findOne({
         const extension = message.embeds[0].url.split('.').pop();
         if (/(jpg|jpeg|png|gif)/gi.test(extension)) image = message.embeds[0].url;
       }
-      
+
       if (!message.content && !image) return;
 
       const embed = new MessageEmbed()
-        .setAuthor(message.author.tag, message.author.displayAvatarURL({ dynamic: true}))
+        .setAuthor(message.author.tag, message.author.displayAvatarURL({ dynamic: true }))
         .setDescription(message.content)
         .addField('Original', `[Jump!](${message.url})`)
         .setImage(image)
         .setTimestamp()
         .setFooter(message.id)
         .setColor('#ffac33');
-      await starboardChannel.send(`⭐ **1  |**  ${message.channel}`, embed);
+      await starboardChannel.send({ content: `⭐ **1  |**  ${message.channel}`, embeds: [embed] });
     }
   }
 };

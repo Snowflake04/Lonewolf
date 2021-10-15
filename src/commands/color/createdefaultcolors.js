@@ -25,7 +25,7 @@ module.exports = class CreateDefaultColorsCommand extends Command {
       .setTitle('Create Default Colors')
       .setDescription('Creating colors...')
       .setColor(message.guild.me.displayHexColor);
-    const msg = await message.channel.send(embed);
+    const msg = await message.channel.send({ embeds: [embed] } );
 
     // Create default colors
     let position = 1;

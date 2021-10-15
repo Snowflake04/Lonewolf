@@ -4,15 +4,15 @@ module.exports = async (client, messageReaction, user) => {
   if (client.user === user) return;
 
   const { message, emoji } = messageReaction;
-const Db = await botSet.findOne({
-  _id: message.guild.id
-})
+  const Db = await botSet.findOne({
+    _id: message.guild.id
+  })
   // Starboard
   if (emoji.name === '⭐' && message.author != user) {
     const starboardChannelId = Db.starboard_channel_id;
     const starboardChannel = message.guild.channels.cache.get(starboardChannelId);
     if (
-      !starboardChannel || 
+      !starboardChannel ||
       !starboardChannel.viewable ||
       !starboardChannel.permissionsFor(message.guild.me).has(['SEND_MESSAGES', 'EMBED_LINKS']) ||
       message.channel === starboardChannel

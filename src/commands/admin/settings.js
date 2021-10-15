@@ -124,7 +124,7 @@ let row = await this.getGuild(message.guild.id);
           .addField('Channel', verificationChannel, true)
           .addField('Status', verificationStatus, true)
           .addField('Message', verificationMessage);
-        return message.channel.send(embed);
+        return message.channel.send({ embeds: [embed] } );
       case 'w':
       case 'welcome':
       case 'welcomes':
@@ -133,7 +133,7 @@ let row = await this.getGuild(message.guild.id);
           .addField('Channel', welcomeChannel, true)
           .addField('Status', welcomeStatus, true)
           .addField('Message', welcomeMessage);
-        return message.channel.send(embed);
+        return message.channel.send({ embeds: [embed] } );
       case 'f':
       case 'farewell':
       case 'farewells':
@@ -142,7 +142,7 @@ let row = await this.getGuild(message.guild.id);
           .addField('Channel', farewellChannel, true)
           .addField('Status', farewellStatus, true)
           .addField('Message', farewellMessage);
-        return message.channel.send(embed);
+        return message.channel.send({ embeds: [embed] } );
       
     }
     if (setting)
@@ -163,6 +163,6 @@ let row = await this.getGuild(message.guild.id);
       .addField('Welcomes', '`2` settings', true)
       .addField('Farewells', '`2` settings', true)
 
-    message.channel.send(embed);
+    message.channel.send({ embeds: [embed] } );
   }
 };

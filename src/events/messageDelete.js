@@ -36,7 +36,7 @@ module.exports = async (client, message) => {
         .setDescription(`${message.member}'s **message** in ${message.channel} was deleted.`)
         .addField('Message', message.content);
         
-      messageDeleteLog.send(embed);
+      messageDeleteLog.send({ embeds: [embed] } );
     }
 
   // Embed delete
@@ -54,7 +54,7 @@ module.exports = async (client, message) => {
       embed
         .setTitle('Message Update: `Delete`')
         .setDescription(`${message.member}'s **message embed** in ${message.channel} was deleted.`);
-      messageDeleteLog.send(embed);
+      messageDeleteLog.send({ embeds: [embed] } );
     }
   }
   

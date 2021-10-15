@@ -1,6 +1,6 @@
 const { MessageEmbed } = require('discord.js');
 const { oneLine } = require('common-tags');
-const util = require('../utils');
+const util = require('../utils/utils');
 const fetch = require('node-fetch')
 module.exports = async (client, message) => {
   if(message.channel.type === 'dm' && !message.author.bot){
@@ -23,10 +23,7 @@ reply = await reply.json()
   const prefixRegex = new RegExp(`^(<@!?${client.user.id}>|${prefix.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})\\s*`);
   if (prefixRegex.test(message.content)) {
 
-    
-     //Get mod channels
-    let modChannelIds = util.mod_channels(message.guild.id) || [];
-   if (typeof(modChannelIds) === 'string') modChannelIds = modChannelIds.split(' ');
+
 
     const [, match] = message.content.match(prefixRegex);
     const args = message.content.slice(match.length).trim().split(/ +/g);
@@ -68,7 +65,7 @@ const cooldown = command.getOrCreateCooldown(message.author)
         `)
         .setFooter('DM Lonewolf#0050 for Assistance and concerns!!')
         .setColor(message.guild.me.displayHexColor);
-      message.channel.send(embed);
+      message.channel.send({ embeds: [embed] } );
     }
   }
 }

@@ -3,13 +3,13 @@ const botSet = require('../../schemas/botschema');
 
 module.exports = async (client, oldMessage, newMessage) => {
   const Db = await botSet.findOne({
-    _id:newMessage.guild.id
+    _id: newMessage.guild.id
   })
   if (newMessage.webhookID) return; // Check for webhook
 
   // Detect edited commands
   if (
-    newMessage.member && 
+    newMessage.member &&
     newMessage.id === newMessage.member.lastMessageID &&
     !oldMessage.command
   ) {
@@ -48,7 +48,7 @@ module.exports = async (client, oldMessage, newMessage) => {
         `)
         .addField('Before', oldMessage.content)
         .addField('After', newMessage.content);
-      messageEditLog.send(embed);
+      messageEditLog.send({ embeds: [embed] })
     }
   }
 
@@ -68,7 +68,7 @@ module.exports = async (client, oldMessage, newMessage) => {
         embed.setDescription(`${newMessage.member}'s **message embeds** in ${newMessage.channel} were deleted.`);
       else
         embed.setDescription(`${newMessage.member}'s **message embed** in ${newMessage.channel} was deleted.`);
-      messageDeleteLog.send(embed);
+      messageDeleteLog.send({ embeds: [embed] });
     }
   }
 };

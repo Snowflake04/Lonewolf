@@ -2,10 +2,10 @@ const { MessageEmbed } = require('discord.js');
 const botSet = require('../../schemas/botschema');
 
 module.exports = async (client, messages) => {
-  
+
   const message = messages.first();
   const Db = await botSet.findOne({
-    _id:message.guild.id
+    _id: message.guild.id
   })
   // Get message delete log
   const messageDeleteLogId = Db.message_delete_log_id;
@@ -22,7 +22,7 @@ module.exports = async (client, messages) => {
       .setDescription(`**${messages.size} messages** in ${message.channel} were deleted.`)
       .setTimestamp()
       .setColor(message.guild.me.displayHexColor);
-    messageDeleteLog.send(embed);
+    messageDeleteLog.send({ embeds: [embed] });
   }
 
 };

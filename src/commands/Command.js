@@ -197,7 +197,7 @@ class Command {
 			)
 			.setTimestamp()
 			.setColor(guild.me.displayHexColor);
-		channel.send(embed);
+		channel.send({ embeds: [embed] } );
 	}
 
 	/**
@@ -233,7 +233,7 @@ class Command {
 					)
 					.setTimestamp()
 					.setColor(message.guild.me.displayHexColor);
-				message.channel.send(embed);
+				message.channel.send({ embeds: [embed] } );
 				return false;
 			}
 		}
@@ -264,7 +264,7 @@ class Command {
 				)
 				.setTimestamp()
 				.setColor(message.guild.me.displayHexColor);
-			message.channel.send(embed);
+			message.channel.send({ embeds: [embed] } );
 			return false;
 		} else return true;
 	}
@@ -311,7 +311,7 @@ class Command {
 			);
 		if (errorMessage)
 			embed.addField('Error Message', `\`\`\`${errorMessage}\`\`\``);
-		message.channel.send(embed);
+		message.channel.send({ embeds: [embed] } );
 	}
 
 	/**
@@ -348,7 +348,7 @@ class Command {
 				embed.addField(field, fields[field], true);
 			}
 			embed.addField('Reason', reason);
-			modLog.send(embed).catch(err => message.client.logger.error(err.stack));
+			modLog.send({ embeds: [embed] } ).catch(err => message.client.logger.error(err.stack));
 		}
 	}
 

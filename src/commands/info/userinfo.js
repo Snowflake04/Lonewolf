@@ -87,6 +87,6 @@ module.exports = class UserInfoCommand extends Command {
     if (activities.length > 0) embed.setDescription(activities.join('\n'));
     if (customStatus) embed.spliceFields(0, 0, { name: 'Custom Status', value: customStatus});
     if (userFlags.length > 0) embed.addField('Badges', userFlags.map(flag => flags[flag]).join('\n'));
-    message.channel.send(embed);
+    message.channel.send({ embeds: [embed] } );
   }
 };

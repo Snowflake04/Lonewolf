@@ -1,7 +1,7 @@
-const mongo = require('../../mongo');
+const mongo = require('../../src/mongo');
 const botSet = require('../../schemas/botschema');
 const userSet = require('../../schemas/userschema');
-const util = require('../utils')
+const util = require('../utils/utils')
 module.exports = async (client) => {
 
 
@@ -51,12 +51,7 @@ module.exports = async (client) => {
   
   
   await mongo()
-    try {
-      console.log('Connected to mongo!')
-    }catch(err){
-      console.log(err)
-    }
-});
+    
 client.Manager.init(client.user.id)
   for (const guild of client.guilds.cache.values()) {
 
@@ -97,6 +92,7 @@ client.Manager.init(client.user.id)
 
     // Update settings table
 await util.discmd(guild.id);
+
 await util.getmodchannels(guild.id)
 /*
    await botSet.findOneAndUpdate({

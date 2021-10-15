@@ -12,9 +12,9 @@ module.exports = async (client, member) => {
    * MEMBER LOG
    * ------------------------------------------------------------------------------------------------ */
   // Get member log
-const New = await botSet.findOne({
+  const New = await botSet.findOne({
     _id: member.guild.id
-});
+  });
 
   const memberLogId = New.member_log_id;
   const memberLog = member.guild.channels.cache.get(memberLogId);
@@ -31,12 +31,12 @@ const New = await botSet.findOne({
       .addField('Account created on', moment(member.user.createdAt).format('dddd, MMMM Do YYYY'))
       .setTimestamp()
       .setColor(member.guild.me.displayHexColor);
-    memberLog.send(embed);
+    memberLog.send({ embeds: [embed] });
   }
 
   /** ------------------------------------------------------------------------------------------------
    * AUTO ROLE
-   * ------------------------------------------------------------------------------------------------ */ 
+   * ------------------------------------------------------------------------------------------------ */
   // Get auto role
   const autoRoleId = New.auto_role_id;
   const autoRole = member.guild.roles.cache.get(autoRoleId);
@@ -44,7 +44,7 @@ const New = await botSet.findOne({
     try {
       await member.roles.add(autoRole);
     } catch (err) {
-      client.sendSystemErrorMessage(member.guild, 'auto role', stripIndent`
+      client.sendSystemErrorMessage(member.guild, 'auto role', stripIndent `
         Unable to assign auto role, please check the role hierarchy and ensure I have the Manage Roles permission
       `, err.message);
     }
@@ -52,70 +52,52 @@ const New = await botSet.findOne({
 
   /** ------------------------------------------------------------------------------------------------
    * WELCOME MESSAGES
-   * ------------------------------------------------------------------------------------------------ */ 
-  // Get welcome channel
-  let welcomeChannelId = New.welcome_channel_id;
-  let welcomeMessage  = New.welcome_message;
-  const welcomeChannel = member.guild.channels.cache.get(welcomeChannelId);
+   * ------------------------------------------------------------------------------------------------ */
+  /*  // Get welcome channel
+    let welcomeChannelId = New.welcome_channel_id;
+    let welcomeMessage = New.welcome_message;
+    const welcomeChannel = member.guild.channels.cache.get(welcomeChannelId);
 
-  // Send welcome message
-  if (
-    welcomeChannel &&
-    welcomeChannel.viewable &&
-    welcomeChannel.permissionsFor(member.guild.me).has(['SEND_MESSAGES', 'EMBED_LINKS']) &&
-    welcomeMessage
-  ) {
-    welcomeMessage = welcomeMessage
-      .replace(/`?\?member`?/g, member) // Member mention substitution
-      .replace(/`?\?username`?/g, member.user.username) // Username substitution
-      .replace(/`?\?tag`?/g, member.user.tag) // Tag substitution
-      .replace(/`?\?size`?/g, member.guild.members.cache.size); // Guild size substitution
-    welcomeChannel.send(new MessageEmbed().setDescription(welcomeMessage).setColor(member.guild.me.displayHexColor));
-  }
-  
-  /** ------------------------------------------------------------------------------------------------
-   * RANDOM COLOR
-   * ------------------------------------------------------------------------------------------------ */ 
-  // Assign random color
-  const randomColor = New.random_color;
-  if (randomColor) {
-    const colors = member.guild.roles.cache.filter(c => c.name.startsWith('#')).array();
-
-    // Check length
-    if (colors.length > 0) {
-      const color = colors[Math.floor(Math.random() * colors.length)]; // Get color
-      try {
-        await member.roles.add(color);
-      } catch (err) {
-        client.sendSystemErrorMessage(member.guild, 'random color', stripIndent`
-          Unable to assign random color, please check the role hierarchy and ensure I have the Manage Roles permission
-        `, err.message);
-      }
+    // Send welcome message
+    if (
+      welcomeChannel &&
+      welcomeChannel.viewable &&
+      welcomeChannel.permissionsFor(member.guild.me).has(['SEND_MESSAGES', 'EMBED_LINKS']) &&
+      welcomeMessage
+    ) {
+      welcomeMessage = welcomeMessage
+        .replace(/`?\?member`?/g, member) // Member mention substitution
+        .replace(/`?\?username`?/g, member.user.username) // Username substitution
+        .replace(/`?\?tag`?/g, member.user.tag) // Tag substitution
+        .replace(/`?\?size`?/g, member.guild.members.cache.size); // Guild size substitution
+      welcomeChannel.send(new MessageEmbed().setDescription(welcomeMessage).setColor(member.guild.me.displayHexColor));
     }
-  }
+  */
+
+
 
   /** ------------------------------------------------------------------------------------------------
    * USERS TABLE
-   * ------------------------------------------------------------------------------------------------ */ 
+   * ------------------------------------------------------------------------------------------------ */
   // Update users table
   await userSet.findOneAndUpdate({
     user_id: member.id,
     guild_id: member.guild.id
   },
   {
-   user_id: member.id, 
-   user_name: member.user.username, 
-   user_discriminator: member.user.discriminator,
-   guild_id: member.guild.id, 
-   guild_name: member.guild.name,
-   date_joined: member.joinedAt.toString(),
-    bot:member.user.bot ? 1 : 0
+    user_id: member.id,
+    user_name: member.user.username,
+    user_discriminator: member.user.discriminator,
+    guild_id: member.guild.id,
+    guild_name: member.guild.name,
+    date_joined: member.joinedAt.toString(),
+    bot: member.user.bot ? 1 : 0
   },
   {
     upsert: true,
   });
-  
+
   // If member already in users table
 
-  
+
 };

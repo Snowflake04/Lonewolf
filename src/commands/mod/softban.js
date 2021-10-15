@@ -45,7 +45,7 @@ module.exports = class SoftBanCommand extends Command {
       .setFooter(message.member.displayName,  message.author.displayAvatarURL({ dynamic: true }))
       .setTimestamp()
       .setColor(message.guild.me.displayHexColor);
-    message.channel.send(embed);
+    message.channel.send({ embeds: [embed] } );
     message.client.logger.info(`${message.guild.name}: ${message.author.tag} softbanned ${member.user.tag}`);
         
     // Update mod log

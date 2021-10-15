@@ -97,7 +97,7 @@ module.exports = class PurgeCommand extends Command {
             .spliceFields(1, 0, { name: 'Member', value: member, inline: true});
         }
 
-        message.channel.send(embed).then(msg => msg.delete({ timeout: 10000 }))
+        message.channel.send({ embeds: [embed] } ).then(msg => msg.delete({ timeout: 10000 }))
           .catch(err => message.client.logger.error(err.stack));
       });
     }

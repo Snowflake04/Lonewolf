@@ -69,7 +69,7 @@ const user = m.nickname || m.user.username;
 
       
 
-    message.channel.send(embed);
+    message.channel.send({ embeds: [embed] } );
 
   }catch(err) {
 
