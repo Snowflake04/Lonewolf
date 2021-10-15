@@ -4,7 +4,7 @@ const { MessageEmbed } = require('discord.js');
 
 const emojis = require('../../utils/emojis.json');
 const { oneLine, stripIndent } = require('common-tags');
-const util = require('../../utils')
+const util = require('../../utils/utils')
 module.exports = class AliasesCommand extends Command {
   constructor(client) {
     super(client, {

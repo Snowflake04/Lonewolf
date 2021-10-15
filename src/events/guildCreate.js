@@ -4,7 +4,7 @@ const botSet = require('../../schemas/botschema');
 const userSet = require('../../schemas/userschema');
 module.exports = async (client, guild) => {
 
-  client.logger.info(`LoneWolf has joined ${guild.name}`);
+  client.logger.log(`LoneWolf has joined ${guild.name}`);
   const serverLog = client.channels.cache.get(client.serverLogId);
   if (serverLog)
     serverLog.send(new MessageEmbed().setDescription(`${client.user} has joined **${guild.name}** ${success}`));

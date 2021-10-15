@@ -4,7 +4,7 @@ reqstring = {
 	type: String,
 	required: true
 };
-const botSet = mongoose.Schema({
+const botSet = new mongoose.Schema({
 	_id: reqstring,
 	guild_name: String,
 	prefix: {

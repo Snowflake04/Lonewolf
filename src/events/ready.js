@@ -47,10 +47,17 @@ module.exports = async (client) => {
 
 
 
-  client.logger.info('Updating database and scheduling jobs...');
+  client.logger.log('Updating database and scheduling jobs...');
   
   
-  await mongo()
+  try{
+      await mongo()
+      
+        console.log('Connected to mongo!')
+    }catch(err){
+      console.log(err)
+    };
+
     
 client.Manager.init(client.user.id)
   for (const guild of client.guilds.cache.values()) {
@@ -249,7 +256,7 @@ const dbGuilds = await botSet.find({},
 {
 })
 
-  const guilds = client.guilds.cache.array();
+  const guilds = Array.from(client.guilds.cache.values());
 
   const leftGuilds = dbGuilds.filter(g1 => !guilds.some(g2 => g1._id === g2.id));
 
@@ -264,15 +271,15 @@ await userSet.deleteMany({
 })
 
 
-    client.logger.info(`LoneWolf has left ${guild.guild_name}`);
+    client.logger.log(`LoneWolf has left ${guild.guild_name}`);
 
   }
 
 
 
-  client.logger.info('LoneWolf is now online');
+  client.logger.log('LoneWolf is now online');
 
-  client.logger.info(`LoneWolf is running on ${client.guilds.cache.size} server(s)`);
+  client.logger.log(`LoneWolf is running on ${client.guilds.cache.size} server(s)`);
 
 };
 

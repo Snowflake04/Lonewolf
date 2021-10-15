@@ -1,7 +1,6 @@
 const Command = require('../Command');
 const { MessageEmbed } = require('discord.js');
 const { TrackUtils } = require('erela.js');
-const util = require('../../utils');
 
 module.exports = class RemoveCommand extends Command {
 	constructor(client) {

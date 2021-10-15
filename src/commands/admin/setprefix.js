@@ -3,7 +3,7 @@ const Command = require('../Command.js');
 const botSet = require('../../../schemas/botschema')
 const { MessageEmbed } = require('discord.js');
 const { success } = require('../../utils/emojis.json');
-const util = require('../../utils')
+const util = require('../../utils/utils')
 module.exports = class SetPrefixCommand extends Command {
   constructor(client) {
     super(client, {

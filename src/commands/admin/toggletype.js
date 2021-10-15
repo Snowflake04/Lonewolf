@@ -2,7 +2,7 @@ const Command = require('../Command.js');
 const { MessageEmbed } = require('discord.js');
 const { success, fail } = require('../../utils/emojis.json');
 const { oneLine } = require('common-tags');
-const util = require('../../utils')
+const util = require('../../utils/utils')
 module.exports = class ToggleTypeCommand extends Command {
   constructor(client) {
     super(client, {

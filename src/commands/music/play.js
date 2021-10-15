@@ -2,7 +2,7 @@ const Command = require('../Command');
 const { Util, MessageEmbed } = require('discord.js');
 const { TrackUtils, Player } = require('erela.js');
 const prettyMilliseconds = require('pretty-ms');
-const util = require('../../utils');
+const util = require('../../utils/utils');
 const config = require('../../../config');
 module.exports = class PlayCommand extends Command {
 	constructor(client) {

@@ -84,7 +84,7 @@ class Client extends Discord.Client {
      */
     this.utils = require('./utils/utils.js');
 
-    this.logger.info('Initializing...');
+    this.logger.log('Initializing...');
   }
 
   /**
@@ -96,7 +96,7 @@ class Client extends Discord.Client {
       if (err) this.logger.error(err);
       files = files.filter(f => f.split('.').pop() === 'js');
       if (files.length === 0) return this.logger.warn('No events found');
-      this.logger.info(`${files.length} event(s) found...`);
+      this.logger.log(`${files.length} event(s) found...`);
       files.forEach(f => {
         const eventName = f.substring(0, f.indexOf('.'));
         const event = require(resolve(__basedir, join(path, f)));
@@ -104,7 +104,7 @@ class Client extends Discord.Client {
         delete require.cache[
           require.resolve(resolve(__basedir, join(path, f)))
         ]; // Clear cache
-        this.logger.info(`Loading event: ${eventName}`);
+        this.logger.log(`Loading event: ${eventName}`);
       });
     });
     return this;
@@ -115,7 +115,7 @@ class Client extends Discord.Client {
    * @param {string} path
    */
   loadCommands(path) {
-    this.logger.info('Loading commands...');
+    this.logger.log('Loading commands...');
     let table = new AsciiTable('Commands');
     table.setHeading('File', 'Aliases', 'Type', 'Status');
     readdirSync(path)
@@ -146,7 +146,7 @@ class Client extends Discord.Client {
           }
         });
       });
-    this.logger.info(`\n${table.toString()}`);
+    this.logger.log(`\n${table.toString()}`);
     return this;
   }
 

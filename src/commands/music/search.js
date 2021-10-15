@@ -3,9 +3,8 @@ const { MessageEmbed, Message } = require('discord.js');
 const { TrackUtils } = require('erela.js');
 const _ = require('lodash');
 const prettyMilliseconds = require('pretty-ms');
-const util = require('../../utils');
+const util = require('../../utils/utils');
 const Pagination = require('../pagination');
-const config = require('../../../config');
 
 module.exports = class SearchCommand extends Command {
 	constructor(client) {

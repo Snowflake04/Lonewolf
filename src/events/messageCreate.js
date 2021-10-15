@@ -19,7 +19,7 @@ reply = await reply.json()
 
   // Command handler
  
-  const prefix = await util.getprefix(message.guild.id);
+  const prefix = await util.getprefix(message.guild.id)|| "-";
   const prefixRegex = new RegExp(`^(<@!?${client.user.id}>|${prefix.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})\\s*`);
   if (prefixRegex.test(message.content)) {
 
@@ -46,8 +46,7 @@ const cooldown = command.getOrCreateCooldown(message.author)
      }
      }else if ( 
       (message.content === `<@${client.user.id}>` || message.content === `<@!${client.user.id}>`) &&
-      message.channel.permissionsFor(message.guild.me).has(['SEND_MESSAGES', 'EMBED_LINKS']) &&
-      !modChannelIds.includes(message.channel.id)
+      message.channel.permissionsFor(message.guild.me).has(['SEND_MESSAGES', 'EMBED_LINKS']) 
     ) {
       const embed = new MessageEmbed()
         .setTitle('<a:wel:839173116655435786> HI , I\'m LoneWolf. Need help?')

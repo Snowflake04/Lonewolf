@@ -6,7 +6,7 @@ const pkg = require(__basedir + '/package.json');
 const { owner } = require('../../utils/emojis.json');
 const { oneLine, stripIndent } = require('common-tags');
 
-const util = require('../../utils')
+const util = require('../../utils/utils')
 
 module.exports = class BotInfoCommand extends Command {
   constructor(client) {

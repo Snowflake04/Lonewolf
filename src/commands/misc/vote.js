@@ -2,7 +2,7 @@ const Command = require('../Command.js');
 
 const { MessageEmbed } = require('discord.js');
 
-const disbut = require('discord-buttons');
+const disbut = require('discord.js');
 
 module.exports = class VoteCommand extends Command {
 

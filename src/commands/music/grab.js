@@ -1,7 +1,7 @@
 const Command = require('../Command');
 const { MessageEmbed } = require('discord.js');
 const prettyMilliseconds = require('pretty-ms');
-const util = require('../../utils');
+const util = require('../../utils/utils');
 module.exports = class GrabCommand extends Command {
 	constructor(client) {
 		super(client, {

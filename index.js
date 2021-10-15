@@ -21,7 +21,7 @@ function init() {
   client.loadEvents('./src/events');
   client.loadCommands('./src/commands');
   require("./src/player")(client);
-  require("./src/poster")(client);
+  //require("./src/poster")(client);
 }
 
 init()

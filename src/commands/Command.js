@@ -5,7 +5,7 @@ const { fail } = require('../utils/emojis.json');
 const botSet = require('../../schemas/botschema');
 const userSet = require('../../schemas/userschema');
 
-const util = require('../utils');
+const util = require('../utils/utils');
 /**
  * custom Command class
  */

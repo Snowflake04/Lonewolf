@@ -2,8 +2,8 @@ const Command = require('../Command.js');
 const { MessageEmbed } = require('discord.js');
 const emojis = require('../../utils/emojis.json');
 const { oneLine, stripIndent } = require('common-tags');
-//const { MessageButton, MessageActionRow } = require('discord-buttons');
-const util = require('../../utils')
+const { MessageButton, MessageActionRow } = require('discord.js');
+const util = require('../../utils/utils')
 module.exports = class HelpCommand extends Command {
   constructor(client) {
     super(client, {

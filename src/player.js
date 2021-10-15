@@ -1,6 +1,6 @@
 const { Manager } = require('erela.js');
 const { LavasfyClient } = require('lavasfy')
-const config = require('./config');
+const config = require('../config.json');
 let nodes = [
   {
     host: 'lava.link',
@@ -44,7 +44,7 @@ module.exports = function(client) {
     )
 
     .on('trackStart', (player, track) => {
-      require('./src/event').nowPlaying(client, player, track);
+      require('./event').nowPlaying(client, player, track);
     })
 
     .on('queueEnd', player => {
