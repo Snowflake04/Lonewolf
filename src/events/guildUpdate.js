@@ -20,5 +20,5 @@ module.exports = async (client, oldGuild, newGuild) => {
     upsert: true,
   })
 
-  client.logger.info(`${oldGuild.name} server name changed to ${newGuild.name}`);
+  client.logger.log(`${oldGuild.name} server name changed to ${newGuild.name}`);
 };

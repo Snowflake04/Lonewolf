@@ -6,7 +6,7 @@ const userSet = require('../../schemas/userschema');
 
 module.exports = async (client, member) => {
 
-  client.logger.info(`${member.guild.name}: ${member.user.tag} has joined the server`);
+  client.logger.log(`${member.guild.name}: ${member.user.tag} has joined the server`);
 
   /** ------------------------------------------------------------------------------------------------
    * MEMBER LOG

@@ -41,7 +41,7 @@ module.exports = class KickCommand extends Command {
       .setTimestamp()
       .setColor(message.guild.me.displayHexColor);
     message.channel.send({ embeds: [embed] } );
-    message.client.logger.info(`${message.guild.name}: ${message.author.tag} kicked ${member.user.tag}`);
+    message.client.logger.log(`${message.guild.name}: ${message.author.tag} kicked ${member.user.tag}`);
     
     // Update mod log
     this.sendModLogMessage(message, reason, { Member: member});

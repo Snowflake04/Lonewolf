@@ -141,9 +141,9 @@
 12:11:17.682 INFO  Loading event: userUpdate 
 12:11:17.682 INFO  Loading event: voiceStateUpdate 
 12:11:17.683 INFO  Loading event: warn 
-12:11:18.019 ERROR client.logger.info is not a function
+12:11:18.019 ERROR client.logger.log is not a function
 {}
-TypeError: client.logger.info is not a function
+TypeError: client.logger.log is not a function
     at module.exports (/home/runner/update-2/src/events/ready.js:50:17)
     at Client.emit (node:events:402:35)
     at WebSocketManager.triggerClientReady (/home/runner/update-2/node_modules/discord.js/src/client/websocket/WebSocketManager.js:383:17)
@@ -307,9 +307,9 @@ TypeError: Cannot read properties of undefined (reading 'replace')
 12:14:50.498 INFO  Loading event: userUpdate 
 12:14:50.498 INFO  Loading event: voiceStateUpdate 
 12:14:50.499 INFO  Loading event: warn 
-12:14:50.815 ERROR client.logger.info is not a function
+12:14:50.815 ERROR client.logger.log is not a function
 {}
-TypeError: client.logger.info is not a function
+TypeError: client.logger.log is not a function
     at module.exports (/home/runner/update-2/src/events/ready.js:50:17)
     at Client.emit (node:events:402:35)
     at WebSocketManager.triggerClientReady (/home/runner/update-2/node_modules/discord.js/src/client/websocket/WebSocketManager.js:383:17)
@@ -473,9 +473,9 @@ TypeError: Cannot read properties of undefined (reading 'replace')
 12:17:22.308 INFO  Loading event: userUpdate 
 12:17:22.309 INFO  Loading event: voiceStateUpdate 
 12:17:22.309 INFO  Loading event: warn 
-12:17:22.707 ERROR client.logger.info is not a function
+12:17:22.707 ERROR client.logger.log is not a function
 {}
-TypeError: client.logger.info is not a function
+TypeError: client.logger.log is not a function
     at module.exports (/home/runner/update-2/src/events/ready.js:50:17)
     at Client.emit (node:events:402:35)
     at WebSocketManager.triggerClientReady (/home/runner/update-2/node_modules/discord.js/src/client/websocket/WebSocketManager.js:383:17)
@@ -635,9 +635,9 @@ TypeError: client.logger.info is not a function
 12:21:50.402 INFO  Loading event: userUpdate 
 12:21:50.402 INFO  Loading event: voiceStateUpdate 
 12:21:50.403 INFO  Loading event: warn 
-12:21:50.763 ERROR client.logger.info is not a function
+12:21:50.763 ERROR client.logger.log is not a function
 {}
-TypeError: client.logger.info is not a function
+TypeError: client.logger.log is not a function
     at module.exports (/home/runner/update-2/src/events/ready.js:50:17)
     at Client.emit (node:events:402:35)
     at WebSocketManager.triggerClientReady (/home/runner/update-2/node_modules/discord.js/src/client/websocket/WebSocketManager.js:383:17)
@@ -801,9 +801,9 @@ ReferenceError: modChannelIds is not defined
 12:25:59.893 INFO  Loading event: userUpdate 
 12:25:59.893 INFO  Loading event: voiceStateUpdate 
 12:25:59.894 INFO  Loading event: warn 
-12:26:00.243 ERROR client.logger.info is not a function
+12:26:00.243 ERROR client.logger.log is not a function
 {}
-TypeError: client.logger.info is not a function
+TypeError: client.logger.log is not a function
     at module.exports (/home/runner/update-2/src/events/ready.js:50:17)
     at Client.emit (node:events:402:35)
     at WebSocketManager.triggerClientReady (/home/runner/update-2/node_modules/discord.js/src/client/websocket/WebSocketManager.js:383:17)
@@ -963,9 +963,9 @@ TypeError: client.logger.info is not a function
 12:28:39.725 INFO  Loading event: userUpdate 
 12:28:39.726 INFO  Loading event: voiceStateUpdate 
 12:28:39.726 INFO  Loading event: warn 
-12:28:40.096 ERROR client.logger.info is not a function
+12:28:40.096 ERROR client.logger.log is not a function
 {}
-TypeError: client.logger.info is not a function
+TypeError: client.logger.log is not a function
     at module.exports (/home/runner/update-2/src/events/ready.js:50:17)
     at Client.emit (node:events:402:35)
     at WebSocketManager.triggerClientReady (/home/runner/update-2/node_modules/discord.js/src/client/websocket/WebSocketManager.js:383:17)
@@ -1307,9 +1307,9 @@ TypeError: Cannot read properties of null (reading 'message_delete_log_id')
 TypeError: Cannot read properties of null (reading 'message_delete_log_id')
     at module.exports (/home/runner/update-2/src/events/messageDelete.js:46:35)
     at processTicksAndRejections (node:internal/process/task_queues:96:5) 
-12:49:39.263 ERROR client.logger.info is not a function
+12:49:39.263 ERROR client.logger.log is not a function
 {}
-TypeError: client.logger.info is not a function
+TypeError: client.logger.log is not a function
     at module.exports (/home/runner/update-2/src/events/guildCreate.js:7:17)
     at Client.emit (node:events:390:28)
     at eval (eval at run (/home/runner/update-2/src/commands/owner/eval.js:23:22), <anonymous>:1:13)
@@ -1491,9 +1491,9 @@ TypeError: Cannot read properties of null (reading 'disabled_commands')
     at Object.discmd (/home/runner/update-2/src/utils/utils.js:53:19)
     at processTicksAndRejections (node:internal/process/task_queues:96:5)
     at async module.exports (/home/runner/update-2/src/events/ready.js:100:1) 
-13:15:10.397 ERROR client.logger.info is not a function
+13:15:10.397 ERROR client.logger.log is not a function
 {}
-TypeError: client.logger.info is not a function
+TypeError: client.logger.log is not a function
     at module.exports (/home/runner/update-2/src/events/guildCreate.js:7:17)
     at Client.emit (node:events:390:28)
     at eval (eval at run (/home/runner/update-2/src/commands/owner/eval.js:23:22), <anonymous>:1:13)

@@ -38,7 +38,7 @@ module.exports = class UnbanCommand extends Command {
       .setColor(message.guild.me.displayHexColor);
 
     message.channel.send({ embeds: [embed] } );
-    message.client.logger.info(`${message.guild.name}: ${message.author.tag} unbanned ${user.tag}`);
+    message.client.logger.log(`${message.guild.name}: ${message.author.tag} unbanned ${user.tag}`);
     
     // Update mod log
     this.sendModLogMessage(message, reason, { Member: user.tag });

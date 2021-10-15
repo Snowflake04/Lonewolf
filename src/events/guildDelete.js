@@ -5,7 +5,7 @@ const userSet = require('../../schemas/userschema');
 
 module.exports = async (client, guild) => {
 
-  client.logger.info(`LoneWolf has left ${guild.name}`);
+  client.logger.log(`LoneWolf has left ${guild.name}`);
   const serverLog = client.channels.cache.get(client.serverLogId);
   if (serverLog)
     serverLog.send(new MessageEmbed().setDescription(`${client.user} has left **${guild.name}** ${fail}`));

@@ -12,7 +12,7 @@ module.exports = async (client, oldUser, newUser) => {
     user_name: newUser.username,
     user_discriminator:newUser.discriminator
  })
-    client.logger.info(`${oldUser.tag} user tag changed to ${newUser.tag}`);
+    client.logger.log(`${oldUser.tag} user tag changed to ${newUser.tag}`);
   }
 
 };

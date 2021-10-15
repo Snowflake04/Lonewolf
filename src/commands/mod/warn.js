@@ -69,7 +69,7 @@ let user = await this.getUser(member.id,message.guild.id)
       .setTimestamp()
       .setColor(message.guild.me.displayHexColor);
     message.channel.send({ embeds: [embed] } );
-    message.client.logger.info(`${message.guild.name}: ${message.author.tag} warned ${member.user.tag}`);
+    message.client.logger.log(`${message.guild.name}: ${message.author.tag} warned ${member.user.tag}`);
     
     // Update mod log
     this.sendModLogMessage(message, reason, { Member: member, 'Warn Count': `\`${warns.warns.length}\`` });
