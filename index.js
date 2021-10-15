@@ -6,7 +6,7 @@ global.__basedir = __dirname;
 // Client setup
 const client = new Client(config, {
   intents: [
-  	'GUILD_PRESENCES',
+  'GUILD_PRESENCES',
 	'GUILD_MEMBERS',
 	'GUILDS',
 	'GUILD_VOICE_STATES',

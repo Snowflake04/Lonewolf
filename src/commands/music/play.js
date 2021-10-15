@@ -84,7 +84,7 @@ module.exports = class PlayCommand extends Command {
 						false
 					);
 					//SongAddedEmbed.addField("Playlist duration", `\`${prettyMilliseconds(Searched.tracks, { colonNotation: true })}\``, false)
-					Searching.edit(SongAddedEmbed);
+					Searching.edit({ embeds: [SongAddedEmbed]});
 				} else if (Searched.loadType.startsWith('TRACK')) {
 					player.queue.add(
 						TrackUtils.build(Searched.tracks[0], message.author)
