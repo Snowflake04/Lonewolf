@@ -1,4 +1,4 @@
-const Command = require('../Command.js');
+const Command = require('../Command');
 const { MessageEmbed } = require('discord.js');
 const { TrackUtils } = require('erela.js');
 const levels = {
@@ -17,22 +17,16 @@ module.exports = class BassCommand extends Command {
 			type: client.types.MUSIC
 		});
 	}
-	/**
-	 *
-	 * @param {import("../structures/DiscordMusicBot")} client
-	 * @param {import("discord.js").Message} message
-	 * @param {string[]} args
-	 * @param {*} param3
-	 */
+
 	async run(message, args) {
 		let player = await message.client.Manager.get(message.guild.id);
 
 		if (!player)
-			return message.channel.send('**No songs playing right now!...**');
+			return message.channel.send('>>> **No songs playing right now!...**');
 
 		if (!message.member.voice.channel)
 			return message.channel.send(
-				'**Please join a voice channel before using this command...**'
+				'>>> **Please join a voice channel before using this command...**'
 			);
 
 		if (
@@ -40,12 +34,12 @@ module.exports = class BassCommand extends Command {
 			message.member.voice.channel.id !== message.guild.me.voice.channel.id
 		)
 			return message.channel.send(
-				':x: | **You must be in the same voice channel as me to use this command!**'
+				'>>> **Oops** | You must be in the same voice channel as me to use this command!'
 			);
 
 		if (!args[0])
 			return message.channel.send(
-				'**Please provide a bassboost level. use `help bass` for more info'
+				'>>> **Please provide a bassboost level. use `help bass` for more info'
 			); //if the user do not provide args [arguments]
 
 		let level = 'none';
@@ -58,6 +52,6 @@ module.exports = class BassCommand extends Command {
 				.map((_, i) => ({ band: i, gain: levels[level] }))
 		);
 
-		return message.channel.send(`**Active EQ set to **${level}`);
+		return message.channel.send(`>>> **EQ has been set to **${level}`);
 	}
 };

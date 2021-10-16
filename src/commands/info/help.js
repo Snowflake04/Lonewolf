@@ -55,59 +55,56 @@ var type = [];
 ///////////////////////////////////////
 
 const del = new MessageButton()
-.setStyle("red")
+.setStyle(3)
 .setLabel("")
 .setEmoji("🗑️")
-.setID(message.author.id + " del")
+.setCustomId(message.author.id + " del")
 
 const info = new MessageButton()
-.setStyle("blurple")
+.setStyle(1)
 .setLabel("info")
-.setID("info noperm 0")
+.setCustomId("info noperm 0")
 
 
 const fun = new MessageButton()
-.setStyle("blurple")
+.setStyle(1)
 .setLabel("fun")
-.setID("fun noperm 1")
+.setCustomId("fun noperm 1")
 
 const color = new MessageButton()
-.setStyle("blurple")
+.setStyle(1)
 .setLabel("color")
-.setID("color noperm 2")
+.setCustomId("color noperm 2")
 
 const misc = new MessageButton()
-.setStyle("blurple")
+.setStyle(1)
 .setLabel("misc")
-.setID("misc noperm 3")
+.setCustomId("misc noperm 3")
 
 const music = new MessageButton()
-.setStyle("blurple")
+.setStyle(1)
 .setLabel("music")
-.setID("music noperm 4")
+.setCustomId("music noperm 4")
 
 const mod = new MessageButton()
-.setStyle("blurple")
+.setStyle(1)
 .setLabel("mod")
-.setID("mod perm 0")
+.setCustomId("mod perm 0")
 
 const admin = new MessageButton()
-.setStyle("blurple")
+.setStyle(1)
 .setLabel("admin")
-.setID("admin perm 1")
+.setCustomId("admin perm 1")
 
 
  var noperm = new MessageActionRow()
- .addComponent(info)
-  .addComponent(fun)
- .addComponent(color)
- .addComponent(misc)
- .addComponent(music)
+ .addComponents([info, fun, color, misc, music])
  
  var perm = new MessageActionRow()
- .addComponent(mod)
- .addComponent(admin)
- .addComponent(del)
+ .addComponents([mod, admin, del])
+ 
+ var dele = new MessageActionRow()
+ .addComponents(del)
 
 //////////////////////////////////////
     const command = message.client.commands.get(type) || message.client.aliases.get(type);
@@ -129,7 +126,7 @@ const admin = new MessageButton()
       if (command.aliases) embed2.addField('Aliases', command.aliases.map(c => `\`${c}\``).join(' '));
       if (command.examples) embed2.addField('Examples', command.examples.map(c => `\`${prefix}${c}\``).join('\n'));
    
-      message.channel.send({ embed : embed2, button : del
+      message.channel.send({ embeds : [embed2], components : [dele]
       })
     }
     
@@ -181,7 +178,7 @@ else if (args[0] && types.includes(type) && (type != OWNER || message.client.isO
         );
      
     
-  message.channel.send({embed :embed , button: del})
+  message.channel.send({embeds :[embed] , components: [dele]})
   
  
     } else if (args.length > 0 && !all && !commands.type) {
@@ -230,36 +227,36 @@ else if (args[0] && types.includes(type) && (type != OWNER || message.client.isO
         '**Links**',
         '[Invite Me](https://discord.com/api/oauth2/authorize?client_id=795952530735104010&permissions=502656374&scope=bot) |' + ' [Support Server](https://discord.gg/JFD3GfEURU) |'+ ' [Dashboard](https://lone.epizy.com)'
         );
- let wt = await message.channel.send({embed : embed3 , components : [noperm,perm]})
-    let collector = wt.createButtonCollector(b => b ,{time: 5*60*1000}); 
+ let wt = await message.channel.send({embeds : [embed3] , components : [noperm,perm]})
+    let collector = wt.createMessageComponentCollector({time: 5*60*1000}); 
 
    collector.on('collect', async button =>{
      
-    if(button.clicker.user.id !== message.author.id){
+    if(button.user.id !== message.author.id){
       return button.reply.send("This can Only be used by the person who Requested", true)
     }
-     button.reply.defer()
-     let v = button.id.split(' ')
+     button.reply.deferReply()
+     let v = button.customId.split(' ')
      if(v[1] !== "del")
      {
    type = v[0]
    
    button.message.components[0].components.forEach(com =>{
      com.setDisabled(false)
-     com.setStyle('blurple')
+     com.setStyle(1)
    })
    button.message.components[1].components.forEach(co => {
      if(co.label){
        co.setDisabled(false)
-       co.setStyle('blurple')
+       co.setStyle(1)
      }
    })
    
    if(v[1] === "noperm"){
-   button.message.components[0].components[v[2]].setDisabled(true).setStyle('green')
+   button.message.components[0].components[v[2]].setDisabled(true).setStyle('SUCCESS')
    }
    if(v[1] === "perm"){
-     button.message.components[1].components[v[2]].setDisabled(true).setStyle('green')
+     button.message.components[1].components[v[2]].setDisabled(true).setStyle('SUCCESS')
    }
   
    const em4 = new MessageEmbed()
@@ -294,7 +291,7 @@ else if (args[0] && types.includes(type) && (type != OWNER || message.client.isO
         );
         
 
-button.message.edit({embed : em4, components : button.message.components })
+button.message.edit({embeds : [em4], components : [button.message.components] })
      }
     })
     }

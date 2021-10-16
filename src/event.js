@@ -7,8 +7,8 @@ module.exports = {
     let channel = client.channels.cache.get(player.textChannel);
     try {
       //custom font
-      Canvas.registerFont('./primary.ttf', { family: 'net' });
-      Canvas.registerFont('./secondary.ttf', { family: 'neet' });
+      Canvas.registerFont('data/fonts/primary.ttf', { family: 'neet' });
+      Canvas.registerFont('data/fonts/secondary.ttf', { family: 'net' });
 
       const canvas = Canvas.createCanvas(1080, 350);
       //make it "2D"

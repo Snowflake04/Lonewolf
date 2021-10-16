@@ -291,27 +291,19 @@ class Command {
 	 * @param {string} errorMessage
 	 */
 	async sendErrorMessage(message, errorType, reason, errorMessage = null) {
-		errorType = this.errorTypes[errorType];
 
 		const prefix = await util.getprefix(message.guild.id);
 		const embed = new MessageEmbed()
-			.setAuthor(
-				`${message.author.tag}`,
-				message.author.displayAvatarURL({ dynamic: true })
-			)
-			.setTitle(`${fail} Error: \`${this.name}\``)
-			.setDescription(`\`\`\`diff\n ${errorType}:\n ${reason}\`\`\``)
-			.addField('Usage', `\`${prefix}${this.usage}\``)
-			.setTimestamp()
-			.setColor(message.guild.me.displayHexColor);
-		if (this.examples)
-			embed.addField(
-				'Examples',
-				this.examples.map(e => `\`${prefix}${e}\``).join('\n')
-			);
-		if (errorMessage)
-			embed.addField('Error Message', `\`\`\`${errorMessage}\`\`\``);
-		message.channel.send({ embeds: [embed] } );
+		.setAuthor(message.member.tag, message.member.displayAvatarURL({dynamic: true}))
+		.setDescription(`**Command Fail:** ${this.name}`)
+	  .setTimestamp()
+	  .addField("Error:", reason)
+	  if(this.usage){
+	  embed.addField("Command Usage:",`${prefix} ${this.usage}`)
+	  }
+	  if(errorMessage){
+	    embed.addField(errorMessage)
+	  }
 	}
 
 	/**
@@ -320,7 +312,7 @@ class Command {
 	 * @param {string} reason
 	 * @param {Object} fields
 	 */
-	async sendModLogMessage(message, reason, fields = {}) {
+	async setCase(message){
 		let Db = await botSet.findOne({
 			_id: message.guild.id
 		});
@@ -337,20 +329,10 @@ class Command {
 				message.client,
 				message.guild,
 				modLog
-			);
-			const embed = new MessageEmbed()
-				.setTitle(`Action: \`${message.client.utils.capitalize(this.name)}\``)
-				.addField('Moderator', message.member, true)
-				.setFooter(`Case #${caseNumber}`)
-				.setTimestamp()
-				.setColor(message.guild.me.displayHexColor);
-			for (const field in fields) {
-				embed.addField(field, fields[field], true);
-			}
-			embed.addField('Reason', reason);
-			modLog.send({ embeds: [embed] } ).catch(err => message.client.logger.error(err.stack));
+			)
+			return [caseNumber, modLog];
 		}
-	}
+	};
 
 	/**
 	 * Validates all options provided

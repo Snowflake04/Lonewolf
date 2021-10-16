@@ -8,7 +8,7 @@ const botSet = require('../../schemas/botschema');
 let prefixcache = {};
 let disabled_command = [];
 let modchannels = [];
-
+let embedcolor = {};
 
 async function getprefix(guildId) {
   const prefix = prefixcache[guildId];
@@ -100,7 +100,32 @@ async function updateModChannels(guildid, id) {
   modchannels[guildid] = vt.mod_channel_ids;
 }
 
+//embed color setting
 
+async function getColor(guildId){
+ let guild = await botSet.findOne({
+   _id: guildId
+ })
+ embedcolor[guildId] = guild.random_embed || false ;
+ return embedcolor[guildId]
+ 
+}
+
+function embedColor(guildid){
+  return embedcolor[guildId]
+}
+//Has to be done here becoz the embeds used are greater
+async function setColor(guildId, value){
+ let now = await botSet.findOneAndUpdate({
+    _id: guildId
+  },{
+    random_embed: value
+  },{
+    upsert: true,
+    new: true
+  })
+  embedcolor[guildId] = now;
+}
 /**
  * Capitalizes a string
  * @param {string} string 
@@ -232,4 +257,7 @@ module.exports = {
   getOrdinalNumeral,
   getCaseNumber,
   getStatus,
+  getColor,
+  embedColor,
+  setColor
 };

@@ -10,13 +10,7 @@ module.exports = class ClearCommand extends Command {
 			type: client.types.MUSIC
 		});
 	}
-	/**
-	 *
-	 * @param {import("../structures/DiscordMusicBot")} client
-	 * @param {import("discord.js").Message} message
-	 * @param {string[]} args
-	 * @param {*} param3
-	 */
+
 	async run(message, args) {
 		let player = await message.client.Manager.get(message.guild.id);
 		if (!player)
@@ -24,12 +18,12 @@ module.exports = class ClearCommand extends Command {
 
 		if (!player.queue || !player.queue.length || player.queue.length === 0)
 			return message.channel.send(
-				'**There are no active queue in the server**'
+				'>>> **There are no active queue on the server**'
 			);
 
 		if (!message.member.voice.channel)
 			return message.channel.send(
-				'**Please join a voice channel to use this command **'
+				'>>> **Please join a voice channel to use this command **'
 			);
 
 		if (
@@ -37,10 +31,10 @@ module.exports = class ClearCommand extends Command {
 			message.member.voice.channel.id !== message.guild.me.voice.channel.id
 		)
 			return message.channel.send(
-				':x: | **You must be in the same voice channel as me to use this command!**'
+				'>>> **You must be in the same voice channel as me to use this command!**'
 			);
 
 		player.queue.clear();
-		await message.channel.send('**Queue has be successfully removed**');
+		await message.channel.send('>>> **Queue has be successfully removed**');
 	}
 };

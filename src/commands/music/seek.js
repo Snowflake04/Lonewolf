@@ -12,13 +12,8 @@ module.exports = class SeekCommand extends Command {
 			type: client.types.MUSIC
 		});
 	}
-	/**
-	 *
-	 * @param {import("../structures/DiscordMusicBot")} client
-	 * @param {import("discord.js").Message} message
-	 * @param {string[]} args
-	 * @param {*} param3
-	 */
+
+
 	async run(message, args) {
 		/*
   let player = await message.client.Manager.get(message.guild.id);
@@ -36,6 +31,6 @@ module.exports = class SeekCommand extends Command {
         player.seek(SeekTo * 1000);
         message.react("✅");
   */
-		message.channel.send('Command under Maintenance');
+		message.channel.send('Command still under Maintenance');
 	}
 };

@@ -30,3 +30,5 @@ client.login(process.env.token);
 
 
 process.on('unhandledRejection', err => client.logger.error(err));
+
+global.wait = function wait(ms){ return new Promise(res => setTimeout(res, ms))};

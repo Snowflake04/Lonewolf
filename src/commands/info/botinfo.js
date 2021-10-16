@@ -1,7 +1,5 @@
-const Command = require('../Command.js');
-
+const Command = require('../Command');
 const { MessageEmbed } = require('discord.js');
-
 const pkg = require(__basedir + '/package.json');
 const { owner } = require('../../utils/emojis.json');
 const { oneLine, stripIndent } = require('common-tags');
@@ -24,9 +22,7 @@ module.exports = class BotInfoCommand extends Command {
     const prefix = await util.getprefix(message.guild.id);
     const tech = stripIndent`
       Version     :: ${pkg.version}
-      Library     :: Discord.js v12.55.1
-      Environment :: Node.js v14.16.1
-      Database    :: SQLite
+      Environment :: Node.js v16.10.1
     `;
     const embed = new MessageEmbed()
       .setTitle('Lonewolf\'s Bot Information')
@@ -41,7 +37,7 @@ module.exports = class BotInfoCommand extends Command {
       
       .addField('Prefix', `\`${prefix}\``, true)
       .addField('Client ID', `\`${message.client.user.id}\``, true)
-      .addField(`Developer ${owner}`, botOwner, true)
+      .addField(`Developer ${owner}`, botOwner.tag , true)
       .addField('Tech', `\`\`\`asciidoc\n${tech}\`\`\``)
 
   .setImage('https://i.imgur.com/sqhfR5J.jpg')

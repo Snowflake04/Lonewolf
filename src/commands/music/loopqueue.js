@@ -11,17 +11,12 @@ module.exports = class LoopQueueCommand extends Command {
 			type: client.types.MUSIC
 		});
 	}
-	/**
-	 *
-	 * @param {import("../structures/DiscordMusicBot")} client
-	 * @param {import("discord.js").Message} message
-	 * @param {string[]} args
-	 * @param {*} param3
-	 */
+
+
 	async run(message) {
 		let player = await message.client.Manager.get(message.guild.id);
 
-		if (!player) return message.channel.send('**Nothing is playing to loop**');
+		if (!player) return message.channel.send('**There is no queue to loop**');
 
 		if (!message.member.voice.channel)
 			return message.channel.send('**Please join a voice channel first!...**');
@@ -36,11 +31,11 @@ module.exports = class LoopQueueCommand extends Command {
 
 		if (player.queueRepeat) {
 			player.setQueueRepeat(false);
-			message.channel.send(`: Queue Loop \`disabled\` by ${message.author}`);
+			message.channel.send(`: Queue Loop has been \`disabled\` by ${message.author}`);
 		} else {
 			player.setQueueRepeat(true);
 			message.channel.send(
-				`:repeat: Queue Loop \`enabled\` by ${message.author}`
+				`:repeat: Queue Loop has been \`enabled\` by ${message.author}`
 			);
 		}
 	}

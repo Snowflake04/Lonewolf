@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const userSet = mongoose.Schema({
+const userSet = new mongoose.Schema({
 	// Guild ID
 	user_id: String,
 	user_name: String,

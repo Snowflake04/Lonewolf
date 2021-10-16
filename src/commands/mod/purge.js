@@ -7,7 +7,7 @@ module.exports = class PurgeCommand extends Command {
     super(client, {
       name: 'purge',
       aliases: ['clear'],
-      usage: 'purge [channel mention/ID] [user mention/ID] <message count> [reason]',
+      usage: 'purge [channel mention/ID] [user mention/ID] <message count>',
       description: oneLine`
         Deletes the specified amount of messages from the provided channel. 
         If no channel is given, the messages will be deleted from the current channel.
@@ -46,9 +46,6 @@ module.exports = class PurgeCommand extends Command {
     if (!channel.permissionsFor(message.guild.me).has(['MANAGE_MESSAGES']))
       return this.sendErrorMessage(message, 0, 'I do not have permission to manage messages in the provided channel');
 
-    let reason = args.slice(1).join(' ');
-    if (!reason) reason = '`None`';
-    if (reason.length > 1024) reason = reason.slice(0, 1021) + '...';
 
     await message.delete(); // Delete command message
 
@@ -59,60 +56,36 @@ module.exports = class PurgeCommand extends Command {
     } else messages = amount;
 
     if (messages.size === 0) { // No messages found
-
-      message.channel.send(
-        new MessageEmbed()
-          .setTitle('Purge')
-          .setDescription(`
-            Unable to find any messages from ${member}. 
-            This message will be deleted after \`10 seconds\`.
-          `)
-          .addField('Channel', channel, true)
-          .addField('Member', member )
-          .addField('Found Messages', `\`${messages.size}\``, true)
-          .setFooter(message.member.displayName,  message.author.displayAvatarURL({ dynamic: true }))
-          .setTimestamp()
-          .setColor(message.guild.me.displayHexColor)
-      ).then(msg => msg.delete({ timeout: 10000 })).catch(err => message.client.logger.error(err.stack));
+    const em = new MessageEmbed()
+    .setAuthor("Purge Failed!")
+    .setDescription("Unable to find any messages from the member")
+    .setTimestamp()
+    .setFooter("Will be deleted in 5s")
+    .setColor("RED")
+      message.channel.send({ embeds: [embed]}).then(msg => setTimeout(()=>{
+        msg.delete()}, 5000)).catch(err => message.client.logger.error(err.stack));
 
     } else { // Purge messages
 
       channel.bulkDelete(messages, true).then(messages => {
         const embed = new MessageEmbed()
-          .setTitle('Purge')
+          .setAuthor('Purged')
           .setDescription(`
             Successfully deleted **${messages.size}** message(s). 
-            This message will be deleted after \`10 seconds\`.
           `)
           .addField('Channel', channel, true)
           .addField('Message Count', `\`${messages.size}\``, true)
-          .addField('Reason', reason)
-          .setFooter(message.member.displayName,  message.author.displayAvatarURL({ dynamic: true }))
+          .setFooter("will be deleted in 10s ",  message.author.displayAvatarURL({ dynamic: true }))
           .setTimestamp()
-          .setColor(message.guild.me.displayHexColor);
-  
-        if (member) {
-          embed
-            .spliceFields(1, 1, { name: 'Found Messages', value:  `\`${messages.size}\``, inline: true})
-            .spliceFields(1, 0, { name: 'Member', value: member, inline: true});
-        }
+          .setColor("#00E676");
 
-        message.channel.send({ embeds: [embed] } ).then(msg => msg.delete({ timeout: 10000 }))
+        message.channel.send({ embeds: [embed] } ).then(msg => setTimeout(() =>{
+          
+         msg.delete
+         }, 10000))
           .catch(err => message.client.logger.error(err.stack));
       });
     }
-    
-    // Update mod log
-    const fields = { 
-      Channel: channel
-    };
-
-    if (member) {
-      fields['Member'] = member;
-      fields['Found Messages'] = `\`${messages.size}\``;
-    } else fields['Message Count'] = `\`${amount}\``;
-
-    this.sendModLogMessage(message, reason, fields);
-
+  
   }
 };

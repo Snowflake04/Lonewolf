@@ -31,6 +31,7 @@ module.exports = class ChannelInfoCommand extends Command {
     if (channel) {
       args.shift();
     } else channel = message.channel;
+    const value = this.client.utils.embedColor(message.guild.id)
     const embed = new MessageEmbed()
       .setTitle('Channel Information')
       .setThumbnail(message.guild.iconURL({ dynamic: true }))
@@ -42,7 +43,7 @@ module.exports = class ChannelInfoCommand extends Command {
       .addField('Created On', `\`${moment(channel.createdAt).format('MMM DD YYYY')}\``, true)
       .setFooter(message.member.displayName,  message.author.displayAvatarURL({ dynamic: true }))
       .setTimestamp()
-      .setColor(message.guild.me.displayHexColor);
+      .setColor(value ? "RANDOM" : message.guild.me.displayHexColor);
     if (channel.type === 'text') {
       embed // Text embed
         .spliceFields(3, 0, { name: 'Rate Limit', value: `\`${channel.rateLimitPerUser}\``, inline: true })

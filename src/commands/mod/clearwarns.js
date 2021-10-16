@@ -1,4 +1,4 @@
-const Command = require('../Command.js');
+const Command = require('../Command');
 const { MessageEmbed } = require('discord.js');
 const { oneLine } = require('common-tags');
 const userset = require('../../../schemas/userschema');
@@ -7,11 +7,11 @@ module.exports = class ClearWarnsCommand extends Command {
   constructor(client) {
     super(client, {
       name: 'clearwarns',
-      usage: 'clearwarns <user mention/ID> [reason]',
+      usage: 'clearwarns <user mention/ID>',
       description: 'Clears all the warns of the provided member.',
       type: client.types.MOD,
       userPermissions: ['KICK_MEMBERS'],
-      examples: ['clearwarns @Daddy']
+      examples: ['clearwarns @Danny']
     });
   }
  async run(message, args) {
@@ -22,11 +22,9 @@ module.exports = class ClearWarnsCommand extends Command {
     if (member === message.member) 
       return this.sendErrorMessage(message, 0, 'You cannot clear your own warns'); 
     if (member.roles.highest.position >= message.member.roles.highest.position)
-      return this.sendErrorMessage(message, 0, 'You cannot clear the warns of someone with an equal or higher role');
+      return this.sendErrorMessage(message, 0, 'You cannot clear the warns of someone who have an equal or higher role');
 
-    let reason = args.slice(1).join(' ');
-    if (!reason) reason = '`None`';
-    if (reason.length > 1024) reason = reason.slice(0, 1021) + '...';
+   
     
   await userset.findOneAndUpdate({
     user_id: member.id,
@@ -38,23 +36,29 @@ module.exports = class ClearWarnsCommand extends Command {
     {
       upsert: true,
     })
-
+ const value = this.client.utils.embedColor(message.guild.id)
     const embed = new MessageEmbed()
-      .setTitle('Clear Warns')
-      .setDescription(`${member}'s warns have been successfully cleared.`)
-      .addField('Moderator', message.member, true)
-      .addField('Member', member, true)
-      .addField('Warn Count', '`0`', true)
-      .addField('Reason', reason)
-      .setFooter(message.member.displayName,  message.author.displayAvatarURL({ dynamic: true }))
-      .setTimestamp()
-      .setColor(message.guild.me.displayHexColor);
+  .setAuthor("Warns cleared!")
+  .setDescription(`All warnings for ${member} has been successfully cleared`)
+  .setColor(value ? "RANDOM" : message.guild.me.displayHexColor)
+  .setTimestamp()
     message.channel.send({ embeds: [embed] } );
     message.client.logger.log(oneLine`
       ${message.guild.name}: ${message.author.tag} cleared ${member.user.tag}'s warns
     `);
     
     // Update mod log
-    this.sendModLogMessage(message, reason, { Member: member, 'Warn Count': '`0`' });
+  let need =  this.setCase(message)
+  let need = this.setCase(message)
+  if (need[1]) {
+    embed
+      .setAuthor("Warns cleared", member.user.displayAvatarURL({ dynamic: true}))
+      .setDescription(`${member}'s warnings was cleared`)
+      .setThumbnail(member.user.displayAvatarURL( { dynamic: true}))
+      .setColor("#7C4DFF")
+      .addField("Cleared by:", message.member)
+      .setFooter(`Case ${need[0]}`)
+    need[1].send({ embeds: [embed] })
+  }
   }
 };

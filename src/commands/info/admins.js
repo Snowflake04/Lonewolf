@@ -22,7 +22,7 @@ module.exports = class AdminsCommand extends Command {
     const admins = message.guild.members.cache.filter(m => {
       if (m.roles.cache.find(r => r === adminRole)) return true;
     }).sort((a, b) => (a.joinedAt > b.joinedAt) ? 1 : -1).array();
-
+const value = this.client.utils.embedColor(message.guild.id)
     const embed = new MessageEmbed()
       .setTitle(`Admin List [${admins.length}]`)
       .setThumbnail(message.guild.iconURL({ dynamic: true }))
@@ -30,7 +30,7 @@ module.exports = class AdminsCommand extends Command {
       .addField('Admin Count', `**${admins.length}** out of **${message.guild.members.cache.size}** members`)
       .setFooter(message.member.displayName, message.author.displayAvatarURL({ dynamic: true }))
       .setTimestamp()
-      .setColor(message.guild.me.displayHexColor);
+      .setColor(value ? "RANDOM" : message.guild.me.displayHexColor);
 
     const interval = 25;
     if (admins.length === 0) message.channel.send(embed.setDescription('No admins found.'));

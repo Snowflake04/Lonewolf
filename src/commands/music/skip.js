@@ -3,38 +3,33 @@ const { MessageEmbed } = require('discord.js');
 const { TrackUtils } = require('erela.js');
 
 module.exports = class SkipCommand extends Command {
-	constructor(client) {
-		super(client, {
-			name: 'skip',
-			aliases: ['next'],
-			description: 'Skips the current song',
-			type: client.types.MUSIC
-		});
-	}
-	/**
-	 *
-	 * @param {import("../structures/DiscordMusicBot")} client
-	 * @param {import("discord.js").Message} message
-	 * @param {string[]} args
-	 * @param {*} param3
-	 */
-	async run(message) {
-		let player = await message.client.Manager.get(message.guild.id);
+  constructor(client) {
+    super(client, {
+      name: 'skip',
+      aliases: ['next'],
+      description: 'Skips the current song',
+      type: client.types.MUSIC
+    });
+  }
 
-		if (!player) return message.channel.send('**No songs playing to skip**');
 
-		if (!message.member.voice.channel)
-			return message.channel.send(
-				'❌ | **You must be in a voice channel to use this command!**'
-			);
+  async run(message) {
+    let player = await message.client.Manager.get(message.guild.id);
 
-		if (
-			message.guild.me.voice.channel &&
-			message.member.voice.channel.id !== message.guild.me.voice.channel.id
-		)
-			return message.channel.send(
-				':x: | **You must be in the same voice channel as me to use this command!**'
-			);
-		player.stop();
-	}
+    if (!player) return message.channel.send('**No songs playing to skip**');
+
+    if (!message.member.voice.channel)
+      return message.channel.send(
+        '**You must be in a voice channel to use this command!**'
+      );
+
+    if (
+      message.guild.me.voice.channel &&
+      message.member.voice.channel.id !== message.guild.me.voice.channel.id
+    )
+      return message.channel.send(
+        ' **You must be in the same voice channel as me to use this command!**'
+      );
+    player.stop();
+  }
 };

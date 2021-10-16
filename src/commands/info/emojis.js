@@ -18,12 +18,12 @@ module.exports = class EmojisCommand extends Command {
 
     const emojis = [];
     message.guild.emojis.cache.forEach(e => emojis.push(`${e} **-** \`:${e.name}:\``));
-
+const value = this.client.utils.embedColor(message.guild.id)
     const embed = new MessageEmbed()
       .setTitle(`Emoji List [${message.guild.emojis.cache.size}]`)
       .setFooter(message.member.displayName,  message.author.displayAvatarURL({ dynamic: true }))
       .setTimestamp()
-      .setColor(message.guild.me.displayHexColor);
+      .setColor(value ? "RANDOM" : message.guild.me.displayHexColor);
 
     const interval = 25;
     if (emojis.length === 0) message.channel.send(embed.setDescription('No emojis found. ðŸ˜¢'));

@@ -11,17 +11,13 @@ module.exports = class LoopCommand extends Command {
 			type: client.types.MUSIC
 		});
 	}
-	/*
-      * @param {import("../structures/DiscordMusicBot")} client
-      * @param {import("discord.js").Message} message
-      * @param {string[]} args
-      * @param {*} param3
-      */
+
+
 	async run(message) {
 		let player = await message.client.Manager.get(message.guild.id);
 
 		if (!player)
-			return message.channel.send('**There is nothing playing to loop**');
+			return message.channel.send('>>> **There is nothing playing to loop**');
 
 		if (!message.member.voice.channel)
 			return message.channel.send('**Please join a voice channel...**');

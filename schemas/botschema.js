@@ -18,9 +18,9 @@ const botSet = new mongoose.Schema({
 	mute_role_id: String,
 	auto_role_id: String,
 	auto_kick: Number,
-	random_color: {
-		default: 0,
-		type: Number
+	random_embed: {
+	  type: Boolean,
+	  default: false
 	},
 	mod_channel_ids: String,
 	disabled_commands: String,

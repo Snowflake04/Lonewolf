@@ -12,13 +12,8 @@ module.exports = class NowPlayingCommand extends Command {
 			type: client.types.MUSIC
 		});
 	}
-	/**
-	 *
-	 * @param {import("../structures/DiscordMusicBot")} client
-	 * @param {import("discord.js").Message} message
-	 * @param {string[]} args
-	 * @param {*} param3
-	 */
+
+
 	async run(message) {
 		let player = await message.client.Manager.get(message.guild.id);
 		if (!player)
@@ -32,8 +27,8 @@ module.exports = class NowPlayingCommand extends Command {
 		console.log(seek);
 		try {
 			//custom font
-			Canvas.registerFont('Font.otf', { family: 'net' });
-			Canvas.registerFont('Aka.ttf', { family: 'neet' });
+			Canvas.registerFont('data/fonts/primary.ttf', { family: 'neet' });
+			Canvas.registerFont('data/fonts/secondary.ttf', { family: 'net' });
 			//making canvas
 			const canvas = Canvas.createCanvas(1080, 350);
 			//make it "2D"
@@ -183,7 +178,7 @@ module.exports = class NowPlayingCommand extends Command {
 
 				.addField('Make sure i have `Send_Attachments` for the best experience')
 				.setThumbnail(player.queue.current.displayThumbnail());
-			return message.channel.send(QueueEmbed);
+			return message.channel.send({embeds: [QueueEmbed]});
 		}
 	}
 };
