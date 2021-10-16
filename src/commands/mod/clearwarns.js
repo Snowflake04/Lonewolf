@@ -48,7 +48,7 @@ module.exports = class ClearWarnsCommand extends Command {
     `);
     
     // Update mod log
-  let need =  this.setCase(message)
+ 
   let need = this.setCase(message)
   if (need[1]) {
     embed
