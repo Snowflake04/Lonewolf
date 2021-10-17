@@ -43,11 +43,11 @@ module.exports = class ModLogsCommand extends Command {
     upsert: true
   }
   )
-      return message.channel.send(embed.addField('Mod Log', `${oldModLog} ➔ \`None\``));
+      return message.channel.send({ embeds: [embed.addField('Mod Log', `${oldModLog} ➔ \`None\``)]});
     }
 
     const modLog = this.getChannelFromMention(message, args[0]) || message.guild.channels.cache.get(args[0]);
-    if (!modLog || modLog.type != 'text' || !modLog.viewable) 
+    if (!modLog || modLog.type != 'GUILD_TEXT' || !modLog.viewable) 
       return this.sendErrorMessage(message, 0, stripIndent`
         Please mention an accessible text channel or provide a valid text channel ID
       `);
@@ -61,6 +61,6 @@ module.exports = class ModLogsCommand extends Command {
     upsert: true
   }
   )
-    message.channel.send(embed.addField('Mod Log', `${oldModLog} ➔ ${modLog}`));
+    message.channel.send({embeds: [embed.addField('Mod Log', `${oldModLog} ➔ ${modLog}`)]});
   }
 };

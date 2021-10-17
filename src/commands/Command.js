@@ -294,7 +294,7 @@ class Command {
 
 		const prefix = await util.getprefix(message.guild.id);
 		const embed = new MessageEmbed()
-		.setAuthor(message.member.tag, message.member.displayAvatarURL({dynamic: true}))
+		.setAuthor(message.author.tag, message.member.displayAvatarURL({dynamic: true}))
 		.setDescription(`**Command Fail:** ${this.name}`)
 	  .setTimestamp()
 	  .addField("Error:", reason)
@@ -304,6 +304,7 @@ class Command {
 	  if(errorMessage){
 	    embed.addField(errorMessage)
 	  }
+    message.channel.send({embeds: [embed]})
 	}
 
 	/**

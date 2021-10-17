@@ -55,7 +55,7 @@ var type = [];
 ///////////////////////////////////////
 
 const del = new MessageButton()
-.setStyle(3)
+.setStyle(4)
 .setLabel("")
 .setEmoji("🗑️")
 .setCustomId(message.author.id + " del")
@@ -135,7 +135,7 @@ const admin = new MessageButton()
 else if (args[0] && types.includes(type) && (type != OWNER || message.client.isOwner(message.member))) {
           message.client.commands.forEach(command => {
   if (!disabledCommands.includes(command.name) && command.type === type ) {
-    if (command.userPermissions && command.userPermissions.every(p => message.member.hasPermission(p)) && !all){
+    if (command.userPermissions && command.userPermissions.every(p => message.member.permissions.has(p)) && !all){
       commands[command.type].push(`  \`${command.name}\`  **|**`);
     }
    else if (!command.userPermissions || all) {
@@ -187,7 +187,7 @@ else if (args[0] && types.includes(type) && (type != OWNER || message.client.isO
     
   message.client.commands.forEach(command => {
    if (!disabledCommands.includes(command.name)) {
-    if (command.userPermissions && command.userPermissions.every(p => message.member.hasPermission(p)) && !all)
+    if (command.userPermissions && command.userPermissions.every(p => message.member.permissions.has(p)) && !all)
     commands[command.type].push(` \`${command.name}\` `);
            
    else if (!command.userPermissions || all) {
@@ -235,13 +235,13 @@ else if (args[0] && types.includes(type) && (type != OWNER || message.client.isO
     if(button.user.id !== message.author.id){
       return button.reply.send("This can Only be used by the person who Requested", true)
     }
-     button.reply.deferReply()
+     button.deferUpdate()
      let v = button.customId.split(' ')
      if(v[1] !== "del")
      {
    type = v[0]
    
-   button.message.components[0].components.forEach(com =>{
+       button.message.components[0].components.forEach(com =>{
      com.setDisabled(false)
      com.setStyle(1)
    })
@@ -253,10 +253,10 @@ else if (args[0] && types.includes(type) && (type != OWNER || message.client.isO
    })
    
    if(v[1] === "noperm"){
-   button.message.components[0].components[v[2]].setDisabled(true).setStyle('SUCCESS')
+   button.message.components[0].components[v[2]].setDisabled(true).setStyle(3)
    }
    if(v[1] === "perm"){
-     button.message.components[1].components[v[2]].setDisabled(true).setStyle('SUCCESS')
+     button.message.components[1].components[v[2]].setDisabled(true).setStyle(3)
    }
   
    const em4 = new MessageEmbed()
@@ -291,7 +291,7 @@ else if (args[0] && types.includes(type) && (type != OWNER || message.client.isO
         );
         
 
-button.message.edit({embeds : [em4], components : [button.message.components] })
+button.message.edit({embeds : [em4], components: button.message.components })
      }
     })
     }

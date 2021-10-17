@@ -16,12 +16,11 @@ module.exports = class AdminRoleCommand extends Command {
   async run(message){
    const sett =this.client.utils.embedColor(message.guild.id)
    let value = !sett;
-   
    const embed = new MessageEmbed()
-   .setTitle(`${sucess} Settings Changed`)
+   .setTitle(`${success} Settings Changed`)
    .setColor(value ? "RANDOM" : message.guild.me.displayHexColor )
    .setDescription(`Random embed color has been successfully ${value ? 'enabled' : 'disabled'}`)
-   
+  message.channel.send({embeds: [embed]})
   await this.client.utils.setColor(message.guild.id, value);
    
   }

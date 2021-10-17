@@ -111,7 +111,7 @@ async function getColor(guildId){
  
 }
 
-function embedColor(guildid){
+function embedColor(guildId){
   return embedcolor[guildId]
 }
 //Has to be done here becoz the embeds used are greater
@@ -124,7 +124,7 @@ async function setColor(guildId, value){
     upsert: true,
     new: true
   })
-  embedcolor[guildId] = now;
+  embedcolor[guildId] = now.random_embed;
 }
 /**
  * Capitalizes a string

@@ -101,7 +101,9 @@ client.Manager.init(client.user.id)
 await util.discmd(guild.id);
 
 await util.getmodchannels(guild.id)
-/*
+
+await client.utils.getColor(guild.id)
+    /*
    await botSet.findOneAndUpdate({
      _id:guild.id
    },

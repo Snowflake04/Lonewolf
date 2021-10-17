@@ -27,7 +27,7 @@ module.exports = class KickCommand extends Command {
 
     let reason = args.slice(1).join(' ');
     if (!reason) reason = null;
-    if (reason.length > 1024) reason = reason.slice(0, 1021) + '...';
+    if (reason && reason.length > 1024) reason = reason.slice(0, 1021) + '...';
 
     await member.kick(reason);
 const value = this.client.utils.embedColor(message.guild.id)
@@ -39,7 +39,7 @@ const value = this.client.utils.embedColor(message.guild.id)
     embed.setFooter("Unable to Dm")
   }
   embed
-     .serAuthor("Kicked!")
+     .setAuthor("Kicked!")
      .setDescription(`${member.user.tag} has been kicked from the server ${ reason ? `for ${reason}` : ''}`)
      .setColor(value ? "RANDOM" : message.guild.me.displayHexColor)
     message.channel.send({ embeds: [embed] });
