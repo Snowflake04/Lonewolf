@@ -57,7 +57,7 @@ module.exports = class AddRoleCommand extends Command {
 
           .setColor(message.guild.me.displayHexColor);
 
-        message.channel.send(embed);
+        message.channel.send({embeds: [embed]});
 
         // Update mod log
 
