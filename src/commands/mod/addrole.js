@@ -28,8 +28,7 @@ module.exports = class AddRoleCommand extends Command {
     if (!role)
       return this.sendErrorMessage(message, 0, "**Missing Role:** Please specify the role to be added to the user");
     else if (member.roles.cache.has(role.id)) // If member already has role
-      return this.sendErrorMessage(message, 0, 'Uole')
-  nd({embeds: [embed]})fully**`)
+      return this.sendErrorMessage(message, 0, 'User already have the provided role')
         // Update mod log
       } catch (err) {
         message.client.logger.error(err.stack);
