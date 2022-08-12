@@ -29,7 +29,40 @@ module.exports = class AddRoleCommand extends Command {
       return this.sendErrorMessage(message, 0, "**Missing Role:** Please specify the role to be added to the user");
     else if (member.roles.cache.has(role.id)) // If member already has role
       return this.sendErrorMessage(message, 0, 'User already have the provided role')
+          else {
+
+      try {
+
+        // Add role
+
+        await member.roles.add(role);
+
+        const embed = new MessageEmbed()
+
+          .setTitle('Add Role')
+
+          .setDescription(`${role} was successfully added to ${member}.`)
+
+          .addField('Moderator', message.member, true)
+
+          .addField('Member', member, true)
+
+          .addField('Role', role, true)
+
+          .addField('Reason', reason)
+
+          .setFooter(message.member.displayName,  message.author.displayAvatarURL({ dynamic: true }))
+
+          .setTimestamp()
+
+          .setColor(message.guild.me.displayHexColor);
+
+        message.channel.send(embed);
+
         // Update mod log
+
+        this.sendModLogMessage(message, reason, { Member: member, Role: role });
+    // Update mod log
       } catch (err) {
         message.client.logger.error(err.stack);
         return this.sendErrorMessage(message, 1, 'Please check the role hierarchy', err.message);
