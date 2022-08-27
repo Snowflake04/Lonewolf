@@ -4,6 +4,7 @@ const { join, resolve } = require('path');
 const AsciiTable = require('ascii-table');
 const { fail } = require('./utils/emojis.json');
 const botSet = require('../schemas/botschema');
+const config = require("../config.json");
 
 class Client extends Discord.Client {
   /**
@@ -58,7 +59,7 @@ class Client extends Discord.Client {
      *  owner ID
      * @type {string}
      */
-    this.ownerId = '464231916011257866';
+    this.ownerId = config.ownerId;
 
     /**
      *  bug report channel ID
@@ -70,13 +71,13 @@ class Client extends Discord.Client {
      *  feedback channel ID
      * @type {string}
      */
-    this.feedbackChannelId = '845689565648912415';
+    this.feedbackChannelId = config.feedbackChannelId;
 
     /**
      *  server log channel ID
      * @type {string}
      */
-    this.serverLogId = '861095876717969408';
+    this.serverLogId = config.serverLogId;
 
     /**
      * Utility functions
