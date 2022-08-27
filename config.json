@@ -12,4 +12,7 @@
  "pass": "", //password
  "scldid": "", //SoundCloud id available on SoundCloud dev portal
  "scldsc": "" //SoundCloud secret Key
+
+//Autoposter
+"toggle":"" //Available from top.gg website
 }
