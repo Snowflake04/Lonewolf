@@ -21,7 +21,8 @@ function init() {
   client.loadEvents('./src/events');
   client.loadCommands('./src/commands');
   require("./src/player")(client);
-  //require("./src/poster")(client);
+//Uncomment next line to post to Top.gg website or else leave as is
+  //require("./src/poster")(client); 
 }
 
 init()
