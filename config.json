@@ -1,14 +1,15 @@
 {
- "ownerId": "464231916011257866",
-  "bugReportChannelId": "845689500075556884",
-  "feedbackChannelId": "845689565648912415",
-  "serverLogId": "845689460552106004",
-"YOUTUBE_API_KEY":"AIzaSyAwD_eQuSIdlNPAr2DsmyQ4iLEB97zSj-o",
+ "ownerId": "", //Your discord id
+  "bugReportChannelId": "", //A channel ID to which the big reports is to be send
+  "feedbackChannelId": "", //A channel ID to which all the feedback is to be collected
+  "serverLogId": "", //For logging 
+"YOUTUBE_API_KEY":"", //YouTube API key V2 here
 
- "id": "lone",
- "host": "n9.danbot.host",
- "port": 1695,
- "pass": "passwd",
- "scldid": "ffdcd6f50b2445a79f195496d1d5e109",
- "scldsc": "f0283a8499e84b268325ae10ad02d4a0"
+//Lavalink
+ "id": "", // ID
+ "host": "", //Host name
+ "port": , //port number
+ "pass": "", //password
+ "scldid": "", //SoundCloud id available on SoundCloud dev portal
+ "scldsc": "" //SoundCloud secret Key
 }
