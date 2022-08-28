@@ -58,10 +58,10 @@ let db = await this.getGuild(message.guild.id);
       const status = 'disabled';
       const statusUpdate = (oldStatus != status) ? `\`${oldStatus}\` ➔ \`${status}\`` : `\`${oldStatus}\``; 
       
-      return message.channel.send(embed
+      return message.channel.send({embeds: [embed
         .spliceFields(0, 0, { name: 'Channel', value: `${oldFarewellChannel} ➔ \`None\``, inline: true })
         .spliceFields(1, 0, { name: 'Status', value: statusUpdate, inline: true })
-      );
+     ]} );
     }
 
     const farewellChannel = this.getChannelFromMention(message, args[0]) || message.guild.channels.cache.get(args[0]);
@@ -83,9 +83,9 @@ let db = await this.getGuild(message.guild.id);
    {
      upsert: true,
    })
-    message.channel.send(embed
+    message.channel.send({embeds: [embed
       .spliceFields(0, 0, { name: 'Channel', value: `${oldFarewellChannel} ➔ ${farewellChannel}`, inline: true})
       .spliceFields(1, 0, { name: 'Status', value: statusUpdate, inline: true})
-    );
+   ]} );
   }
 };
