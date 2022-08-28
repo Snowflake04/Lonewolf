@@ -44,7 +44,7 @@ module.exports = class EditLogCommand extends Command {
    {
      upsert: true,
    })
-      return message.channel.send(embed.addField('Message Edit Log', `${oldMessageEditLog} ➔ \`None\``));
+      return message.channel.send({embeds: [embed.addField('Message Edit Log', `${oldMessageEditLog} ➔ \`None\``)]});
     }
 
     const messageEditLog = this.getChannelFromMention(message, args[0]) || message.guild.channels.cache.get(args[0]);
@@ -61,6 +61,6 @@ module.exports = class EditLogCommand extends Command {
   {
     upsert:true,
   })
-    message.channel.send(embed.addField('Message Edit Log', `${oldMessageEditLog} ➔ ${messageEditLog}`));
+    message.channel.send({embeds: [embed.addField('Message Edit Log', `${oldMessageEditLog} ➔ ${messageEditLog}`)]});
   }
 };
