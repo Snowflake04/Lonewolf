@@ -44,7 +44,7 @@ module.exports = class AutoRoleCommand extends Command {
    {
      upsert: true,
    })
-      return message.channel.send(embed.addField('Auto Role', `${oldAutoRole} ➔ \`None\``));
+      return message.channel.send({embeds: [embed.addField('Auto Role', `${oldAutoRole} ➔ \`None\``)]});
     }
 
     // Update role
@@ -60,6 +60,6 @@ module.exports = class AutoRoleCommand extends Command {
     upsert: true,
     
   })
-    message.channel.send(embed.addField('Auto Role', `${oldAutoRole} ➔ ${autoRole}`));
+    message.channel.send({embeds: [embed.addField('Auto Role', `${oldAutoRole} ➔ ${autoRole}`)]});
   }
 };
