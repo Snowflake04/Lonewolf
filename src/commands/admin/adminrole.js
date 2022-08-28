@@ -39,7 +39,7 @@ module.exports = class AdminRoleCommand extends Command {
      }
     );
      
-   return message.channel.send(embed.addField('Admin Role', `${oldAdminRole} ➔ \`None\``));
+   return message.channel.send({ embeds: [embed.addField('Admin Role', `${oldAdminRole} ➔ \`None\``)]});
     }
 
     // Update role
@@ -52,7 +52,7 @@ module.exports = class AdminRoleCommand extends Command {
     admin_role_id: adminRole.id,
   });
   
-    message.channel.send(embed.addField('Admin Role', `${oldAdminRole} ➔ ${adminRole}`));
+    message.channel.send({embeds: [embed.addField('Admin Role', `${oldAdminRole} ➔ ${adminRole}`)]});
     
   }
 };
