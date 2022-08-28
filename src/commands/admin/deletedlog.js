@@ -44,7 +44,7 @@ let db = await this.getGuild(message.guild.id);
   {
     upsert: true,
   })
-      return message.channel.send(embed.addField('Message Delete Log', `${oldMessageDeleteLog} ➔ \`None\``));
+      return message.channel.send({embeds: [embed.addField('Message Delete Log', `${oldMessageDeleteLog} ➔ \`None\``)]});
     }
 
     const messageDeleteLog = this.getChannelFromMention(message, args[0]) || message.guild.channels.cache.get(args[0]);
@@ -62,6 +62,6 @@ let db = await this.getGuild(message.guild.id);
   upsert: true,
   }
 )
-    message.channel.send(embed.addField('Message Delete Log', `${oldMessageDeleteLog} ➔ ${messageDeleteLog}`));
+    message.channel.send({embeds: [embed.addField('Message Delete Log', `${oldMessageDeleteLog} ➔ ${messageDeleteLog}`)]});
   }
 };
