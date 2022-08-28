@@ -47,7 +47,7 @@ module.exports = class AutoKickCommand extends Command {
       {
         upsert: true,
       })
-      return message.channel.send(embed.addField('Auto Kick', `\`${autoKick}\` ➔ \`disabled\``));
+      return message.channel.send({ embeds: [embed.addField('Auto Kick', `\`${autoKick}\` ➔ \`disabled\``)]});
     }
 
   await botSet.findOneAndUpdate({
@@ -59,7 +59,7 @@ module.exports = class AutoKickCommand extends Command {
   {
     upsert: true,
   })
-    message.channel.send(embed.addField('Auto Kick', `\`${autoKick}\` ➔ \`${amount}\``));
+    message.channel.send({embeds: [embed.addField('Auto Kick', `\`${autoKick}\` ➔ \`${amount}\``)]});
     
   }
 };
