@@ -43,7 +43,7 @@ module.exports = class RoleLogCommand extends Command {
     upsert: true
   }
   )
-      return message.channel.send(embed.addField('Role Log', `${oldRoleLog} ➔ \`None\``));
+      return message.channel.send({embeds: [embed.addField('Role Log', `${oldRoleLog} ➔ \`None\``)]});
     }
 
     const roleLog = this.getChannelFromMention(message, args[0]) || message.guild.channels.cache.get(args[0]);
@@ -61,6 +61,6 @@ module.exports = class RoleLogCommand extends Command {
     upsert: true
   }
   )
-    message.channel.send(embed.addField('Role Log', `${oldRoleLog} ➔ ${roleLog}`));
+    message.channel.send({embeds: [embed.addField('Role Log', `${oldRoleLog} ➔ ${roleLog}`)]});
   }
 };
