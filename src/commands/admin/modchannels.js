@@ -44,7 +44,7 @@ module.exports = class ModChannelsCommand extends Command {
     // Clear if no args provided
     if (args.length === 0) {
       await util.updateModChannels(message.guild.id, null)
-      return message.channel.send(embed.addField('Mod Channels', `${oldModChannels} ➔ \`None\``));
+      return message.channel.send({embeds: [embed.addField('Mod Channels', `${oldModChannels} ➔ \`None\``)]});
     }
 
     let channels = [];
@@ -58,6 +58,6 @@ module.exports = class ModChannelsCommand extends Command {
     channels = [...new Set(channels)];
     const channelIds = channels.map(c => c.id).join(' '); // Only keep unique IDs
     await util.updateModChannels(message.guild.id, channelIds)
-    message.channel.send(embed.addField('Mod Channels', `${oldModChannels} ➔ ${trimArray(channels).join(' ')}`));
+    message.channel.send({embeds: [embed.addField('Mod Channels', `${oldModChannels} ➔ ${trimArray(channels).join(' ')}`)]});
   }
 };
