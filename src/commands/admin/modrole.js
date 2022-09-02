@@ -40,7 +40,7 @@ module.exports = class ModRoleCommand extends Command {
     upsert: true
   }
   )
-      return message.channel.send(embed.addField('Mod Role', `${oldModRole} ➔ \`None\``));
+      return message.channel.send({embeds: [embed.addField('Mod Role', `${oldModRole} ➔ \`None\``)]});
     }
 
     // Update role
@@ -56,6 +56,6 @@ module.exports = class ModRoleCommand extends Command {
     upsert: true
   }
   )
-    message.channel.send(embed.addField('Mod Role', `${oldModRole} ➔ ${modRole}`));
+    message.channel.send({embeds: [embed.addField('Mod Role', `${oldModRole} ➔ ${modRole}`)]});
   }
 };
