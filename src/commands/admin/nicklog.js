@@ -64,6 +64,6 @@ module.exports = class NickLogCommand extends Command {
     {
       upsert: true,
     })
-    message.channel.send(embed.addField('Nickname Log', `${oldNicknameLog} ➔ ${nicknameLog}`));
+    message.channel.send({embeds: [embed.addField('Nickname Log', `${oldNicknameLog} ➔ ${nicknameLog}`)]});
   }
 };
