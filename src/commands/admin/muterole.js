@@ -40,7 +40,7 @@ let db = await this.getGuild(message.guild.id);
     upsert: true
   }
   )
-      return message.channel.send(embed.addField('Mute Role', `${oldMuteRole} ➔ \`None\``));
+      return message.channel.send({embeds: [embed.addField('Mute Role', `${oldMuteRole} ➔ \`None\``)]});
     }
 
     // Update role
@@ -56,6 +56,6 @@ let db = await this.getGuild(message.guild.id);
     upsert: true
   }
   )
-    message.channel.send(embed.addField('Mute Role', `${oldMuteRole} ➔ ${muteRole}`));
+    message.channel.send({embeds: [embed.addField('Mute Role', `${oldMuteRole} ➔ ${muteRole}`)]});
   }
 };
