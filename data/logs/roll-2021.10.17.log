@@ -1,0 +1,1592 @@
+06:31:01.995 INFO  Initializing... 
+06:31:01.999 INFO  Loading commands... 
+06:31:02.547 INFO  
+.----------------------------------------------------------------------.
+|                               Commands                               |
+|----------------------------------------------------------------------|
+|         File         |           Aliases            | Type  | Status |
+|----------------------|------------------------------|-------|--------|
+| adminrole.js         | setar, sar                   | admin | pass   |
+| autokick.js          | setak, sak                   | admin | pass   |
+| autorole.js          | arole                        | admin | pass   |
+| deletedlog.js        | dlog                         | admin | pass   |
+| editlog.js           | eml                          | admin | pass   |
+| embedcolor.js        | embedcolor, emcol            | admin | pass   |
+| farewell.js          | fwchannel                    | admin | pass   |
+| farewellmessage.js   | setfwmsg                     | admin | pass   |
+| memberlog.js         | setmlog                      | admin | pass   |
+| modchannels.js       | setmods                      | admin | pass   |
+| modlog.js            | mlog                         | admin | pass   |
+| modrole.js           | mrole                        | admin | pass   |
+| muterole.js          | mutedrole                    | admin | pass   |
+| nicklog.js           | nicknamelog                  | admin | pass   |
+| rolelog.js           | setrolelog                   | admin | pass   |
+| setprefix.js         | setp, sp                     | admin | pass   |
+| settings.js          | set, s, config, conf         | admin | pass   |
+| starboard.js         | starchannel                  | admin | pass   |
+| systemchannel.js     | syschannel                   | admin | pass   |
+| togglecommand.js     | togglec, togc, tc            | admin | pass   |
+| togglerandomcolor.js | togglerc, togrc, trc         | admin | pass   |
+| toggletype.js        | togglet, togt, tt            | admin | pass   |
+| welcomechannel.js    | welchannel                   | admin | pass   |
+| welcomemessage.js    | welcomemsg                   | admin | pass   |
+| 8ball.js             | fortune                      | fun   | pass   |
+| bird.js              |                              | fun   | pass   |
+| catfact.js           | cf                           | fun   | pass   |
+| coinflip.js          | cointoss, coin, flip         | fun   | pass   |
+| dog.js               | puppy, pup                   | fun   | pass   |
+| dogfact.js           | df                           | fun   | pass   |
+| duck.js              |                              | fun   | pass   |
+| eject.js             |                              | fun   | pass   |
+| emojify.js           | sayemoji                     | fun   | pass   |
+| fox.js               |                              | fun   | pass   |
+| hack.js              |                              | fun   | pass   |
+| iq.js                |                              | fun   | pass   |
+| joke.js              |                              | fun   | pass   |
+| meme.js              |                              | fun   | pass   |
+| roll.js              | dice, r                      | fun   | pass   |
+| rps.js               |                              | fun   | pass   |
+| say.js               |                              | fun   | pass   |
+| shibe.js             |                              | fun   | pass   |
+| solotrivia.js        | solotriv, striv, solot, st   | fun   | pass   |
+| thouart.js           | elizabethan, ta              | fun   | pass   |
+| topics.js            | triviatopics, categories, ts | fun   | pass   |
+| trivia.js            | triv, t                      | fun   | pass   |
+| trumptweet.js        | trump                        | fun   | pass   |
+| yesno.js             | yn                           | fun   | pass   |
+| yomomma.js           | yourmom, yomamma, yomama, ym | fun   | pass   |
+| youtube.js           | yt                           | fun   | pass   |
+| admins.js            |                              | info  | pass   |
+| avatar.js            | profilepic, pic, ava         | info  | pass   |
+| botinfo.js           | bot, bi                      | info  | pass   |
+| channelinfo.js       | channel, ci                  | info  | pass   |
+| emojis.js            | e                            | info  | pass   |
+| findid.js            | find, id                     | info  | pass   |
+| help.js              | commands, h                  | info  | pass   |
+| inviteme.js          | invite, invme, im            | info  | pass   |
+| members.js           | memberstatus                 | info  | pass   |
+| mods.js              |                              | info  | pass   |
+| permissions.js       | perms                        | info  | pass   |
+| ping.js              |                              | info  | pass   |
+| prefix.js            | pre                          | info  | pass   |
+| roleinfo.js          | role, ri                     | info  | pass   |
+| servercount.js       | usercount, sc, uc            | info  | pass   |
+| servericon.js        | icon, i                      | info  | pass   |
+| serverinfo.js        | server, si                   | info  | pass   |
+| serverstaff.js       | staff                        | info  | pass   |
+| stats.js             | statistics, metrics          | info  | pass   |
+| uptime.js            | up                           | info  | pass   |
+| userinfo.js          | whois, user, ui              | info  | pass   |
+| addrole.js           | giverole, addr, ar           | mod   | pass   |
+| ban.js               |                              | mod   | pass   |
+| clearwarns.js        |                              | mod   | pass   |
+| kick.js              |                              | mod   | pass   |
+| mute.js              |                              | mod   | pass   |
+| purge.js             | clear                        | mod   | pass   |
+| removerole.js        | remover, rr                  | mod   | pass   |
+| setnickname.js       | setnick, snn                 | mod   | pass   |
+| slowmode.js          | slow, sm                     | mod   | pass   |
+| softban.js           |                              | mod   | pass   |
+| unban.js             |                              | mod   | pass   |
+| unmute.js            |                              | mod   | pass   |
+| warn.js              |                              | mod   | pass   |
+| warns.js             | warnings                     | mod   | pass   |
+| bassboost.js         | eq                           | music | pass   |
+| clear.js             | clrq                         | music | pass   |
+| disconnect.js        | stop, quit                   | music | pass   |
+| loop.js              | repeat, lp                   | music | pass   |
+| loopqueue.js         | lq, loopall                  | music | pass   |
+| lyrics.js            | ly                           | music | pass   |
+| nowplaying.js        | np                           | music | pass   |
+| pause.js             |                              | music | pass   |
+| play.js              | p                            | music | pass   |
+| queue.js             | q                            | music | pass   |
+| remove.js            | rm                           | music | pass   |
+| resume.js            | res                          | music | pass   |
+| search.js            | se                           | music | pass   |
+| seek.js              | forward                      | music | pass   |
+| shuffle.js           | juggle                       | music | pass   |
+| skip.js              | next                         | music | pass   |
+| skipto.js            | moveto                       | music | pass   |
+| volume.js            | vol                          | music | pass   |
+| blast.js             |                              | owner | pass   |
+| eval.js              |                              | owner | pass   |
+| leaveguild.js        |                              | owner | pass   |
+| servers.js           | servs                        | owner | pass   |
+| suggest.js           | sg                           | misc  | pass   |
+| vote.js              | upvote                       | misc  | pass   |
+'----------------------------------------------------------------------' 
+06:31:02.610 INFO  20 event(s) found... 
+06:31:02.611 INFO  Loading event: clickButton 
+06:31:02.612 INFO  Loading event: debug 
+06:31:02.612 INFO  Loading event: error 
+06:31:02.613 INFO  Loading event: guildCreate 
+06:31:02.614 INFO  Loading event: guildDelete 
+06:31:02.615 INFO  Loading event: guildMemberAdd 
+06:31:02.616 INFO  Loading event: guildMemberRemove 
+06:31:02.617 INFO  Loading event: guildMemberUpdate 
+06:31:02.618 INFO  Loading event: guildUpdate 
+06:31:02.625 INFO  Loading event: messageCreate 
+06:31:02.626 INFO  Loading event: messageDelete 
+06:31:02.626 INFO  Loading event: messageDeleteBulk 
+06:31:02.628 INFO  Loading event: messageReactionAdd 
+06:31:02.629 INFO  Loading event: messageReactionRemove 
+06:31:02.630 INFO  Loading event: messageUpdate 
+06:31:02.630 INFO  Loading event: raw 
+06:31:02.632 INFO  Loading event: ready 
+06:31:02.633 INFO  Loading event: userUpdate 
+06:31:02.633 INFO  Loading event: voiceStateUpdate 
+06:31:02.634 INFO  Loading event: warn 
+06:31:02.957 INFO  Updating database and scheduling jobs... 
+06:31:08.202 INFO  LoneWolf is now online 
+06:31:08.203 INFO  LoneWolf is running on 1 server(s) 
+06:32:37.199 INFO  Initializing... 
+06:32:37.201 INFO  Loading commands... 
+06:32:37.420 INFO  
+.----------------------------------------------------------------------.
+|                               Commands                               |
+|----------------------------------------------------------------------|
+|         File         |           Aliases            | Type  | Status |
+|----------------------|------------------------------|-------|--------|
+| adminrole.js         | setar, sar                   | admin | pass   |
+| autokick.js          | setak, sak                   | admin | pass   |
+| autorole.js          | arole                        | admin | pass   |
+| deletedlog.js        | dlog                         | admin | pass   |
+| editlog.js           | eml                          | admin | pass   |
+| embedcolor.js        | embedcolor, emcol            | admin | pass   |
+| farewell.js          | fwchannel                    | admin | pass   |
+| farewellmessage.js   | setfwmsg                     | admin | pass   |
+| memberlog.js         | setmlog                      | admin | pass   |
+| modchannels.js       | setmods                      | admin | pass   |
+| modlog.js            | mlog                         | admin | pass   |
+| modrole.js           | mrole                        | admin | pass   |
+| muterole.js          | mutedrole                    | admin | pass   |
+| nicklog.js           | nicknamelog                  | admin | pass   |
+| rolelog.js           | setrolelog                   | admin | pass   |
+| setprefix.js         | setp, sp                     | admin | pass   |
+| settings.js          | set, s, config, conf         | admin | pass   |
+| starboard.js         | starchannel                  | admin | pass   |
+| systemchannel.js     | syschannel                   | admin | pass   |
+| togglecommand.js     | togglec, togc, tc            | admin | pass   |
+| togglerandomcolor.js | togglerc, togrc, trc         | admin | pass   |
+| toggletype.js        | togglet, togt, tt            | admin | pass   |
+| welcomechannel.js    | welchannel                   | admin | pass   |
+| welcomemessage.js    | welcomemsg                   | admin | pass   |
+| 8ball.js             | fortune                      | fun   | pass   |
+| bird.js              |                              | fun   | pass   |
+| catfact.js           | cf                           | fun   | pass   |
+| coinflip.js          | cointoss, coin, flip         | fun   | pass   |
+| dog.js               | puppy, pup                   | fun   | pass   |
+| dogfact.js           | df                           | fun   | pass   |
+| duck.js              |                              | fun   | pass   |
+| eject.js             |                              | fun   | pass   |
+| emojify.js           | sayemoji                     | fun   | pass   |
+| fox.js               |                              | fun   | pass   |
+| hack.js              |                              | fun   | pass   |
+| iq.js                |                              | fun   | pass   |
+| joke.js              |                              | fun   | pass   |
+| meme.js              |                              | fun   | pass   |
+| roll.js              | dice, r                      | fun   | pass   |
+| rps.js               |                              | fun   | pass   |
+| say.js               |                              | fun   | pass   |
+| shibe.js             |                              | fun   | pass   |
+| solotrivia.js        | solotriv, striv, solot, st   | fun   | pass   |
+| thouart.js           | elizabethan, ta              | fun   | pass   |
+| topics.js            | triviatopics, categories, ts | fun   | pass   |
+| trivia.js            | triv, t                      | fun   | pass   |
+| trumptweet.js        | trump                        | fun   | pass   |
+| yesno.js             | yn                           | fun   | pass   |
+| yomomma.js           | yourmom, yomamma, yomama, ym | fun   | pass   |
+| youtube.js           | yt                           | fun   | pass   |
+| admins.js            |                              | info  | pass   |
+| avatar.js            | profilepic, pic, ava         | info  | pass   |
+| botinfo.js           | bot, bi                      | info  | pass   |
+| channelinfo.js       | channel, ci                  | info  | pass   |
+| emojis.js            | e                            | info  | pass   |
+| findid.js            | find, id                     | info  | pass   |
+| help.js              | commands, h                  | info  | pass   |
+| inviteme.js          | invite, invme, im            | info  | pass   |
+| members.js           | memberstatus                 | info  | pass   |
+| mods.js              |                              | info  | pass   |
+| permissions.js       | perms                        | info  | pass   |
+| ping.js              |                              | info  | pass   |
+| prefix.js            | pre                          | info  | pass   |
+| roleinfo.js          | role, ri                     | info  | pass   |
+| servercount.js       | usercount, sc, uc            | info  | pass   |
+| servericon.js        | icon, i                      | info  | pass   |
+| serverinfo.js        | server, si                   | info  | pass   |
+| serverstaff.js       | staff                        | info  | pass   |
+| stats.js             | statistics, metrics          | info  | pass   |
+| uptime.js            | up                           | info  | pass   |
+| userinfo.js          | whois, user, ui              | info  | pass   |
+| addrole.js           | giverole, addr, ar           | mod   | pass   |
+| ban.js               |                              | mod   | pass   |
+| clearwarns.js        |                              | mod   | pass   |
+| kick.js              |                              | mod   | pass   |
+| mute.js              |                              | mod   | pass   |
+| purge.js             | clear                        | mod   | pass   |
+| removerole.js        | remover, rr                  | mod   | pass   |
+| setnickname.js       | setnick, snn                 | mod   | pass   |
+| slowmode.js          | slow, sm                     | mod   | pass   |
+| softban.js           |                              | mod   | pass   |
+| unban.js             |                              | mod   | pass   |
+| unmute.js            |                              | mod   | pass   |
+| warn.js              |                              | mod   | pass   |
+| warns.js             | warnings                     | mod   | pass   |
+| bassboost.js         | eq                           | music | pass   |
+| clear.js             | clrq                         | music | pass   |
+| disconnect.js        | stop, quit                   | music | pass   |
+| loop.js              | repeat, lp                   | music | pass   |
+| loopqueue.js         | lq, loopall                  | music | pass   |
+| lyrics.js            | ly                           | music | pass   |
+| nowplaying.js        | np                           | music | pass   |
+| pause.js             |                              | music | pass   |
+| play.js              | p                            | music | pass   |
+| queue.js             | q                            | music | pass   |
+| remove.js            | rm                           | music | pass   |
+| resume.js            | res                          | music | pass   |
+| search.js            | se                           | music | pass   |
+| seek.js              | forward                      | music | pass   |
+| shuffle.js           | juggle                       | music | pass   |
+| skip.js              | next                         | music | pass   |
+| skipto.js            | moveto                       | music | pass   |
+| volume.js            | vol                          | music | pass   |
+| blast.js             |                              | owner | pass   |
+| eval.js              |                              | owner | pass   |
+| leaveguild.js        |                              | owner | pass   |
+| servers.js           | servs                        | owner | pass   |
+| suggest.js           | sg                           | misc  | pass   |
+| vote.js              | upvote                       | misc  | pass   |
+'----------------------------------------------------------------------' 
+06:32:37.459 INFO  20 event(s) found... 
+06:32:37.460 INFO  Loading event: clickButton 
+06:32:37.460 INFO  Loading event: debug 
+06:32:37.461 INFO  Loading event: error 
+06:32:37.461 INFO  Loading event: guildCreate 
+06:32:37.462 INFO  Loading event: guildDelete 
+06:32:37.463 INFO  Loading event: guildMemberAdd 
+06:32:37.464 INFO  Loading event: guildMemberRemove 
+06:32:37.465 INFO  Loading event: guildMemberUpdate 
+06:32:37.465 INFO  Loading event: guildUpdate 
+06:32:37.466 INFO  Loading event: messageCreate 
+06:32:37.467 INFO  Loading event: messageDelete 
+06:32:37.467 INFO  Loading event: messageDeleteBulk 
+06:32:37.468 INFO  Loading event: messageReactionAdd 
+06:32:37.469 INFO  Loading event: messageReactionRemove 
+06:32:37.470 INFO  Loading event: messageUpdate 
+06:32:37.470 INFO  Loading event: raw 
+06:32:37.471 INFO  Loading event: ready 
+06:32:37.471 INFO  Loading event: userUpdate 
+06:32:37.472 INFO  Loading event: voiceStateUpdate 
+06:32:37.472 INFO  Loading event: warn 
+06:32:37.820 INFO  Updating database and scheduling jobs... 
+06:32:43.115 INFO  LoneWolf is now online 
+06:32:43.115 INFO  LoneWolf is running on 1 server(s) 
+06:34:43.769 ERROR Cannot send an empty message
+{"name":"DiscordAPIError","message":"Cannot send an empty message","method":"post","path":"/channels/842364289745420318/messages","code":50006,"httpStatus":400,"requestData":{"json":{"tts":false},"files":[]}}
+DiscordAPIError: Cannot send an empty message
+    at RequestHandler.execute (/home/runner/lone-wolf-1/node_modules/discord.js/src/rest/RequestHandler.js:298:13)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async RequestHandler.push (/home/runner/lone-wolf-1/node_modules/discord.js/src/rest/RequestHandler.js:50:14)
+    at async TextChannel.send (/home/runner/lone-wolf-1/node_modules/discord.js/src/structures/interfaces/TextBasedChannel.js:172:15) 
+06:37:21.103 INFO  Initializing... 
+06:37:21.107 INFO  Loading commands... 
+06:37:21.392 INFO  
+.----------------------------------------------------------------------.
+|                               Commands                               |
+|----------------------------------------------------------------------|
+|         File         |           Aliases            | Type  | Status |
+|----------------------|------------------------------|-------|--------|
+| adminrole.js         | setar, sar                   | admin | pass   |
+| autokick.js          | setak, sak                   | admin | pass   |
+| autorole.js          | arole                        | admin | pass   |
+| deletedlog.js        | dlog                         | admin | pass   |
+| editlog.js           | eml                          | admin | pass   |
+| embedcolor.js        | embedcolor, emcol            | admin | pass   |
+| farewell.js          | fwchannel                    | admin | pass   |
+| farewellmessage.js   | setfwmsg                     | admin | pass   |
+| memberlog.js         | setmlog                      | admin | pass   |
+| modchannels.js       | setmods                      | admin | pass   |
+| modlog.js            | mlog                         | admin | pass   |
+| modrole.js           | mrole                        | admin | pass   |
+| muterole.js          | mutedrole                    | admin | pass   |
+| nicklog.js           | nicknamelog                  | admin | pass   |
+| rolelog.js           | setrolelog                   | admin | pass   |
+| setprefix.js         | setp, sp                     | admin | pass   |
+| settings.js          | set, s, config, conf         | admin | pass   |
+| starboard.js         | starchannel                  | admin | pass   |
+| systemchannel.js     | syschannel                   | admin | pass   |
+| togglecommand.js     | togglec, togc, tc            | admin | pass   |
+| togglerandomcolor.js | togglerc, togrc, trc         | admin | pass   |
+| toggletype.js        | togglet, togt, tt            | admin | pass   |
+| welcomechannel.js    | welchannel                   | admin | pass   |
+| welcomemessage.js    | welcomemsg                   | admin | pass   |
+| 8ball.js             | fortune                      | fun   | pass   |
+| bird.js              |                              | fun   | pass   |
+| catfact.js           | cf                           | fun   | pass   |
+| coinflip.js          | cointoss, coin, flip         | fun   | pass   |
+| dog.js               | puppy, pup                   | fun   | pass   |
+| dogfact.js           | df                           | fun   | pass   |
+| duck.js              |                              | fun   | pass   |
+| eject.js             |                              | fun   | pass   |
+| emojify.js           | sayemoji                     | fun   | pass   |
+| fox.js               |                              | fun   | pass   |
+| hack.js              |                              | fun   | pass   |
+| iq.js                |                              | fun   | pass   |
+| joke.js              |                              | fun   | pass   |
+| meme.js              |                              | fun   | pass   |
+| roll.js              | dice, r                      | fun   | pass   |
+| rps.js               |                              | fun   | pass   |
+| say.js               |                              | fun   | pass   |
+| shibe.js             |                              | fun   | pass   |
+| solotrivia.js        | solotriv, striv, solot, st   | fun   | pass   |
+| thouart.js           | elizabethan, ta              | fun   | pass   |
+| topics.js            | triviatopics, categories, ts | fun   | pass   |
+| trivia.js            | triv, t                      | fun   | pass   |
+| trumptweet.js        | trump                        | fun   | pass   |
+| yesno.js             | yn                           | fun   | pass   |
+| yomomma.js           | yourmom, yomamma, yomama, ym | fun   | pass   |
+| youtube.js           | yt                           | fun   | pass   |
+| admins.js            |                              | info  | pass   |
+| avatar.js            | profilepic, pic, ava         | info  | pass   |
+| botinfo.js           | bot, bi                      | info  | pass   |
+| channelinfo.js       | channel, ci                  | info  | pass   |
+| emojis.js            | e                            | info  | pass   |
+| findid.js            | find, id                     | info  | pass   |
+| help.js              | commands, h                  | info  | pass   |
+| inviteme.js          | invite, invme, im            | info  | pass   |
+| members.js           | memberstatus                 | info  | pass   |
+| mods.js              |                              | info  | pass   |
+| permissions.js       | perms                        | info  | pass   |
+| ping.js              |                              | info  | pass   |
+| prefix.js            | pre                          | info  | pass   |
+| roleinfo.js          | role, ri                     | info  | pass   |
+| servercount.js       | usercount, sc, uc            | info  | pass   |
+| servericon.js        | icon, i                      | info  | pass   |
+| serverinfo.js        | server, si                   | info  | pass   |
+| serverstaff.js       | staff                        | info  | pass   |
+| stats.js             | statistics, metrics          | info  | pass   |
+| uptime.js            | up                           | info  | pass   |
+| userinfo.js          | whois, user, ui              | info  | pass   |
+| addrole.js           | giverole, addr, ar           | mod   | pass   |
+| ban.js               |                              | mod   | pass   |
+| clearwarns.js        |                              | mod   | pass   |
+| kick.js              |                              | mod   | pass   |
+| mute.js              |                              | mod   | pass   |
+| purge.js             | clear                        | mod   | pass   |
+| removerole.js        | remover, rr                  | mod   | pass   |
+| setnickname.js       | setnick, snn                 | mod   | pass   |
+| slowmode.js          | slow, sm                     | mod   | pass   |
+| softban.js           |                              | mod   | pass   |
+| unban.js             |                              | mod   | pass   |
+| unmute.js            |                              | mod   | pass   |
+| warn.js              |                              | mod   | pass   |
+| warns.js             | warnings                     | mod   | pass   |
+| bassboost.js         | eq                           | music | pass   |
+| clear.js             | clrq                         | music | pass   |
+| disconnect.js        | stop, quit                   | music | pass   |
+| loop.js              | repeat, lp                   | music | pass   |
+| loopqueue.js         | lq, loopall                  | music | pass   |
+| lyrics.js            | ly                           | music | pass   |
+| nowplaying.js        | np                           | music | pass   |
+| pause.js             |                              | music | pass   |
+| play.js              | p                            | music | pass   |
+| queue.js             | q                            | music | pass   |
+| remove.js            | rm                           | music | pass   |
+| resume.js            | res                          | music | pass   |
+| search.js            | se                           | music | pass   |
+| seek.js              | forward                      | music | pass   |
+| shuffle.js           | juggle                       | music | pass   |
+| skip.js              | next                         | music | pass   |
+| skipto.js            | moveto                       | music | pass   |
+| volume.js            | vol                          | music | pass   |
+| blast.js             |                              | owner | pass   |
+| eval.js              |                              | owner | pass   |
+| leaveguild.js        |                              | owner | pass   |
+| servers.js           | servs                        | owner | pass   |
+| suggest.js           | sg                           | misc  | pass   |
+| vote.js              | upvote                       | misc  | pass   |
+'----------------------------------------------------------------------' 
+06:37:21.436 INFO  20 event(s) found... 
+06:37:21.437 INFO  Loading event: clickButton 
+06:37:21.437 INFO  Loading event: debug 
+06:37:21.438 INFO  Loading event: error 
+06:37:21.439 INFO  Loading event: guildCreate 
+06:37:21.439 INFO  Loading event: guildDelete 
+06:37:21.440 INFO  Loading event: guildMemberAdd 
+06:37:21.441 INFO  Loading event: guildMemberRemove 
+06:37:21.442 INFO  Loading event: guildMemberUpdate 
+06:37:21.443 INFO  Loading event: guildUpdate 
+06:37:21.444 INFO  Loading event: messageCreate 
+06:37:21.444 INFO  Loading event: messageDelete 
+06:37:21.445 INFO  Loading event: messageDeleteBulk 
+06:37:21.446 INFO  Loading event: messageReactionAdd 
+06:37:21.446 INFO  Loading event: messageReactionRemove 
+06:37:21.447 INFO  Loading event: messageUpdate 
+06:37:21.448 INFO  Loading event: raw 
+06:37:21.449 INFO  Loading event: ready 
+06:37:21.449 INFO  Loading event: userUpdate 
+06:37:21.449 INFO  Loading event: voiceStateUpdate 
+06:37:21.450 INFO  Loading event: warn 
+06:37:21.784 INFO  Updating database and scheduling jobs... 
+06:37:27.157 INFO  LoneWolf is now online 
+06:37:27.158 INFO  LoneWolf is running on 1 server(s) 
+06:37:39.977 ERROR Cannot send an empty message
+{"name":"DiscordAPIError","message":"Cannot send an empty message","method":"post","path":"/channels/842364289745420318/messages","code":50006,"httpStatus":400,"requestData":{"json":{"tts":false},"files":[]}}
+DiscordAPIError: Cannot send an empty message
+    at RequestHandler.execute (/home/runner/lone-wolf-1/node_modules/discord.js/src/rest/RequestHandler.js:298:13)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async RequestHandler.push (/home/runner/lone-wolf-1/node_modules/discord.js/src/rest/RequestHandler.js:50:14)
+    at async TextChannel.send (/home/runner/lone-wolf-1/node_modules/discord.js/src/structures/interfaces/TextBasedChannel.js:172:15) 
+06:39:04.181 ERROR Cannot read properties of null (reading 'length')
+{}
+TypeError: Cannot read properties of null (reading 'length')
+    at KickCommand.run (/home/runner/lone-wolf-1/src/commands/mod/kick.js:30:16)
+    at module.exports (/home/runner/lone-wolf-1/src/events/messageCreate.js:44:24)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5) 
+06:41:45.393 INFO  Initializing... 
+06:41:45.398 INFO  Loading commands... 
+06:41:45.620 INFO  
+.----------------------------------------------------------------------.
+|                               Commands                               |
+|----------------------------------------------------------------------|
+|         File         |           Aliases            | Type  | Status |
+|----------------------|------------------------------|-------|--------|
+| adminrole.js         | setar, sar                   | admin | pass   |
+| autokick.js          | setak, sak                   | admin | pass   |
+| autorole.js          | arole                        | admin | pass   |
+| deletedlog.js        | dlog                         | admin | pass   |
+| editlog.js           | eml                          | admin | pass   |
+| embedcolor.js        | embedcolor, emcol            | admin | pass   |
+| farewell.js          | fwchannel                    | admin | pass   |
+| farewellmessage.js   | setfwmsg                     | admin | pass   |
+| memberlog.js         | setmlog                      | admin | pass   |
+| modchannels.js       | setmods                      | admin | pass   |
+| modlog.js            | mlog                         | admin | pass   |
+| modrole.js           | mrole                        | admin | pass   |
+| muterole.js          | mutedrole                    | admin | pass   |
+| nicklog.js           | nicknamelog                  | admin | pass   |
+| rolelog.js           | setrolelog                   | admin | pass   |
+| setprefix.js         | setp, sp                     | admin | pass   |
+| settings.js          | set, s, config, conf         | admin | pass   |
+| starboard.js         | starchannel                  | admin | pass   |
+| systemchannel.js     | syschannel                   | admin | pass   |
+| togglecommand.js     | togglec, togc, tc            | admin | pass   |
+| togglerandomcolor.js | togglerc, togrc, trc         | admin | pass   |
+| toggletype.js        | togglet, togt, tt            | admin | pass   |
+| welcomechannel.js    | welchannel                   | admin | pass   |
+| welcomemessage.js    | welcomemsg                   | admin | pass   |
+| 8ball.js             | fortune                      | fun   | pass   |
+| bird.js              |                              | fun   | pass   |
+| catfact.js           | cf                           | fun   | pass   |
+| coinflip.js          | cointoss, coin, flip         | fun   | pass   |
+| dog.js               | puppy, pup                   | fun   | pass   |
+| dogfact.js           | df                           | fun   | pass   |
+| duck.js              |                              | fun   | pass   |
+| eject.js             |                              | fun   | pass   |
+| emojify.js           | sayemoji                     | fun   | pass   |
+| fox.js               |                              | fun   | pass   |
+| hack.js              |                              | fun   | pass   |
+| iq.js                |                              | fun   | pass   |
+| joke.js              |                              | fun   | pass   |
+| meme.js              |                              | fun   | pass   |
+| roll.js              | dice, r                      | fun   | pass   |
+| rps.js               |                              | fun   | pass   |
+| say.js               |                              | fun   | pass   |
+| shibe.js             |                              | fun   | pass   |
+| solotrivia.js        | solotriv, striv, solot, st   | fun   | pass   |
+| thouart.js           | elizabethan, ta              | fun   | pass   |
+| topics.js            | triviatopics, categories, ts | fun   | pass   |
+| trivia.js            | triv, t                      | fun   | pass   |
+| trumptweet.js        | trump                        | fun   | pass   |
+| yesno.js             | yn                           | fun   | pass   |
+| yomomma.js           | yourmom, yomamma, yomama, ym | fun   | pass   |
+| youtube.js           | yt                           | fun   | pass   |
+| admins.js            |                              | info  | pass   |
+| avatar.js            | profilepic, pic, ava         | info  | pass   |
+| botinfo.js           | bot, bi                      | info  | pass   |
+| channelinfo.js       | channel, ci                  | info  | pass   |
+| emojis.js            | e                            | info  | pass   |
+| findid.js            | find, id                     | info  | pass   |
+| help.js              | commands, h                  | info  | pass   |
+| inviteme.js          | invite, invme, im            | info  | pass   |
+| members.js           | memberstatus                 | info  | pass   |
+| mods.js              |                              | info  | pass   |
+| permissions.js       | perms                        | info  | pass   |
+| ping.js              |                              | info  | pass   |
+| prefix.js            | pre                          | info  | pass   |
+| roleinfo.js          | role, ri                     | info  | pass   |
+| servercount.js       | usercount, sc, uc            | info  | pass   |
+| servericon.js        | icon, i                      | info  | pass   |
+| serverinfo.js        | server, si                   | info  | pass   |
+| serverstaff.js       | staff                        | info  | pass   |
+| stats.js             | statistics, metrics          | info  | pass   |
+| uptime.js            | up                           | info  | pass   |
+| userinfo.js          | whois, user, ui              | info  | pass   |
+| addrole.js           | giverole, addr, ar           | mod   | pass   |
+| ban.js               |                              | mod   | pass   |
+| clearwarns.js        |                              | mod   | pass   |
+| kick.js              |                              | mod   | pass   |
+| mute.js              |                              | mod   | pass   |
+| purge.js             | clear                        | mod   | pass   |
+| removerole.js        | remover, rr                  | mod   | pass   |
+| setnickname.js       | setnick, snn                 | mod   | pass   |
+| slowmode.js          | slow, sm                     | mod   | pass   |
+| softban.js           |                              | mod   | pass   |
+| unban.js             |                              | mod   | pass   |
+| unmute.js            |                              | mod   | pass   |
+| warn.js              |                              | mod   | pass   |
+| warns.js             | warnings                     | mod   | pass   |
+| bassboost.js         | eq                           | music | pass   |
+| clear.js             | clrq                         | music | pass   |
+| disconnect.js        | stop, quit                   | music | pass   |
+| loop.js              | repeat, lp                   | music | pass   |
+| loopqueue.js         | lq, loopall                  | music | pass   |
+| lyrics.js            | ly                           | music | pass   |
+| nowplaying.js        | np                           | music | pass   |
+| pause.js             |                              | music | pass   |
+| play.js              | p                            | music | pass   |
+| queue.js             | q                            | music | pass   |
+| remove.js            | rm                           | music | pass   |
+| resume.js            | res                          | music | pass   |
+| search.js            | se                           | music | pass   |
+| seek.js              | forward                      | music | pass   |
+| shuffle.js           | juggle                       | music | pass   |
+| skip.js              | next                         | music | pass   |
+| skipto.js            | moveto                       | music | pass   |
+| volume.js            | vol                          | music | pass   |
+| blast.js             |                              | owner | pass   |
+| eval.js              |                              | owner | pass   |
+| leaveguild.js        |                              | owner | pass   |
+| servers.js           | servs                        | owner | pass   |
+| suggest.js           | sg                           | misc  | pass   |
+| vote.js              | upvote                       | misc  | pass   |
+'----------------------------------------------------------------------' 
+06:41:45.664 INFO  20 event(s) found... 
+06:41:45.665 INFO  Loading event: clickButton 
+06:41:45.665 INFO  Loading event: debug 
+06:41:45.666 INFO  Loading event: error 
+06:41:45.667 INFO  Loading event: guildCreate 
+06:41:45.668 INFO  Loading event: guildDelete 
+06:41:45.669 INFO  Loading event: guildMemberAdd 
+06:41:45.670 INFO  Loading event: guildMemberRemove 
+06:41:45.671 INFO  Loading event: guildMemberUpdate 
+06:41:45.672 INFO  Loading event: guildUpdate 
+06:41:45.672 INFO  Loading event: messageCreate 
+06:41:45.673 INFO  Loading event: messageDelete 
+06:41:45.674 INFO  Loading event: messageDeleteBulk 
+06:41:45.675 INFO  Loading event: messageReactionAdd 
+06:41:45.676 INFO  Loading event: messageReactionRemove 
+06:41:45.677 INFO  Loading event: messageUpdate 
+06:41:45.677 INFO  Loading event: raw 
+06:41:45.678 INFO  Loading event: ready 
+06:41:45.679 INFO  Loading event: userUpdate 
+06:41:45.679 INFO  Loading event: voiceStateUpdate 
+06:41:45.680 INFO  Loading event: warn 
+06:41:46.049 INFO  Updating database and scheduling jobs... 
+06:41:51.279 INFO  LoneWolf is now online 
+06:41:51.280 INFO  LoneWolf is running on 1 server(s) 
+06:42:10.097 INFO  Test: Aqua~bot#2591 has left the server 
+06:42:10.172 ERROR embed.serAuthor is not a function
+{}
+TypeError: embed.serAuthor is not a function
+    at KickCommand.run (/home/runner/lone-wolf-1/src/commands/mod/kick.js:42:7)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5) 
+09:37:31.027 INFO  Initializing... 
+09:37:31.030 INFO  Loading commands... 
+09:37:31.404 INFO  
+.----------------------------------------------------------------------.
+|                               Commands                               |
+|----------------------------------------------------------------------|
+|         File         |           Aliases            | Type  | Status |
+|----------------------|------------------------------|-------|--------|
+| adminrole.js         | setar, sar                   | admin | pass   |
+| autokick.js          | setak, sak                   | admin | pass   |
+| autorole.js          | arole                        | admin | pass   |
+| deletedlog.js        | dlog                         | admin | pass   |
+| editlog.js           | eml                          | admin | pass   |
+| embedcolor.js        | embedcolor, emcol            | admin | pass   |
+| farewell.js          | fwchannel                    | admin | pass   |
+| farewellmessage.js   | setfwmsg                     | admin | pass   |
+| memberlog.js         | setmlog                      | admin | pass   |
+| modchannels.js       | setmods                      | admin | pass   |
+| modlog.js            | mlog                         | admin | pass   |
+| modrole.js           | mrole                        | admin | pass   |
+| muterole.js          | mutedrole                    | admin | pass   |
+| nicklog.js           | nicknamelog                  | admin | pass   |
+| rolelog.js           | setrolelog                   | admin | pass   |
+| setprefix.js         | setp, sp                     | admin | pass   |
+| settings.js          | set, s, config, conf         | admin | pass   |
+| starboard.js         | starchannel                  | admin | pass   |
+| systemchannel.js     | syschannel                   | admin | pass   |
+| togglecommand.js     | togglec, togc, tc            | admin | pass   |
+| togglerandomcolor.js | togglerc, togrc, trc         | admin | pass   |
+| toggletype.js        | togglet, togt, tt            | admin | pass   |
+| welcomechannel.js    | welchannel                   | admin | pass   |
+| welcomemessage.js    | welcomemsg                   | admin | pass   |
+| 8ball.js             | fortune                      | fun   | pass   |
+| bird.js              |                              | fun   | pass   |
+| catfact.js           | cf                           | fun   | pass   |
+| coinflip.js          | cointoss, coin, flip         | fun   | pass   |
+| dog.js               | puppy, pup                   | fun   | pass   |
+| dogfact.js           | df                           | fun   | pass   |
+| duck.js              |                              | fun   | pass   |
+| eject.js             |                              | fun   | pass   |
+| emojify.js           | sayemoji                     | fun   | pass   |
+| fox.js               |                              | fun   | pass   |
+| hack.js              |                              | fun   | pass   |
+| iq.js                |                              | fun   | pass   |
+| joke.js              |                              | fun   | pass   |
+| meme.js              |                              | fun   | pass   |
+| roll.js              | dice, r                      | fun   | pass   |
+| rps.js               |                              | fun   | pass   |
+| say.js               |                              | fun   | pass   |
+| shibe.js             |                              | fun   | pass   |
+| solotrivia.js        | solotriv, striv, solot, st   | fun   | pass   |
+| thouart.js           | elizabethan, ta              | fun   | pass   |
+| topics.js            | triviatopics, categories, ts | fun   | pass   |
+| trivia.js            | triv, t                      | fun   | pass   |
+| trumptweet.js        | trump                        | fun   | pass   |
+| yesno.js             | yn                           | fun   | pass   |
+| yomomma.js           | yourmom, yomamma, yomama, ym | fun   | pass   |
+| youtube.js           | yt                           | fun   | pass   |
+| admins.js            |                              | info  | pass   |
+| avatar.js            | profilepic, pic, ava         | info  | pass   |
+| botinfo.js           | bot, bi                      | info  | pass   |
+| channelinfo.js       | channel, ci                  | info  | pass   |
+| emojis.js            | e                            | info  | pass   |
+| findid.js            | find, id                     | info  | pass   |
+| help.js              | commands, h                  | info  | pass   |
+| inviteme.js          | invite, invme, im            | info  | pass   |
+| members.js           | memberstatus                 | info  | pass   |
+| mods.js              |                              | info  | pass   |
+| permissions.js       | perms                        | info  | pass   |
+| ping.js              |                              | info  | pass   |
+| prefix.js            | pre                          | info  | pass   |
+| roleinfo.js          | role, ri                     | info  | pass   |
+| servercount.js       | usercount, sc, uc            | info  | pass   |
+| servericon.js        | icon, i                      | info  | pass   |
+| serverinfo.js        | server, si                   | info  | pass   |
+| serverstaff.js       | staff                        | info  | pass   |
+| stats.js             | statistics, metrics          | info  | pass   |
+| uptime.js            | up                           | info  | pass   |
+| userinfo.js          | whois, user, ui              | info  | pass   |
+| addrole.js           | giverole, addr, ar           | mod   | pass   |
+| ban.js               |                              | mod   | pass   |
+| clearwarns.js        |                              | mod   | pass   |
+| kick.js              |                              | mod   | pass   |
+| mute.js              |                              | mod   | pass   |
+| purge.js             | clear                        | mod   | pass   |
+| removerole.js        | remover, rr                  | mod   | pass   |
+| setnickname.js       | setnick, snn                 | mod   | pass   |
+| slowmode.js          | slow, sm                     | mod   | pass   |
+| softban.js           |                              | mod   | pass   |
+| unban.js             |                              | mod   | pass   |
+| unmute.js            |                              | mod   | pass   |
+| warn.js              |                              | mod   | pass   |
+| warns.js             | warnings                     | mod   | pass   |
+| bassboost.js         | eq                           | music | pass   |
+| clear.js             | clrq                         | music | pass   |
+| disconnect.js        | stop, quit                   | music | pass   |
+| loop.js              | repeat, lp                   | music | pass   |
+| loopqueue.js         | lq, loopall                  | music | pass   |
+| lyrics.js            | ly                           | music | pass   |
+| nowplaying.js        | np                           | music | pass   |
+| pause.js             |                              | music | pass   |
+| play.js              | p                            | music | pass   |
+| queue.js             | q                            | music | pass   |
+| remove.js            | rm                           | music | pass   |
+| resume.js            | res                          | music | pass   |
+| search.js            | se                           | music | pass   |
+| seek.js              | forward                      | music | pass   |
+| shuffle.js           | juggle                       | music | pass   |
+| skip.js              | next                         | music | pass   |
+| skipto.js            | moveto                       | music | pass   |
+| volume.js            | vol                          | music | pass   |
+| blast.js             |                              | owner | pass   |
+| eval.js              |                              | owner | pass   |
+| leaveguild.js        |                              | owner | pass   |
+| servers.js           | servs                        | owner | pass   |
+| suggest.js           | sg                           | misc  | pass   |
+| vote.js              | upvote                       | misc  | pass   |
+'----------------------------------------------------------------------' 
+09:37:31.455 INFO  20 event(s) found... 
+09:37:31.456 INFO  Loading event: clickButton 
+09:37:31.456 INFO  Loading event: debug 
+09:37:31.457 INFO  Loading event: error 
+09:37:31.458 INFO  Loading event: guildCreate 
+09:37:31.458 INFO  Loading event: guildDelete 
+09:37:31.459 INFO  Loading event: guildMemberAdd 
+09:37:31.460 INFO  Loading event: guildMemberRemove 
+09:37:31.461 INFO  Loading event: guildMemberUpdate 
+09:37:31.461 INFO  Loading event: guildUpdate 
+09:37:31.462 INFO  Loading event: messageCreate 
+09:37:31.463 INFO  Loading event: messageDelete 
+09:37:31.464 INFO  Loading event: messageDeleteBulk 
+09:37:31.464 INFO  Loading event: messageReactionAdd 
+09:37:31.465 INFO  Loading event: messageReactionRemove 
+09:37:31.466 INFO  Loading event: messageUpdate 
+09:37:31.466 INFO  Loading event: raw 
+09:37:31.467 INFO  Loading event: ready 
+09:37:31.467 INFO  Loading event: userUpdate 
+09:37:31.468 INFO  Loading event: voiceStateUpdate 
+09:37:31.468 INFO  Loading event: warn 
+09:37:31.771 INFO  Updating database and scheduling jobs... 
+09:38:55.709 INFO  Initializing... 
+09:38:55.711 INFO  Loading commands... 
+09:38:56.007 INFO  
+.----------------------------------------------------------------------.
+|                               Commands                               |
+|----------------------------------------------------------------------|
+|         File         |           Aliases            | Type  | Status |
+|----------------------|------------------------------|-------|--------|
+| adminrole.js         | setar, sar                   | admin | pass   |
+| autokick.js          | setak, sak                   | admin | pass   |
+| autorole.js          | arole                        | admin | pass   |
+| deletedlog.js        | dlog                         | admin | pass   |
+| editlog.js           | eml                          | admin | pass   |
+| embedcolor.js        | embedcolor, emcol            | admin | pass   |
+| farewell.js          | fwchannel                    | admin | pass   |
+| farewellmessage.js   | setfwmsg                     | admin | pass   |
+| memberlog.js         | setmlog                      | admin | pass   |
+| modchannels.js       | setmods                      | admin | pass   |
+| modlog.js            | mlog                         | admin | pass   |
+| modrole.js           | mrole                        | admin | pass   |
+| muterole.js          | mutedrole                    | admin | pass   |
+| nicklog.js           | nicknamelog                  | admin | pass   |
+| rolelog.js           | setrolelog                   | admin | pass   |
+| setprefix.js         | setp, sp                     | admin | pass   |
+| settings.js          | set, s, config, conf         | admin | pass   |
+| starboard.js         | starchannel                  | admin | pass   |
+| systemchannel.js     | syschannel                   | admin | pass   |
+| togglecommand.js     | togglec, togc, tc            | admin | pass   |
+| togglerandomcolor.js | togglerc, togrc, trc         | admin | pass   |
+| toggletype.js        | togglet, togt, tt            | admin | pass   |
+| welcomechannel.js    | welchannel                   | admin | pass   |
+| welcomemessage.js    | welcomemsg                   | admin | pass   |
+| 8ball.js             | fortune                      | fun   | pass   |
+| bird.js              |                              | fun   | pass   |
+| catfact.js           | cf                           | fun   | pass   |
+| coinflip.js          | cointoss, coin, flip         | fun   | pass   |
+| dog.js               | puppy, pup                   | fun   | pass   |
+| dogfact.js           | df                           | fun   | pass   |
+| duck.js              |                              | fun   | pass   |
+| eject.js             |                              | fun   | pass   |
+| emojify.js           | sayemoji                     | fun   | pass   |
+| fox.js               |                              | fun   | pass   |
+| hack.js              |                              | fun   | pass   |
+| iq.js                |                              | fun   | pass   |
+| joke.js              |                              | fun   | pass   |
+| meme.js              |                              | fun   | pass   |
+| roll.js              | dice, r                      | fun   | pass   |
+| rps.js               |                              | fun   | pass   |
+| say.js               |                              | fun   | pass   |
+| shibe.js             |                              | fun   | pass   |
+| solotrivia.js        | solotriv, striv, solot, st   | fun   | pass   |
+| thouart.js           | elizabethan, ta              | fun   | pass   |
+| topics.js            | triviatopics, categories, ts | fun   | pass   |
+| trivia.js            | triv, t                      | fun   | pass   |
+| trumptweet.js        | trump                        | fun   | pass   |
+| yesno.js             | yn                           | fun   | pass   |
+| yomomma.js           | yourmom, yomamma, yomama, ym | fun   | pass   |
+| youtube.js           | yt                           | fun   | pass   |
+| admins.js            |                              | info  | pass   |
+| avatar.js            | profilepic, pic, ava         | info  | pass   |
+| botinfo.js           | bot, bi                      | info  | pass   |
+| channelinfo.js       | channel, ci                  | info  | pass   |
+| emojis.js            | e                            | info  | pass   |
+| findid.js            | find, id                     | info  | pass   |
+| help.js              | commands, h                  | info  | pass   |
+| inviteme.js          | invite, invme, im            | info  | pass   |
+| members.js           | memberstatus                 | info  | pass   |
+| mods.js              |                              | info  | pass   |
+| permissions.js       | perms                        | info  | pass   |
+| ping.js              |                              | info  | pass   |
+| prefix.js            | pre                          | info  | pass   |
+| roleinfo.js          | role, ri                     | info  | pass   |
+| servercount.js       | usercount, sc, uc            | info  | pass   |
+| servericon.js        | icon, i                      | info  | pass   |
+| serverinfo.js        | server, si                   | info  | pass   |
+| serverstaff.js       | staff                        | info  | pass   |
+| stats.js             | statistics, metrics          | info  | pass   |
+| uptime.js            | up                           | info  | pass   |
+| userinfo.js          | whois, user, ui              | info  | pass   |
+| addrole.js           | giverole, addr, ar           | mod   | pass   |
+| ban.js               |                              | mod   | pass   |
+| clearwarns.js        |                              | mod   | pass   |
+| kick.js              |                              | mod   | pass   |
+| mute.js              |                              | mod   | pass   |
+| purge.js             | clear                        | mod   | pass   |
+| removerole.js        | remover, rr                  | mod   | pass   |
+| setnickname.js       | setnick, snn                 | mod   | pass   |
+| slowmode.js          | slow, sm                     | mod   | pass   |
+| softban.js           |                              | mod   | pass   |
+| unban.js             |                              | mod   | pass   |
+| unmute.js            |                              | mod   | pass   |
+| warn.js              |                              | mod   | pass   |
+| warns.js             | warnings                     | mod   | pass   |
+| bassboost.js         | eq                           | music | pass   |
+| clear.js             | clrq                         | music | pass   |
+| disconnect.js        | stop, quit                   | music | pass   |
+| loop.js              | repeat, lp                   | music | pass   |
+| loopqueue.js         | lq, loopall                  | music | pass   |
+| lyrics.js            | ly                           | music | pass   |
+| nowplaying.js        | np                           | music | pass   |
+| pause.js             |                              | music | pass   |
+| play.js              | p                            | music | pass   |
+| queue.js             | q                            | music | pass   |
+| remove.js            | rm                           | music | pass   |
+| resume.js            | res                          | music | pass   |
+| search.js            | se                           | music | pass   |
+| seek.js              | forward                      | music | pass   |
+| shuffle.js           | juggle                       | music | pass   |
+| skip.js              | next                         | music | pass   |
+| skipto.js            | moveto                       | music | pass   |
+| volume.js            | vol                          | music | pass   |
+| blast.js             |                              | owner | pass   |
+| eval.js              |                              | owner | pass   |
+| leaveguild.js        |                              | owner | pass   |
+| servers.js           | servs                        | owner | pass   |
+| suggest.js           | sg                           | misc  | pass   |
+| vote.js              | upvote                       | misc  | pass   |
+'----------------------------------------------------------------------' 
+09:38:56.048 INFO  20 event(s) found... 
+09:38:56.049 INFO  Loading event: clickButton 
+09:38:56.049 INFO  Loading event: debug 
+09:38:56.050 INFO  Loading event: error 
+09:38:56.051 INFO  Loading event: guildCreate 
+09:38:56.052 INFO  Loading event: guildDelete 
+09:38:56.053 INFO  Loading event: guildMemberAdd 
+09:38:56.053 INFO  Loading event: guildMemberRemove 
+09:38:56.054 INFO  Loading event: guildMemberUpdate 
+09:38:56.055 INFO  Loading event: guildUpdate 
+09:38:56.056 INFO  Loading event: messageCreate 
+09:38:56.056 INFO  Loading event: messageDelete 
+09:38:56.057 INFO  Loading event: messageDeleteBulk 
+09:38:56.058 INFO  Loading event: messageReactionAdd 
+09:38:56.058 INFO  Loading event: messageReactionRemove 
+09:38:56.059 INFO  Loading event: messageUpdate 
+09:38:56.059 INFO  Loading event: raw 
+09:38:56.060 INFO  Loading event: ready 
+09:38:56.061 INFO  Loading event: userUpdate 
+09:38:56.061 INFO  Loading event: voiceStateUpdate 
+09:38:56.062 INFO  Loading event: warn 
+09:38:56.446 INFO  Updating database and scheduling jobs... 
+09:39:01.654 INFO  LoneWolf is now online 
+09:39:01.655 INFO  LoneWolf is running on 1 server(s) 
+09:39:06.709 ERROR sucess is not defined
+{}
+ReferenceError: sucess is not defined
+    at AdminRoleCommand.run (/home/runner/lone-wolf-1/src/commands/admin/embedcolor.js:21:17)
+    at module.exports (/home/runner/lone-wolf-1/src/events/messageCreate.js:44:24)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5) 
+09:39:57.289 INFO  Initializing... 
+09:39:57.291 INFO  Loading commands... 
+09:39:57.474 INFO  
+.----------------------------------------------------------------------.
+|                               Commands                               |
+|----------------------------------------------------------------------|
+|         File         |           Aliases            | Type  | Status |
+|----------------------|------------------------------|-------|--------|
+| adminrole.js         | setar, sar                   | admin | pass   |
+| autokick.js          | setak, sak                   | admin | pass   |
+| autorole.js          | arole                        | admin | pass   |
+| deletedlog.js        | dlog                         | admin | pass   |
+| editlog.js           | eml                          | admin | pass   |
+| embedcolor.js        | embedcolor, emcol            | admin | pass   |
+| farewell.js          | fwchannel                    | admin | pass   |
+| farewellmessage.js   | setfwmsg                     | admin | pass   |
+| memberlog.js         | setmlog                      | admin | pass   |
+| modchannels.js       | setmods                      | admin | pass   |
+| modlog.js            | mlog                         | admin | pass   |
+| modrole.js           | mrole                        | admin | pass   |
+| muterole.js          | mutedrole                    | admin | pass   |
+| nicklog.js           | nicknamelog                  | admin | pass   |
+| rolelog.js           | setrolelog                   | admin | pass   |
+| setprefix.js         | setp, sp                     | admin | pass   |
+| settings.js          | set, s, config, conf         | admin | pass   |
+| starboard.js         | starchannel                  | admin | pass   |
+| systemchannel.js     | syschannel                   | admin | pass   |
+| togglecommand.js     | togglec, togc, tc            | admin | pass   |
+| togglerandomcolor.js | togglerc, togrc, trc         | admin | pass   |
+| toggletype.js        | togglet, togt, tt            | admin | pass   |
+| welcomechannel.js    | welchannel                   | admin | pass   |
+| welcomemessage.js    | welcomemsg                   | admin | pass   |
+| 8ball.js             | fortune                      | fun   | pass   |
+| bird.js              |                              | fun   | pass   |
+| catfact.js           | cf                           | fun   | pass   |
+| coinflip.js          | cointoss, coin, flip         | fun   | pass   |
+| dog.js               | puppy, pup                   | fun   | pass   |
+| dogfact.js           | df                           | fun   | pass   |
+| duck.js              |                              | fun   | pass   |
+| eject.js             |                              | fun   | pass   |
+| emojify.js           | sayemoji                     | fun   | pass   |
+| fox.js               |                              | fun   | pass   |
+| hack.js              |                              | fun   | pass   |
+| iq.js                |                              | fun   | pass   |
+| joke.js              |                              | fun   | pass   |
+| meme.js              |                              | fun   | pass   |
+| roll.js              | dice, r                      | fun   | pass   |
+| rps.js               |                              | fun   | pass   |
+| say.js               |                              | fun   | pass   |
+| shibe.js             |                              | fun   | pass   |
+| solotrivia.js        | solotriv, striv, solot, st   | fun   | pass   |
+| thouart.js           | elizabethan, ta              | fun   | pass   |
+| topics.js            | triviatopics, categories, ts | fun   | pass   |
+| trivia.js            | triv, t                      | fun   | pass   |
+| trumptweet.js        | trump                        | fun   | pass   |
+| yesno.js             | yn                           | fun   | pass   |
+| yomomma.js           | yourmom, yomamma, yomama, ym | fun   | pass   |
+| youtube.js           | yt                           | fun   | pass   |
+| admins.js            |                              | info  | pass   |
+| avatar.js            | profilepic, pic, ava         | info  | pass   |
+| botinfo.js           | bot, bi                      | info  | pass   |
+| channelinfo.js       | channel, ci                  | info  | pass   |
+| emojis.js            | e                            | info  | pass   |
+| findid.js            | find, id                     | info  | pass   |
+| help.js              | commands, h                  | info  | pass   |
+| inviteme.js          | invite, invme, im            | info  | pass   |
+| members.js           | memberstatus                 | info  | pass   |
+| mods.js              |                              | info  | pass   |
+| permissions.js       | perms                        | info  | pass   |
+| ping.js              |                              | info  | pass   |
+| prefix.js            | pre                          | info  | pass   |
+| roleinfo.js          | role, ri                     | info  | pass   |
+| servercount.js       | usercount, sc, uc            | info  | pass   |
+| servericon.js        | icon, i                      | info  | pass   |
+| serverinfo.js        | server, si                   | info  | pass   |
+| serverstaff.js       | staff                        | info  | pass   |
+| stats.js             | statistics, metrics          | info  | pass   |
+| uptime.js            | up                           | info  | pass   |
+| userinfo.js          | whois, user, ui              | info  | pass   |
+| addrole.js           | giverole, addr, ar           | mod   | pass   |
+| ban.js               |                              | mod   | pass   |
+| clearwarns.js        |                              | mod   | pass   |
+| kick.js              |                              | mod   | pass   |
+| mute.js              |                              | mod   | pass   |
+| purge.js             | clear                        | mod   | pass   |
+| removerole.js        | remover, rr                  | mod   | pass   |
+| setnickname.js       | setnick, snn                 | mod   | pass   |
+| slowmode.js          | slow, sm                     | mod   | pass   |
+| softban.js           |                              | mod   | pass   |
+| unban.js             |                              | mod   | pass   |
+| unmute.js            |                              | mod   | pass   |
+| warn.js              |                              | mod   | pass   |
+| warns.js             | warnings                     | mod   | pass   |
+| bassboost.js         | eq                           | music | pass   |
+| clear.js             | clrq                         | music | pass   |
+| disconnect.js        | stop, quit                   | music | pass   |
+| loop.js              | repeat, lp                   | music | pass   |
+| loopqueue.js         | lq, loopall                  | music | pass   |
+| lyrics.js            | ly                           | music | pass   |
+| nowplaying.js        | np                           | music | pass   |
+| pause.js             |                              | music | pass   |
+| play.js              | p                            | music | pass   |
+| queue.js             | q                            | music | pass   |
+| remove.js            | rm                           | music | pass   |
+| resume.js            | res                          | music | pass   |
+| search.js            | se                           | music | pass   |
+| seek.js              | forward                      | music | pass   |
+| shuffle.js           | juggle                       | music | pass   |
+| skip.js              | next                         | music | pass   |
+| skipto.js            | moveto                       | music | pass   |
+| volume.js            | vol                          | music | pass   |
+| blast.js             |                              | owner | pass   |
+| eval.js              |                              | owner | pass   |
+| leaveguild.js        |                              | owner | pass   |
+| servers.js           | servs                        | owner | pass   |
+| suggest.js           | sg                           | misc  | pass   |
+| vote.js              | upvote                       | misc  | pass   |
+'----------------------------------------------------------------------' 
+09:39:57.513 INFO  20 event(s) found... 
+09:39:57.513 INFO  Loading event: clickButton 
+09:39:57.514 INFO  Loading event: debug 
+09:39:57.514 INFO  Loading event: error 
+09:39:57.515 INFO  Loading event: guildCreate 
+09:39:57.516 INFO  Loading event: guildDelete 
+09:39:57.517 INFO  Loading event: guildMemberAdd 
+09:39:57.517 INFO  Loading event: guildMemberRemove 
+09:39:57.518 INFO  Loading event: guildMemberUpdate 
+09:39:57.519 INFO  Loading event: guildUpdate 
+09:39:57.520 INFO  Loading event: messageCreate 
+09:39:57.520 INFO  Loading event: messageDelete 
+09:39:57.521 INFO  Loading event: messageDeleteBulk 
+09:39:57.522 INFO  Loading event: messageReactionAdd 
+09:39:57.522 INFO  Loading event: messageReactionRemove 
+09:39:57.523 INFO  Loading event: messageUpdate 
+09:39:57.523 INFO  Loading event: raw 
+09:39:57.524 INFO  Loading event: ready 
+09:39:57.525 INFO  Loading event: userUpdate 
+09:39:57.525 INFO  Loading event: voiceStateUpdate 
+09:39:57.526 INFO  Loading event: warn 
+09:39:57.849 INFO  Updating database and scheduling jobs... 
+09:40:03.164 INFO  LoneWolf is now online 
+09:40:03.164 INFO  LoneWolf is running on 1 server(s) 
+09:41:10.116 INFO  Initializing... 
+09:41:10.119 INFO  Loading commands... 
+09:41:10.338 INFO  
+.----------------------------------------------------------------------.
+|                               Commands                               |
+|----------------------------------------------------------------------|
+|         File         |           Aliases            | Type  | Status |
+|----------------------|------------------------------|-------|--------|
+| adminrole.js         | setar, sar                   | admin | pass   |
+| autokick.js          | setak, sak                   | admin | pass   |
+| autorole.js          | arole                        | admin | pass   |
+| deletedlog.js        | dlog                         | admin | pass   |
+| editlog.js           | eml                          | admin | pass   |
+| embedcolor.js        | embedcolor, emcol            | admin | pass   |
+| farewell.js          | fwchannel                    | admin | pass   |
+| farewellmessage.js   | setfwmsg                     | admin | pass   |
+| memberlog.js         | setmlog                      | admin | pass   |
+| modchannels.js       | setmods                      | admin | pass   |
+| modlog.js            | mlog                         | admin | pass   |
+| modrole.js           | mrole                        | admin | pass   |
+| muterole.js          | mutedrole                    | admin | pass   |
+| nicklog.js           | nicknamelog                  | admin | pass   |
+| rolelog.js           | setrolelog                   | admin | pass   |
+| setprefix.js         | setp, sp                     | admin | pass   |
+| settings.js          | set, s, config, conf         | admin | pass   |
+| starboard.js         | starchannel                  | admin | pass   |
+| systemchannel.js     | syschannel                   | admin | pass   |
+| togglecommand.js     | togglec, togc, tc            | admin | pass   |
+| togglerandomcolor.js | togglerc, togrc, trc         | admin | pass   |
+| toggletype.js        | togglet, togt, tt            | admin | pass   |
+| welcomechannel.js    | welchannel                   | admin | pass   |
+| welcomemessage.js    | welcomemsg                   | admin | pass   |
+| 8ball.js             | fortune                      | fun   | pass   |
+| bird.js              |                              | fun   | pass   |
+| catfact.js           | cf                           | fun   | pass   |
+| coinflip.js          | cointoss, coin, flip         | fun   | pass   |
+| dog.js               | puppy, pup                   | fun   | pass   |
+| dogfact.js           | df                           | fun   | pass   |
+| duck.js              |                              | fun   | pass   |
+| eject.js             |                              | fun   | pass   |
+| emojify.js           | sayemoji                     | fun   | pass   |
+| fox.js               |                              | fun   | pass   |
+| hack.js              |                              | fun   | pass   |
+| iq.js                |                              | fun   | pass   |
+| joke.js              |                              | fun   | pass   |
+| meme.js              |                              | fun   | pass   |
+| roll.js              | dice, r                      | fun   | pass   |
+| rps.js               |                              | fun   | pass   |
+| say.js               |                              | fun   | pass   |
+| shibe.js             |                              | fun   | pass   |
+| solotrivia.js        | solotriv, striv, solot, st   | fun   | pass   |
+| thouart.js           | elizabethan, ta              | fun   | pass   |
+| topics.js            | triviatopics, categories, ts | fun   | pass   |
+| trivia.js            | triv, t                      | fun   | pass   |
+| trumptweet.js        | trump                        | fun   | pass   |
+| yesno.js             | yn                           | fun   | pass   |
+| yomomma.js           | yourmom, yomamma, yomama, ym | fun   | pass   |
+| youtube.js           | yt                           | fun   | pass   |
+| admins.js            |                              | info  | pass   |
+| avatar.js            | profilepic, pic, ava         | info  | pass   |
+| botinfo.js           | bot, bi                      | info  | pass   |
+| channelinfo.js       | channel, ci                  | info  | pass   |
+| emojis.js            | e                            | info  | pass   |
+| findid.js            | find, id                     | info  | pass   |
+| help.js              | commands, h                  | info  | pass   |
+| inviteme.js          | invite, invme, im            | info  | pass   |
+| members.js           | memberstatus                 | info  | pass   |
+| mods.js              |                              | info  | pass   |
+| permissions.js       | perms                        | info  | pass   |
+| ping.js              |                              | info  | pass   |
+| prefix.js            | pre                          | info  | pass   |
+| roleinfo.js          | role, ri                     | info  | pass   |
+| servercount.js       | usercount, sc, uc            | info  | pass   |
+| servericon.js        | icon, i                      | info  | pass   |
+| serverinfo.js        | server, si                   | info  | pass   |
+| serverstaff.js       | staff                        | info  | pass   |
+| stats.js             | statistics, metrics          | info  | pass   |
+| uptime.js            | up                           | info  | pass   |
+| userinfo.js          | whois, user, ui              | info  | pass   |
+| addrole.js           | giverole, addr, ar           | mod   | pass   |
+| ban.js               |                              | mod   | pass   |
+| clearwarns.js        |                              | mod   | pass   |
+| kick.js              |                              | mod   | pass   |
+| mute.js              |                              | mod   | pass   |
+| purge.js             | clear                        | mod   | pass   |
+| removerole.js        | remover, rr                  | mod   | pass   |
+| setnickname.js       | setnick, snn                 | mod   | pass   |
+| slowmode.js          | slow, sm                     | mod   | pass   |
+| softban.js           |                              | mod   | pass   |
+| unban.js             |                              | mod   | pass   |
+| unmute.js            |                              | mod   | pass   |
+| warn.js              |                              | mod   | pass   |
+| warns.js             | warnings                     | mod   | pass   |
+| bassboost.js         | eq                           | music | pass   |
+| clear.js             | clrq                         | music | pass   |
+| disconnect.js        | stop, quit                   | music | pass   |
+| loop.js              | repeat, lp                   | music | pass   |
+| loopqueue.js         | lq, loopall                  | music | pass   |
+| lyrics.js            | ly                           | music | pass   |
+| nowplaying.js        | np                           | music | pass   |
+| pause.js             |                              | music | pass   |
+| play.js              | p                            | music | pass   |
+| queue.js             | q                            | music | pass   |
+| remove.js            | rm                           | music | pass   |
+| resume.js            | res                          | music | pass   |
+| search.js            | se                           | music | pass   |
+| seek.js              | forward                      | music | pass   |
+| shuffle.js           | juggle                       | music | pass   |
+| skip.js              | next                         | music | pass   |
+| skipto.js            | moveto                       | music | pass   |
+| volume.js            | vol                          | music | pass   |
+| blast.js             |                              | owner | pass   |
+| eval.js              |                              | owner | pass   |
+| leaveguild.js        |                              | owner | pass   |
+| servers.js           | servs                        | owner | pass   |
+| suggest.js           | sg                           | misc  | pass   |
+| vote.js              | upvote                       | misc  | pass   |
+'----------------------------------------------------------------------' 
+09:41:10.377 INFO  20 event(s) found... 
+09:41:10.377 INFO  Loading event: clickButton 
+09:41:10.378 INFO  Loading event: debug 
+09:41:10.378 INFO  Loading event: error 
+09:41:10.379 INFO  Loading event: guildCreate 
+09:41:10.380 INFO  Loading event: guildDelete 
+09:41:10.381 INFO  Loading event: guildMemberAdd 
+09:41:10.381 INFO  Loading event: guildMemberRemove 
+09:41:10.382 INFO  Loading event: guildMemberUpdate 
+09:41:10.383 INFO  Loading event: guildUpdate 
+09:41:10.384 INFO  Loading event: messageCreate 
+09:41:10.384 INFO  Loading event: messageDelete 
+09:41:10.385 INFO  Loading event: messageDeleteBulk 
+09:41:10.386 INFO  Loading event: messageReactionAdd 
+09:41:10.386 INFO  Loading event: messageReactionRemove 
+09:41:10.387 INFO  Loading event: messageUpdate 
+09:41:10.387 INFO  Loading event: raw 
+09:41:10.389 INFO  Loading event: ready 
+09:41:10.389 INFO  Loading event: userUpdate 
+09:41:10.389 INFO  Loading event: voiceStateUpdate 
+09:41:10.390 INFO  Loading event: warn 
+09:41:10.691 INFO  Updating database and scheduling jobs... 
+09:41:15.955 INFO  LoneWolf is now online 
+09:41:15.956 INFO  LoneWolf is running on 1 server(s) 
+09:42:46.638 INFO  Initializing... 
+09:42:46.640 INFO  Loading commands... 
+09:42:46.809 INFO  
+.----------------------------------------------------------------------.
+|                               Commands                               |
+|----------------------------------------------------------------------|
+|         File         |           Aliases            | Type  | Status |
+|----------------------|------------------------------|-------|--------|
+| adminrole.js         | setar, sar                   | admin | pass   |
+| autokick.js          | setak, sak                   | admin | pass   |
+| autorole.js          | arole                        | admin | pass   |
+| deletedlog.js        | dlog                         | admin | pass   |
+| editlog.js           | eml                          | admin | pass   |
+| embedcolor.js        | embedcolor, emcol            | admin | pass   |
+| farewell.js          | fwchannel                    | admin | pass   |
+| farewellmessage.js   | setfwmsg                     | admin | pass   |
+| memberlog.js         | setmlog                      | admin | pass   |
+| modchannels.js       | setmods                      | admin | pass   |
+| modlog.js            | mlog                         | admin | pass   |
+| modrole.js           | mrole                        | admin | pass   |
+| muterole.js          | mutedrole                    | admin | pass   |
+| nicklog.js           | nicknamelog                  | admin | pass   |
+| rolelog.js           | setrolelog                   | admin | pass   |
+| setprefix.js         | setp, sp                     | admin | pass   |
+| settings.js          | set, s, config, conf         | admin | pass   |
+| starboard.js         | starchannel                  | admin | pass   |
+| systemchannel.js     | syschannel                   | admin | pass   |
+| togglecommand.js     | togglec, togc, tc            | admin | pass   |
+| togglerandomcolor.js | togglerc, togrc, trc         | admin | pass   |
+| toggletype.js        | togglet, togt, tt            | admin | pass   |
+| welcomechannel.js    | welchannel                   | admin | pass   |
+| welcomemessage.js    | welcomemsg                   | admin | pass   |
+| 8ball.js             | fortune                      | fun   | pass   |
+| bird.js              |                              | fun   | pass   |
+| catfact.js           | cf                           | fun   | pass   |
+| coinflip.js          | cointoss, coin, flip         | fun   | pass   |
+| dog.js               | puppy, pup                   | fun   | pass   |
+| dogfact.js           | df                           | fun   | pass   |
+| duck.js              |                              | fun   | pass   |
+| eject.js             |                              | fun   | pass   |
+| emojify.js           | sayemoji                     | fun   | pass   |
+| fox.js               |                              | fun   | pass   |
+| hack.js              |                              | fun   | pass   |
+| iq.js                |                              | fun   | pass   |
+| joke.js              |                              | fun   | pass   |
+| meme.js              |                              | fun   | pass   |
+| roll.js              | dice, r                      | fun   | pass   |
+| rps.js               |                              | fun   | pass   |
+| say.js               |                              | fun   | pass   |
+| shibe.js             |                              | fun   | pass   |
+| solotrivia.js        | solotriv, striv, solot, st   | fun   | pass   |
+| thouart.js           | elizabethan, ta              | fun   | pass   |
+| topics.js            | triviatopics, categories, ts | fun   | pass   |
+| trivia.js            | triv, t                      | fun   | pass   |
+| trumptweet.js        | trump                        | fun   | pass   |
+| yesno.js             | yn                           | fun   | pass   |
+| yomomma.js           | yourmom, yomamma, yomama, ym | fun   | pass   |
+| youtube.js           | yt                           | fun   | pass   |
+| admins.js            |                              | info  | pass   |
+| avatar.js            | profilepic, pic, ava         | info  | pass   |
+| botinfo.js           | bot, bi                      | info  | pass   |
+| channelinfo.js       | channel, ci                  | info  | pass   |
+| emojis.js            | e                            | info  | pass   |
+| findid.js            | find, id                     | info  | pass   |
+| help.js              | commands, h                  | info  | pass   |
+| inviteme.js          | invite, invme, im            | info  | pass   |
+| members.js           | memberstatus                 | info  | pass   |
+| mods.js              |                              | info  | pass   |
+| permissions.js       | perms                        | info  | pass   |
+| ping.js              |                              | info  | pass   |
+| prefix.js            | pre                          | info  | pass   |
+| roleinfo.js          | role, ri                     | info  | pass   |
+| servercount.js       | usercount, sc, uc            | info  | pass   |
+| servericon.js        | icon, i                      | info  | pass   |
+| serverinfo.js        | server, si                   | info  | pass   |
+| serverstaff.js       | staff                        | info  | pass   |
+| stats.js             | statistics, metrics          | info  | pass   |
+| uptime.js            | up                           | info  | pass   |
+| userinfo.js          | whois, user, ui              | info  | pass   |
+| addrole.js           | giverole, addr, ar           | mod   | pass   |
+| ban.js               |                              | mod   | pass   |
+| clearwarns.js        |                              | mod   | pass   |
+| kick.js              |                              | mod   | pass   |
+| mute.js              |                              | mod   | pass   |
+| purge.js             | clear                        | mod   | pass   |
+| removerole.js        | remover, rr                  | mod   | pass   |
+| setnickname.js       | setnick, snn                 | mod   | pass   |
+| slowmode.js          | slow, sm                     | mod   | pass   |
+| softban.js           |                              | mod   | pass   |
+| unban.js             |                              | mod   | pass   |
+| unmute.js            |                              | mod   | pass   |
+| warn.js              |                              | mod   | pass   |
+| warns.js             | warnings                     | mod   | pass   |
+| bassboost.js         | eq                           | music | pass   |
+| clear.js             | clrq                         | music | pass   |
+| disconnect.js        | stop, quit                   | music | pass   |
+| loop.js              | repeat, lp                   | music | pass   |
+| loopqueue.js         | lq, loopall                  | music | pass   |
+| lyrics.js            | ly                           | music | pass   |
+| nowplaying.js        | np                           | music | pass   |
+| pause.js             |                              | music | pass   |
+| play.js              | p                            | music | pass   |
+| queue.js             | q                            | music | pass   |
+| remove.js            | rm                           | music | pass   |
+| resume.js            | res                          | music | pass   |
+| search.js            | se                           | music | pass   |
+| seek.js              | forward                      | music | pass   |
+| shuffle.js           | juggle                       | music | pass   |
+| skip.js              | next                         | music | pass   |
+| skipto.js            | moveto                       | music | pass   |
+| volume.js            | vol                          | music | pass   |
+| blast.js             |                              | owner | pass   |
+| eval.js              |                              | owner | pass   |
+| leaveguild.js        |                              | owner | pass   |
+| servers.js           | servs                        | owner | pass   |
+| suggest.js           | sg                           | misc  | pass   |
+| vote.js              | upvote                       | misc  | pass   |
+'----------------------------------------------------------------------' 
+09:42:46.838 INFO  20 event(s) found... 
+09:42:46.838 INFO  Loading event: clickButton 
+09:42:46.839 INFO  Loading event: debug 
+09:42:46.839 INFO  Loading event: error 
+09:42:46.840 INFO  Loading event: guildCreate 
+09:42:46.841 INFO  Loading event: guildDelete 
+09:42:46.841 INFO  Loading event: guildMemberAdd 
+09:42:46.842 INFO  Loading event: guildMemberRemove 
+09:42:46.843 INFO  Loading event: guildMemberUpdate 
+09:42:46.843 INFO  Loading event: guildUpdate 
+09:42:46.846 INFO  Loading event: messageCreate 
+09:42:46.847 INFO  Loading event: messageDelete 
+09:42:46.848 INFO  Loading event: messageDeleteBulk 
+09:42:46.848 INFO  Loading event: messageReactionAdd 
+09:42:46.849 INFO  Loading event: messageReactionRemove 
+09:42:46.849 INFO  Loading event: messageUpdate 
+09:42:46.850 INFO  Loading event: raw 
+09:42:46.851 INFO  Loading event: ready 
+09:42:46.851 INFO  Loading event: userUpdate 
+09:42:46.852 INFO  Loading event: voiceStateUpdate 
+09:42:46.852 INFO  Loading event: warn 
+09:42:47.214 INFO  Updating database and scheduling jobs... 
+09:42:52.475 INFO  LoneWolf is now online 
+09:42:52.475 INFO  LoneWolf is running on 1 server(s) 
+09:46:13.065 INFO  Initializing... 
+09:46:13.067 INFO  Loading commands... 
+09:46:13.235 INFO  
+.----------------------------------------------------------------------.
+|                               Commands                               |
+|----------------------------------------------------------------------|
+|         File         |           Aliases            | Type  | Status |
+|----------------------|------------------------------|-------|--------|
+| adminrole.js         | setar, sar                   | admin | pass   |
+| autokick.js          | setak, sak                   | admin | pass   |
+| autorole.js          | arole                        | admin | pass   |
+| deletedlog.js        | dlog                         | admin | pass   |
+| editlog.js           | eml                          | admin | pass   |
+| embedcolor.js        | embedcolor, emcol            | admin | pass   |
+| farewell.js          | fwchannel                    | admin | pass   |
+| farewellmessage.js   | setfwmsg                     | admin | pass   |
+| memberlog.js         | setmlog                      | admin | pass   |
+| modchannels.js       | setmods                      | admin | pass   |
+| modlog.js            | mlog                         | admin | pass   |
+| modrole.js           | mrole                        | admin | pass   |
+| muterole.js          | mutedrole                    | admin | pass   |
+| nicklog.js           | nicknamelog                  | admin | pass   |
+| rolelog.js           | setrolelog                   | admin | pass   |
+| setprefix.js         | setp, sp                     | admin | pass   |
+| settings.js          | set, s, config, conf         | admin | pass   |
+| starboard.js         | starchannel                  | admin | pass   |
+| systemchannel.js     | syschannel                   | admin | pass   |
+| togglecommand.js     | togglec, togc, tc            | admin | pass   |
+| togglerandomcolor.js | togglerc, togrc, trc         | admin | pass   |
+| toggletype.js        | togglet, togt, tt            | admin | pass   |
+| welcomechannel.js    | welchannel                   | admin | pass   |
+| welcomemessage.js    | welcomemsg                   | admin | pass   |
+| 8ball.js             | fortune                      | fun   | pass   |
+| bird.js              |                              | fun   | pass   |
+| catfact.js           | cf                           | fun   | pass   |
+| coinflip.js          | cointoss, coin, flip         | fun   | pass   |
+| dog.js               | puppy, pup                   | fun   | pass   |
+| dogfact.js           | df                           | fun   | pass   |
+| duck.js              |                              | fun   | pass   |
+| eject.js             |                              | fun   | pass   |
+| emojify.js           | sayemoji                     | fun   | pass   |
+| fox.js               |                              | fun   | pass   |
+| hack.js              |                              | fun   | pass   |
+| iq.js                |                              | fun   | pass   |
+| joke.js              |                              | fun   | pass   |
+| meme.js              |                              | fun   | pass   |
+| roll.js              | dice, r                      | fun   | pass   |
+| rps.js               |                              | fun   | pass   |
+| say.js               |                              | fun   | pass   |
+| shibe.js             |                              | fun   | pass   |
+| solotrivia.js        | solotriv, striv, solot, st   | fun   | pass   |
+| thouart.js           | elizabethan, ta              | fun   | pass   |
+| topics.js            | triviatopics, categories, ts | fun   | pass   |
+| trivia.js            | triv, t                      | fun   | pass   |
+| trumptweet.js        | trump                        | fun   | pass   |
+| yesno.js             | yn                           | fun   | pass   |
+| yomomma.js           | yourmom, yomamma, yomama, ym | fun   | pass   |
+| youtube.js           | yt                           | fun   | pass   |
+| admins.js            |                              | info  | pass   |
+| avatar.js            | profilepic, pic, ava         | info  | pass   |
+| botinfo.js           | bot, bi                      | info  | pass   |
+| channelinfo.js       | channel, ci                  | info  | pass   |
+| emojis.js            | e                            | info  | pass   |
+| findid.js            | find, id                     | info  | pass   |
+| help.js              | commands, h                  | info  | pass   |
+| inviteme.js          | invite, invme, im            | info  | pass   |
+| members.js           | memberstatus                 | info  | pass   |
+| mods.js              |                              | info  | pass   |
+| permissions.js       | perms                        | info  | pass   |
+| ping.js              |                              | info  | pass   |
+| prefix.js            | pre                          | info  | pass   |
+| roleinfo.js          | role, ri                     | info  | pass   |
+| servercount.js       | usercount, sc, uc            | info  | pass   |
+| servericon.js        | icon, i                      | info  | pass   |
+| serverinfo.js        | server, si                   | info  | pass   |
+| serverstaff.js       | staff                        | info  | pass   |
+| stats.js             | statistics, metrics          | info  | pass   |
+| uptime.js            | up                           | info  | pass   |
+| userinfo.js          | whois, user, ui              | info  | pass   |
+| addrole.js           | giverole, addr, ar           | mod   | pass   |
+| ban.js               |                              | mod   | pass   |
+| clearwarns.js        |                              | mod   | pass   |
+| kick.js              |                              | mod   | pass   |
+| mute.js              |                              | mod   | pass   |
+| purge.js             | clear                        | mod   | pass   |
+| removerole.js        | remover, rr                  | mod   | pass   |
+| setnickname.js       | setnick, snn                 | mod   | pass   |
+| slowmode.js          | slow, sm                     | mod   | pass   |
+| softban.js           |                              | mod   | pass   |
+| unban.js             |                              | mod   | pass   |
+| unmute.js            |                              | mod   | pass   |
+| warn.js              |                              | mod   | pass   |
+| warns.js             | warnings                     | mod   | pass   |
+| bassboost.js         | eq                           | music | pass   |
+| clear.js             | clrq                         | music | pass   |
+| disconnect.js        | stop, quit                   | music | pass   |
+| loop.js              | repeat, lp                   | music | pass   |
+| loopqueue.js         | lq, loopall                  | music | pass   |
+| lyrics.js            | ly                           | music | pass   |
+| nowplaying.js        | np                           | music | pass   |
+| pause.js             |                              | music | pass   |
+| play.js              | p                            | music | pass   |
+| queue.js             | q                            | music | pass   |
+| remove.js            | rm                           | music | pass   |
+| resume.js            | res                          | music | pass   |
+| search.js            | se                           | music | pass   |
+| seek.js              | forward                      | music | pass   |
+| shuffle.js           | juggle                       | music | pass   |
+| skip.js              | next                         | music | pass   |
+| skipto.js            | moveto                       | music | pass   |
+| volume.js            | vol                          | music | pass   |
+| blast.js             |                              | owner | pass   |
+| eval.js              |                              | owner | pass   |
+| leaveguild.js        |                              | owner | pass   |
+| servers.js           | servs                        | owner | pass   |
+| suggest.js           | sg                           | misc  | pass   |
+| vote.js              | upvote                       | misc  | pass   |
+'----------------------------------------------------------------------' 
+09:46:13.265 INFO  20 event(s) found... 
+09:46:13.266 INFO  Loading event: clickButton 
+09:46:13.266 INFO  Loading event: debug 
+09:46:13.267 INFO  Loading event: error 
+09:46:13.267 INFO  Loading event: guildCreate 
+09:46:13.270 INFO  Loading event: guildDelete 
+09:46:13.271 INFO  Loading event: guildMemberAdd 
+09:46:13.272 INFO  Loading event: guildMemberRemove 
+09:46:13.273 INFO  Loading event: guildMemberUpdate 
+09:46:13.273 INFO  Loading event: guildUpdate 
+09:46:13.274 INFO  Loading event: messageCreate 
+09:46:13.275 INFO  Loading event: messageDelete 
+09:46:13.275 INFO  Loading event: messageDeleteBulk 
+09:46:13.276 INFO  Loading event: messageReactionAdd 
+09:46:13.277 INFO  Loading event: messageReactionRemove 
+09:46:13.277 INFO  Loading event: messageUpdate 
+09:46:13.278 INFO  Loading event: raw 
+09:46:13.279 INFO  Loading event: ready 
+09:46:13.279 INFO  Loading event: userUpdate 
+09:46:13.279 INFO  Loading event: voiceStateUpdate 
+09:46:13.280 INFO  Loading event: warn 
+09:46:13.576 INFO  Updating database and scheduling jobs... 
+09:46:18.734 INFO  LoneWolf is now online 
+09:46:18.734 INFO  LoneWolf is running on 1 server(s) 
+15:12:41.640 INFO  Initializing... 
+15:12:41.642 INFO  Loading commands... 
+15:12:41.941 INFO  
+.----------------------------------------------------------------------.
+|                               Commands                               |
+|----------------------------------------------------------------------|
+|         File         |           Aliases            | Type  | Status |
+|----------------------|------------------------------|-------|--------|
+| adminrole.js         | setar, sar                   | admin | pass   |
+| autokick.js          | setak, sak                   | admin | pass   |
+| autorole.js          | arole                        | admin | pass   |
+| deletedlog.js        | dlog                         | admin | pass   |
+| editlog.js           | eml                          | admin | pass   |
+| embedcolor.js        | embedcolor, emcol            | admin | pass   |
+| farewell.js          | fwchannel                    | admin | pass   |
+| farewellmessage.js   | setfwmsg                     | admin | pass   |
+| memberlog.js         | setmlog                      | admin | pass   |
+| modchannels.js       | setmods                      | admin | pass   |
+| modlog.js            | mlog                         | admin | pass   |
+| modrole.js           | mrole                        | admin | pass   |
+| muterole.js          | mutedrole                    | admin | pass   |
+| nicklog.js           | nicknamelog                  | admin | pass   |
+| rolelog.js           | setrolelog                   | admin | pass   |
+| setprefix.js         | setp, sp                     | admin | pass   |
+| settings.js          | set, s, config, conf         | admin | pass   |
+| starboard.js         | starchannel                  | admin | pass   |
+| systemchannel.js     | syschannel                   | admin | pass   |
+| togglecommand.js     | togglec, togc, tc            | admin | pass   |
+| togglerandomcolor.js | togglerc, togrc, trc         | admin | pass   |
+| toggletype.js        | togglet, togt, tt            | admin | pass   |
+| welcomechannel.js    | welchannel                   | admin | pass   |
+| welcomemessage.js    | welcomemsg                   | admin | pass   |
+| 8ball.js             | fortune                      | fun   | pass   |
+| bird.js              |                              | fun   | pass   |
+| catfact.js           | cf                           | fun   | pass   |
+| coinflip.js          | cointoss, coin, flip         | fun   | pass   |
+| dog.js               | puppy, pup                   | fun   | pass   |
+| dogfact.js           | df                           | fun   | pass   |
+| duck.js              |                              | fun   | pass   |
+| eject.js             |                              | fun   | pass   |
+| emojify.js           | sayemoji                     | fun   | pass   |
+| fox.js               |                              | fun   | pass   |
+| hack.js              |                              | fun   | pass   |
+| iq.js                |                              | fun   | pass   |
+| joke.js              |                              | fun   | pass   |
+| meme.js              |                              | fun   | pass   |
+| roll.js              | dice, r                      | fun   | pass   |
+| rps.js               |                              | fun   | pass   |
+| say.js               |                              | fun   | pass   |
+| shibe.js             |                              | fun   | pass   |
+| solotrivia.js        | solotriv, striv, solot, st   | fun   | pass   |
+| thouart.js           | elizabethan, ta              | fun   | pass   |
+| topics.js            | triviatopics, categories, ts | fun   | pass   |
+| trivia.js            | triv, t                      | fun   | pass   |
+| trumptweet.js        | trump                        | fun   | pass   |
+| yesno.js             | yn                           | fun   | pass   |
+| yomomma.js           | yourmom, yomamma, yomama, ym | fun   | pass   |
+| youtube.js           | yt                           | fun   | pass   |
+| admins.js            |                              | info  | pass   |
+| avatar.js            | profilepic, pic, ava         | info  | pass   |
+| botinfo.js           | bot, bi                      | info  | pass   |
+| channelinfo.js       | channel, ci                  | info  | pass   |
+| emojis.js            | e                            | info  | pass   |
+| findid.js            | find, id                     | info  | pass   |
+| help.js              | commands, h                  | info  | pass   |
+| inviteme.js          | invite, invme, im            | info  | pass   |
+| members.js           | memberstatus                 | info  | pass   |
+| mods.js              |                              | info  | pass   |
+| permissions.js       | perms                        | info  | pass   |
+| ping.js              |                              | info  | pass   |
+| prefix.js            | pre                          | info  | pass   |
+| roleinfo.js          | role, ri                     | info  | pass   |
+| servercount.js       | usercount, sc, uc            | info  | pass   |
+| servericon.js        | icon, i                      | info  | pass   |
+| serverinfo.js        | server, si                   | info  | pass   |
+| serverstaff.js       | staff                        | info  | pass   |
+| stats.js             | statistics, metrics          | info  | pass   |
+| uptime.js            | up                           | info  | pass   |
+| userinfo.js          | whois, user, ui              | info  | pass   |
+| addrole.js           | giverole, addr, ar           | mod   | pass   |
+| ban.js               |                              | mod   | pass   |
+| clearwarns.js        |                              | mod   | pass   |
+| kick.js              |                              | mod   | pass   |
+| mute.js              |                              | mod   | pass   |
+| purge.js             | clear                        | mod   | pass   |
+| removerole.js        | remover, rr                  | mod   | pass   |
+| setnickname.js       | setnick, snn                 | mod   | pass   |
+| slowmode.js          | slow, sm                     | mod   | pass   |
+| softban.js           |                              | mod   | pass   |
+| unban.js             |                              | mod   | pass   |
+| unmute.js            |                              | mod   | pass   |
+| warn.js              |                              | mod   | pass   |
+| warns.js             | warnings                     | mod   | pass   |
+| bassboost.js         | eq                           | music | pass   |
+| clear.js             | clrq                         | music | pass   |
+| disconnect.js        | stop, quit                   | music | pass   |
+| loop.js              | repeat, lp                   | music | pass   |
+| loopqueue.js         | lq, loopall                  | music | pass   |
+| lyrics.js            | ly                           | music | pass   |
+| nowplaying.js        | np                           | music | pass   |
+| pause.js             |                              | music | pass   |
+| play.js              | p                            | music | pass   |
+| queue.js             | q                            | music | pass   |
+| remove.js            | rm                           | music | pass   |
+| resume.js            | res                          | music | pass   |
+| search.js            | se                           | music | pass   |
+| seek.js              | forward                      | music | pass   |
+| shuffle.js           | juggle                       | music | pass   |
+| skip.js              | next                         | music | pass   |
+| skipto.js            | moveto                       | music | pass   |
+| volume.js            | vol                          | music | pass   |
+| blast.js             |                              | owner | pass   |
+| eval.js              |                              | owner | pass   |
+| leaveguild.js        |                              | owner | pass   |
+| servers.js           | servs                        | owner | pass   |
+| suggest.js           | sg                           | misc  | pass   |
+| vote.js              | upvote                       | misc  | pass   |
+'----------------------------------------------------------------------' 
+15:12:41.977 INFO  20 event(s) found... 
+15:12:41.978 INFO  Loading event: clickButton 
+15:12:41.978 INFO  Loading event: debug 
+15:12:41.978 INFO  Loading event: error 
+15:12:41.979 INFO  Loading event: guildCreate 
+15:12:41.980 INFO  Loading event: guildDelete 
+15:12:41.981 INFO  Loading event: guildMemberAdd 
+15:12:41.981 INFO  Loading event: guildMemberRemove 
+15:12:41.982 INFO  Loading event: guildMemberUpdate 
+15:12:41.983 INFO  Loading event: guildUpdate 
+15:12:41.986 INFO  Loading event: messageCreate 
+15:12:41.986 INFO  Loading event: messageDelete 
+15:12:41.987 INFO  Loading event: messageDeleteBulk 
+15:12:41.988 INFO  Loading event: messageReactionAdd 
+15:12:41.988 INFO  Loading event: messageReactionRemove 
+15:12:41.989 INFO  Loading event: messageUpdate 
+15:12:41.989 INFO  Loading event: raw 
+15:12:41.990 INFO  Loading event: ready 
+15:12:41.990 INFO  Loading event: userUpdate 
+15:12:41.991 INFO  Loading event: voiceStateUpdate 
+15:12:41.991 INFO  Loading event: warn 
+15:12:42.466 INFO  Updating database and scheduling jobs... 
+15:12:47.640 INFO  LoneWolf is now online 
+15:12:47.640 INFO  LoneWolf is running on 1 server(s) 

@@ -1,0 +1,18 @@
+{
+ "ownerId": "", //Your discord id
+  "bugReportChannelId": "", //A channel ID to which the big reports is to be send
+  "feedbackChannelId": "", //A channel ID to which all the feedback is to be collected
+  "serverLogId": "", //For logging 
+"YOUTUBE_API_KEY":"", //YouTube API key V2 here
+
+//Lavalink
+ "id": "", // ID
+ "host": "", //Host name
+ "port": , //port number
+ "pass": "", //password
+ "scldid": "", //SoundCloud id available on SoundCloud dev portal
+ "scldsc": "" //SoundCloud secret Key
+
+//Autoposter
+"toggle":"" //Available from top.gg website
+}
