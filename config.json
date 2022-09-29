@@ -1,18 +1,17 @@
 {
- "ownerId": "", //Your discord id
-  "bugReportChannelId": "", //A channel ID to which the big reports is to be send
-  "feedbackChannelId": "", //A channel ID to which all the feedback is to be collected
-  "serverLogId": "", //For logging 
-"YOUTUBE_API_KEY":"", //YouTube API key V2 here
+ "ownerId": "Your discord id",
+  "bugReportChannelId": "A channel ID to which the big reports is to be send",
+  "feedbackChannelId": "A channel ID to which all the feedback is to be collected",
+  "serverLogId": "For logging",
 
 //Lavalink
- "id": "", // ID
- "host": "", //Host name
- "port": , //port number
- "pass": "", //password
+ "id": "Lavalink ID",
+ "host": "Lavalink Host Name",
+ "port": "port number",
+ "pass": "Lavalink Password",
  "scldid": "", //SoundCloud id available on SoundCloud dev portal
  "scldsc": "" //SoundCloud secret Key
 
 //Autoposter
-"toggle":"" //Available from top.gg website
+"topgg":"" //Available from top.gg website
 }
