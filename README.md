@@ -1,3 +1,4 @@
+<img src = "https://img.shields.io/github/languages/top/SnowFlake04/lone-wolf?color=green&style=plastic">  <img src = "https://img.shields.io/badge/Version-V1.8-blue?style=plastic">
 # LoneWolf
 Lonewolf is a multi purpose open source discord bot. The bot is a heavily modified version of the popular [Calypso](https://github.com/sabattle/CalypsoBot) Bot. Many features and improvements has been added to make the bot suitable for your server.
 
