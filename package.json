@@ -1,6 +1,6 @@
 {
-  "name": "lone-wolf-1",
-  "version": "1.0.0",
+  "name": "lone-wolf",
+  "version": "1.8.0",
   "description": "",
   "main": "index.js",
   "dependencies": {
@@ -34,13 +34,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/LoneWolf6969/lone-wolf.git"
+    "url": "git+https://github.com/Snowflake04/lone-wolf.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/LoneWolf6969/lone-wolf/issues"
+    "url": "https://github.com/Snowflake04/lone-wolf/issues"
   },
-  "homepage": "https://github.com/LoneWolf6969/lone-wolf#readme"
+  "homepage": "https://github.com/Snowflake04/lone-wolf#readme"
 }
