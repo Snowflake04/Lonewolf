@@ -1,4 +1,4 @@
-<img src = "https://img.shields.io/github/languages/top/SnowFlake04/lone-wolf?color=green&style=plastic">  <img src = "https://img.shields.io/badge/Version-V1.8-blue?style=plastic">
+<img src = "https://img.shields.io/github/languages/top/SnowFlake04/lone-wolf?color=green&style=plastic"> <img src = "https://img.shields.io/badge/Version-V1.8-blue?style=plastic">
 
 <H1 align = center> Lonewolf </H1>
 
@@ -35,3 +35,5 @@ The bot includes features such as:
 7. Save and close `config.json`
 8. That's it! You are ready to start your bot!
 
+## Support
+Join my [Discord server](https://discord.gg/DdqsxbxCEC) for help regarding any issues 
