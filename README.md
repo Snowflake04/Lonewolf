@@ -4,7 +4,6 @@
 
 <H3 align = center> Powerfull, multi purpose & open source discord bot. </H3>
 
-Lonewolf is a heavily modified version of the popular [Calypso](https://github.com/sabattle/CalypsoBot) Bot. Many features and improvements has been added to make the bot suitable for your server.
 
 ## Features <br>
 
