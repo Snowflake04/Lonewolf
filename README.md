@@ -39,5 +39,3 @@ The bot includes features such as:
 ## Support
 Join my [Discord server](https://discord.gg/DdqsxbxCEC) for help regarding any issues 
 
-
-NB: The bot is a modified version of the [Calypso Bot](https://github.com/sabattle/CalypsoBot)
